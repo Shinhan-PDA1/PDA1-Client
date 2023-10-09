@@ -1,11 +1,29 @@
-/* TopNav.css */
+/* TopNav.module.css */
+.top-nav {
+    font-size: 16px;
+}
+
 .top-nav ul {
-    display: flex;
-    justify-content: space-around;
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    display: flex;
+    gap: 15px;
 }
 
 .top-nav li {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #f0f0f0; /* 연한 회색 */
+    color: black; /* 검은 글씨 */
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.top-nav li:hover {
+    background-color: #d9d9d9;
+}
+
+.top-nav .active {
+    background-color: #555; /* 진한 회색 */
+    color: white; /* 흰 글씨 */
 }

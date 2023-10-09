@@ -1,15 +1,31 @@
 /* MarketTrend.module.css */
 .market-trends {
-    padding: 20px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px silver solid;
+
 }
 
-.trends-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+
+.component-header {
+    display: flex;
+    justify-content: space-between; /* h2와 p를 나란히 배치 */
+    align-items: center;
+    color: blue; /* 버팔색으로 설정 */
 }
+
+.placeholder-table{
+    width: 90%;
+    height: 90%;
+    border: 3px silver solid;
+
+
+
+}
+
+
+
 
 .trends-table th, .trends-table td {
     border: 1px solid #ccc;

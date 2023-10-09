@@ -6,6 +6,10 @@ function MarketTrend({ trendsData }) {
 
     return (
         <div className={styles['market-trends']}>
+            <div className={styles['component-header']}>
+                    <h2>투자자 별 매매동향</h2>
+                    <p>다른 투자자들은 이 종목에 대해 어떻게 대응하고 있을까요?</p>
+                </div>
             {/* 테이블 위치 표시 */}
             <div className={styles['placeholder-table']}>테이블 위치</div>
 
