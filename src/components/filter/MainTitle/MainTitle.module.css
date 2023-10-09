@@ -1,0 +1,9 @@
+.mainContainer {
+    border: 2px solid #ccc;
+    width: 420px;
+    height: 70px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+    
+}

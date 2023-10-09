@@ -1,11 +1,13 @@
-/* QuestionField.module.css */
+/* QuestionTerm.module.css */
 
 .questionContainer {
     border: 2px solid #ccc;
+    
     width: 420px;
     height: 40px;
+
     box-sizing: border-box;
     border-radius: 5px;
-    text-align: center;
     
-}
+    text-align: center; 
+  }

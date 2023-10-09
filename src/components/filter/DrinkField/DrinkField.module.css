@@ -1,11 +1,6 @@
-.questionContainer {
-    background-color: #ccc; 
-    padding: 20px; 
-    border-radius: 10px; 
-    text-align: center; 
-  }
+/* DrinkField.css */
 
-  body {
+body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -30,3 +25,4 @@
   input[type="checkbox"] {
     margin-right: 10px;
   }
+  
