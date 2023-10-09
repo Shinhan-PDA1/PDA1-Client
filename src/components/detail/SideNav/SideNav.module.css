@@ -1,0 +1,14 @@
+/* SideNav.css */
+.side-nav {
+    position: sticky;
+    top: 0;
+}
+
+.side-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-nav li {
+    cursor: pointer;
+}

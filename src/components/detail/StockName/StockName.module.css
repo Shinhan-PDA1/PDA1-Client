@@ -1,0 +1,19 @@
+/* StockInfo.css */
+.stock-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.stock-name, .stock-price {
+    font-size: 18px;
+}
+
+.price-rise {
+    color: red;
+}
+
+.price-fall {
+    color: blue;
+}
