@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './SideNav.module.css';
 function SideNav({ scrollToComponent }) {
+    
     return (
         <div className='container'>
             <nav className={styles['side-nav']}>

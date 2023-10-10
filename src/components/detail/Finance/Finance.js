@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import sol from"../../../assets/images/detail/sol01.png"
+
 import '../../../style/detail/detailGlobal.css'
 import styles from './Finance.module.css';
 import { summaryData, annualData, quarterlyData, aiReport } from '../../../data/detail/mockFinance';  // 경로는 적절하게 변경
@@ -17,10 +19,20 @@ function Finance() {
            </div>
             <div className={styles['tabs-container']}>
           
-                <div className={styles.tabs}>
-                    <button className={mainTab === 'summary' ? styles.mainActive : ''} onClick={() => setMainTab('summary')}>요약</button>
-                    <button className={mainTab === 'financial' ? styles.mainActive : ''} onClick={() => setMainTab('financial')}>주요재무</button>
-                </div>
+            <div className={styles.tabs}>
+                <button
+                    className={mainTab === 'summary' ? `${styles.tabButton} ${styles.active}` : styles.tabButton}
+                    onClick={() => setMainTab('summary')}
+                >
+                    요약
+                </button>
+                <button
+                    className={mainTab === 'financial' ? `${styles.tabButton} ${styles.active}` : styles.tabButton}
+                    onClick={() => setMainTab('financial')}
+                >
+                    주요재무
+                </button>
+            </div>
 
                 {mainTab === 'financial' && (
                     <div className={styles['sub-tabs']}>
@@ -74,7 +86,7 @@ function Finance() {
             <div className={styles['ai-report']}>
                 <hr /> 
                 <div className={styles['textarea-container']}>
-                    <img src="path-to-image.jpg" alt="AI Icon" className={styles['ai-image']} />
+                    <img src={sol} alt="AI Icon" className={styles['ai-image']} />
                     <textarea value={aiReport} readOnly />
                 </div>
             </div>

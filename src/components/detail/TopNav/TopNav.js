@@ -10,6 +10,7 @@ function TopNav({ scrollToComponent }) {
                         <li 
                             key={index} 
                             onClick={() => scrollToComponent(item)}
+                        
                         >
                             {item}
                         </li>
