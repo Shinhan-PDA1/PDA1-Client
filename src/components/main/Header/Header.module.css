@@ -1,0 +1,33 @@
+/* Header.module.css */
+
+header {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+  }
+  
+  .container img {
+    width: 100px; 
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .container p {
+    margin: 0;
+    margin-left: 100px;
+    margin-top: -10px;
+    color: #333; 
+  }
+  
+  h1 {
+    margin-right: 400px;
+    font-size: 2em;
+    color: #0046FF; 
+  }
+  
+  
