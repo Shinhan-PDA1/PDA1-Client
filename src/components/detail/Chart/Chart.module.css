@@ -1,7 +1,6 @@
 /* Chart.module.css */
 .price-chart {
-    display: flex;
-    flex-direction: column;
+     padding: 2%;
 }
 
 .content-container {
@@ -29,7 +28,7 @@
 .ai-report {
     width: 90%;
     height: 50%;
-    margin: 1%;
+    margin:  auto;
     display: flex;
     flex-direction: column;
 
@@ -39,6 +38,7 @@
 
 .textarea-container {
     display: flex; /* textarea와 이미지를 나란히 배치 */
+    gap: 1%; /* 여백 */
 }
 
 .ai-image {
@@ -49,8 +49,12 @@
 
 textarea {
     flex: 1; /* 가능한 모든 공간 차지 */
-    padding: 10px;
+    padding:1%;
     border: 1px solid #ccc;
     border-radius: 5px;
     resize: none;
 }
+
+
+
+
