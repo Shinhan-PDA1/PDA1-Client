@@ -1,0 +1,48 @@
+/* NowStockSector.css */
+
+.nowstocksector {
+    text-align: center;
+    margin: 20px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: center;
+    align-items: center;
+  }
+  
+  .timegroup {
+    margin-bottom: 10px;
+  }
+  
+  .line {
+    margin-top: -10px;
+    border: 1px solid #ccc;
+  }
+  
+  .rectanglegroup {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .rectangle {
+    width: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .infogroup,
+  .chartgroup {
+    margin-top: 10px;
+  }
+  
+  
+  
+  
+  
+  
+  

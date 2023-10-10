@@ -1,0 +1,23 @@
+/* TopNav.module.css */
+
+.topnav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f0f0f0; /* Set the background color as needed */
+  padding: 10px; /* Adjust padding as needed */
+  border-radius: 15px; /* Set the border radius to create rounded rectangles */
+}
+
+.navitem {
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+
+  /* Add any other styles you need for each item */
+}
+
+.navitem:hover {
+  background-color: #ddd; /* Change the background color on hover */
+}
