@@ -279,7 +279,7 @@ function Chart() {
                 <p>차트를 통해 시세를 살펴볼까요?</p>
             </div>
             <div className={styles['content-container']}>
-                <div className='TestChart'>
+                <div className={styles['TestChart']}>
                     <ReactApexChart
                         options={options}
                         series={series}
