@@ -3,40 +3,38 @@
 .stock-info {
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 
 .stock-name {
-    font-weight: bold;
-    margin-right: 20px;
+    font-size: 1.8rem;
+    margin: 2% 3% 2% 0%;
 }
 
 .price-container {
     display: flex;
     align-items: center; /*가격과 '원'을 가운데 정렬*/
-    gap: 5px;
+    gap: 1%;
 }
 
 .stock-price {
-    font-size: 24px;
+    font-size: 2rem;
     font-weight: bold;
 }
 
 .currency {
-    font-size: 14px;
-    line-height: 24px; /*'stock-price'와 같은 높이를 주기 위해 */
+    font-size: 1rem;
 }
 
 .price-rise {
-    font-size: 12px;
+    font-size: 1rem;
     font-weight: bold; 
     color: red; 
-    margin-top: 5px;
+    margin-top: 1%;
 }
 
 .price-fall {
-    font-size: 12px;
+    font-size: 1rem;
     font-weight: bold; 
     color: blue; 
-    margin-top: 5px;
+    margin-top: 1%;
 }

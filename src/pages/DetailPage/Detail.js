@@ -10,7 +10,6 @@ import NewsAnnouncements from '../../components/detail/NewsAnnouncements/NewsAnn
 import Reports from '../../components/detail/Reports/Reports';
 import './Detail.module.css';
 
-
 function DetailPage() {
     return (
         <div className="detail-page">

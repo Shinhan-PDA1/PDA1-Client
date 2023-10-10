@@ -2,24 +2,19 @@
 .price-chart {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    border: 3px silver solid;
 }
 
 .content-container {
-    height: 50%;
-    width: 90%;
+
     display: flex;
     flex-direction: row;
-    border: 3px silver solid;
-
     justify-content: space-between; /* 차트와 테이블 간의 간격을 균등하게 */
 }
 
 
 .chart-image {
     width: 70%;
-    margin: 10px;
+    margin: 1%;
     border: 3px silver solid;
 
 }
@@ -27,7 +22,6 @@
 .chart-table {
     width: 30%;
     margin: 10px;
-    border: 3px silver solid;
 
 
 }
@@ -35,23 +29,16 @@
 .ai-report {
     width: 90%;
     height: 50%;
-    margin: 20px auto;
+    margin: 1%;
     display: flex;
     flex-direction: column;
-    border: 3px silver solid;
 
 }
 
-.compoent-header {
-    display: flex;
-    justify-content: space-between; /* h2와 p를 나란히 배치 */
-    align-items: center;
-    color: blue; /* 버팔색으로 설정 */
-}
+
 
 .textarea-container {
     display: flex; /* textarea와 이미지를 나란히 배치 */
-    gap: 10px; /* 여백 */
 }
 
 .ai-image {

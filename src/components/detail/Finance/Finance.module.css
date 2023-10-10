@@ -1,49 +1,38 @@
-/* Finance.module.css */
 .finance {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 3px silver solid;
-}
-
-.component-header {
-    display: flex;
-    justify-content: space-between; /* h2와 p를 나란히 배치 */
-    align-items: center;
-    color: blue; /* 버팔색으로 설정 */
+    padding: 20px;
 }
 
 .tabs {
     display: flex;
     gap: 10px;
+    margin-bottom: 20px;
+}
+.tabs-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.tabs button {
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    background-color: #eee; /* Default background */
-    color: black;
+.sub-tabs {
+    display: flex;
+    gap: 10px;
 }
 
-.tabs button.active {
-    background-color: #666; /* Active tab background */
-    color: white;
+.active, .mainActive {
+    display: flex;
+    font-weight: bold;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
 }
 
-table, th, td {
-    border: 1px solid #ccc;
-}
-
-th, td {
+td, th {
+    border: 1px solid #e0e0e0;
     padding: 10px;
 }
+
 .ai-report {
     width: 90%;
     height: 50%;
@@ -74,3 +63,4 @@ textarea {
     border-radius: 5px;
     resize: none;
 }
+

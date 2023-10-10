@@ -1,40 +1,45 @@
-/* MarketTrend.module.css */
 .market-trends {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 3px silver solid;
-
-}
-
-
-.component-header {
-    display: flex;
-    justify-content: space-between; /* h2와 p를 나란히 배치 */
-    align-items: center;
-    color: blue; /* 버팔색으로 설정 */
-}
-
-.placeholder-table{
-    width: 90%;
-    height: 90%;
-    border: 3px silver solid;
-
-
-
+    padding: 20px;
 }
 
 
 
+.trend-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
 
-.trends-table th, .trends-table td {
-    border: 1px solid #ccc;
+.trend-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.trend-table td {
     padding: 10px;
     text-align: center;
+    border-top: 1px solid #e1e1e1;
 }
 
-.more-trends {
-    background-color: #f9f9f9;
-    padding: 10px;
-    border: 1px solid #ccc;
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+.button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #2980b9;
 }
