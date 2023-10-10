@@ -1,17 +1,17 @@
 import React from 'react';
 import styles from './LongTerm.module.css';
+import longtermimg from '../../../assets/images/filter/LongTerm.png';
 
 function LongTerm() {
   return (
     <div className={styles.fieldContainer}>
       <div className={styles.fieldimg}>
-        <img src="장기 투자 이미지경로.jpg" alt="장기 투자 이미지" />
+        <img src={longtermimg} alt="장기 투자 이미지" style={{ width: '100px', height: '100px' }} />
         <p>장기 투자 선호</p>
       </div>
 
       <div className={styles.fieldCheckBox}>
         <input type="checkbox" id="longCheckbox" />
-        <label htmlFor="longCheckbox">장기 투자 체크박스</label>
       </div>
     </div>
   );

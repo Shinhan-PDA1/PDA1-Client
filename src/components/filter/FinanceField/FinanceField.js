@@ -1,17 +1,18 @@
 import React from 'react';
 import styles from './FinanceField.module.css';
+import financeimg from '../../../assets//images/filter/FinanceField.png'
+
 
 function FinanceField() {
   return (
     <div className={styles.fieldContainer}>
       <div className={styles.fieldimg}>
-        <img src="금융이미지경로.jpg" alt="금융 이미지" />
+        <img src={financeimg} alt="금융 이미지" style={{ width: '100px', height: '100px' }} />
         <p>금융</p>
       </div>
 
       <div className={styles.fieldCheckBox}>
         <input type="checkbox" id="financeCheckbox" />
-        <label htmlFor="financeCheckbox">금융 체크박스</label>
       </div>
     </div>
   );

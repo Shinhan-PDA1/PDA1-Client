@@ -13,33 +13,40 @@ import LongTerm from '../../components/filter/LongTerm/LongTerm';
 import ShortTerm from '../../components/filter/ShortTerm/ShortTerm';
 import ExplainLongTerm from '../../components/filter/ExplainLongTerm/ExplainLongTerm';
 import ExplainShortTerm from '../../components/filter/ExplainShortTerm/ExplainShortTerm';
-import './Filter.module.css';
+import styles from './Filter.module.css';
 
 function FilterPage() {
     return (
-        <div className="filter-page">
-            <MainTitle />
-            <QuestionField />
-            <div style={{ display : 'flex', justifyContent : 'space-around' }}>
-                <FinanceField />
-                <ITField />
-            </div>
-            <div style={{ display : 'flex', justifyContent : 'space-around' }}>
-                <FlightField />
-                <DrinkField />
-            </div>
-            <div style={{ display : 'flex', justifyContent : 'space-around' }}>           
-                <MedicalField />
-                <EnergyField />
-            </div>
-            <QuestionTerm />
-            <div style={{ display : 'flex', justifyContent : 'space-around' }}>
-                <ShortTerm />
-                <LongTerm />
-            </div>
-            <div style={{ display : 'flex', justifyContent : 'space-around' }}>
-                <ExplainShortTerm />
-                <ExplainLongTerm />
+        <div className={styles.filterpage}>
+            <MainTitle />  
+            <div className={styles['container']}>
+                <div className={styles['top-section']}>
+                    <QuestionField />
+                    <div style={{ display: 'flex', justifyContent: 'space-around'}}>
+                        <FinanceField />
+                        <ITField />
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+                        <FlightField />
+                        <DrinkField />
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+                        <MedicalField />
+                        <EnergyField />
+                    </div>
+                </div>
+
+                <div className={styles['bottom-section']}>
+                    <QuestionTerm />
+                    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+                        <ShortTerm />
+                        <LongTerm />
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+                        <ExplainShortTerm />
+                        <ExplainLongTerm />
+                    </div>
+                </div>
             </div>
         </div>
     );

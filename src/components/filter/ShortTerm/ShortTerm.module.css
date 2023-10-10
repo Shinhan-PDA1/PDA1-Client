@@ -22,7 +22,8 @@ body {
   align-items: center;
 }
 
-input[type="checkbox"] {
-  margin-right: 10px;
+.fieldCheckBox {
+  margin-left: 70px;
+  margin-bottom: 10px;
 }
   
