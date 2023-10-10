@@ -1,7 +1,7 @@
 // pages/DetailPage.js
 import React from 'react';
 import Header from "../../components/detail/Header/Header"
-import StockName from "../../components/detail/StockName/StockName"
+import StockInfo from "../../components/detail/StockInfo/StockInfo"
 import TopNav from "../../components/detail/TopNav/TopNav"
 import Chart from '../../components/detail/Chart/Chart';
 import MarketTrend from '../../components/detail/MarketTrend/MarketTrend';
@@ -10,12 +10,11 @@ import NewsAnnouncements from '../../components/detail/NewsAnnouncements/NewsAnn
 import Reports from '../../components/detail/Reports/Reports';
 import './Detail.module.css';
 
-
 function DetailPage() {
     return (
         <div className="detail-page">
             <Header />
-            <StockName />
+            <StockInfo />
             <TopNav />
             <Chart />
             <MarketTrend />

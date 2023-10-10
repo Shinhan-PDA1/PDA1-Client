@@ -1,0 +1,66 @@
+.finance {
+    padding: 20px;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.tabs-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sub-tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.active, .mainActive {
+    display: flex;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+}
+
+.ai-report {
+    width: 90%;
+    height: 50%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    border: 3px silver solid;
+
+}
+
+
+
+.textarea-container {
+    display: flex; /* textarea와 이미지를 나란히 배치 */
+    gap: 10px; /* 여백 */
+}
+
+.ai-image {
+    width: 30%; /* 이미지의 크기 */
+    height: auto;
+    border: 1px solid #ccc; /* 이미지 경계 */
+}
+
+textarea {
+    flex: 1; /* 가능한 모든 공간 차지 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+

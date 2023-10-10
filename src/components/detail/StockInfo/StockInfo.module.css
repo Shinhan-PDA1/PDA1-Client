@@ -1,0 +1,40 @@
+/* StockName.module.css */
+
+.stock-info {
+    display: flex;
+    align-items: center;
+}
+
+.stock-name {
+    font-size: 1.8rem;
+    margin: 2% 3% 2% 0%;
+}
+
+.price-container {
+    display: flex;
+    align-items: center; /*가격과 '원'을 가운데 정렬*/
+    gap: 1%;
+}
+
+.stock-price {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.currency {
+    font-size: 1rem;
+}
+
+.price-rise {
+    font-size: 1rem;
+    font-weight: bold; 
+    color: red; 
+    margin-top: 1%;
+}
+
+.price-fall {
+    font-size: 1rem;
+    font-weight: bold; 
+    color: blue; 
+    margin-top: 1%;
+}
