@@ -19,18 +19,17 @@ function NewsAnnouncements() {
             <div className={styles.tabs}>
                 <button 
                     onClick={() => setActiveTab('news')}
-                    className={activeTab === 'news' ? 'active' : ''}
+                    className={activeTab === 'news' ? `${styles.tabButton} ${styles.active}` : styles.tabButton}
                 >
                     뉴스
                 </button>
                 <button 
                     onClick={() => setActiveTab('announcements')}
-                    className={activeTab === 'announcements' ? 'active' : ''}
+                    className={activeTab === 'announcements' ? `${styles.tabButton} ${styles.active}` : styles.tabButton}
                 >
                     공시
                 </button>
             </div>
-
             {activeTab === 'news' ? (
                 <div className={styles.news}>
                     {mockNewsData.map((news, index) => (

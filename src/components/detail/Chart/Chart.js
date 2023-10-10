@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import sol from"../../../assets/images/detail/sol01.png"
 import '../../../style/detail/detailGlobal.css'
 import styles from './Chart.module.css';
 import mockChartData from '../../../data/detail/mockChartData';
@@ -306,7 +307,7 @@ function Chart() {
             <div className={styles['ai-report']}>
                 <hr /> 
                 <div className={styles['textarea-container']}>
-                    <img src="path-to-image.jpg" alt="AI Icon" className={styles['ai-image']} />
+                    <img src={sol} alt="AI Icon" className={styles['ai-image']} />
                     <textarea value={aiReport} readOnly />
                 </div>
             </div>

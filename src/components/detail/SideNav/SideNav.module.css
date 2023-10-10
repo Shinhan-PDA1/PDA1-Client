@@ -1,12 +1,30 @@
+.container {
+    position: fixed; /* 고정 위치 */
+    left: 7%; /* 화면의 왼쪽에서 시작 */
+    transition: top 0.3s; /* smooth transition for top property */
+    animation: bounce 0.3s; /* bounce animation */
+}
+
+@keyframes bounce {
+    0% { top: 30%; }
+    50% { top: 28%; }
+    100% { top: 30%; }
+}
+
+.container.bounce {
+    animation: bounce 0.3s; /* bounce animation */
+}
+
 .side-nav {
     position: fixed; /* 고정 위치 */
-    top: 30%; /* 화면의 상단에서 시작 */
     left: 7%; /* 화면의 왼쪽에서 시작 */
     width: ; /* 너비는 원하는대로 조정 */
     background-color: #f0f0f0; /* 배경색 */
     overflow-y: auto; /* 내용이 넘치면 스크롤 표시 */
-}
+    transition: top 0.3s; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
 
+}
 
 .side-nav ul {
     list-style: none;

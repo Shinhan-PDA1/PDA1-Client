@@ -5,6 +5,8 @@
     justify-content: space-around; /* 메뉴 항목들을 균등하게 분배 */
     align-items: center;
     height: 50px; /* 높이 설정 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0.2, 0.2);
+
 }
 
 .top-nav ul {
