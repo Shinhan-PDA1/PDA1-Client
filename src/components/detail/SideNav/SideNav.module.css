@@ -1,19 +1,3 @@
-.container {
-    position: fixed; /* 고정 위치 */
-    left: 7%; /* 화면의 왼쪽에서 시작 */
-    transition: top 0.3s; /* smooth transition for top property */
-    animation: bounce 0.3s; /* bounce animation */
-}
-
-@keyframes bounce {
-    0% { top: 30%; }
-    50% { top: 28%; }
-    100% { top: 30%; }
-}
-
-.container.bounce {
-    animation: bounce 0.3s; /* bounce animation */
-}
 
 .side-nav {
     position: fixed; /* 고정 위치 */
@@ -21,22 +5,37 @@
     width: ; /* 너비는 원하는대로 조정 */
     background-color: #f0f0f0; /* 배경색 */
     overflow-y: auto; /* 내용이 넘치면 스크롤 표시 */
-    transition: top 0.3s; 
     box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
+    animation: float 3s infinite;
 
+
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .side-nav ul {
     list-style: none;
+    width: 7vw;
+    height: 25vh;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column; /* 세로로 배치 */
-    gap: 10px;
+    gap: 5%;
 }
 
 .side-nav li {
-    padding: 10px;
+    padding: 5%;
     text-align: center; /* 텍스트를 중앙에 위치 */
     cursor: pointer;
     transition: background-color 0.3s;
@@ -50,4 +49,24 @@
 .side-nav .active {
     background-color: #555; /* 선택된 메뉴 항목의 배경색 */
     color: white; /* 선택된 메뉴 항목의 글씨색 */
+}
+
+.sideNav_button {
+    width: 7vw;
+    height: 5vh;
+    position: fixed;
+    padding: 1%;
+    left: 7%;
+    top: 55%;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
+    font-size: 1rem;
+}
+
+.sideNav_button:hover {
+    background-color: #d9d9d9;
 }
