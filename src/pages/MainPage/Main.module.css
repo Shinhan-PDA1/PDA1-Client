@@ -1,6 +1,7 @@
 /* Main.module.css */
 .horizontalContainer {
     display: flex; /* or use 'grid' for grid layout */
-    justify-content: space-between; /* or other justification as needed */
+    /* justify-content: space-between; or other justification as needed */
     margin: 10px; /* adjust margins as needed */
+    width : 1vw;
 }
