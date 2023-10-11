@@ -1,13 +1,16 @@
 /* DecreaseSector.module.css */
 
-/* .increase-sector {
+.decreasesector {
     text-align: center;
     margin: 20px;
+  }
+
+  .decreasesector h2 {
+    margin-bottom: 2px;
   }
   
   .line {
     border: 1px solid #ccc;
-    margin-top: 10px;
     margin-bottom: 10px;
   }
   
@@ -25,21 +28,25 @@
     height: auto;
   }
   
-  .time-group {
+  .timegroup {
     font-size: 14px;
     color: #555;
     margin-top: 10px;
   }
-  
-  .more-info {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    color: #007bff;
+
+  .bottomgroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
-  .more-info:hover {
+  .moreinfo {
+    cursor: pointer;
+    color: #007bff;
+    margin-top: 9px;
+  }
+  
+  .moreinfo:hover {
     text-decoration: underline;
-  } */
+  }
   

@@ -1,17 +1,24 @@
 /* Interested.module.css */
 
-/* .interested {
+.interested {
     text-align: center;
     margin: 20px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: center;
+    align-items: center;
   }
   
   .line {
     border: 1px solid #ccc;
-    margin-top: 10px;
+    margin-top: -15px;
     margin-bottom: 10px;
   }
   
-  .rectangle-group {
+  .rectanglegroup {
     display: flex;
     justify-content: space-around;
   }
@@ -22,13 +29,14 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     margin-bottom: 10px;
+    margin-right: 5px;
   }
   
-  .info-group {
+  .infogroup {
     margin-top: 10px;
   }
   
-  .info-group img {
+  .infogroup img {
     max-width: 100%;
     height: auto;
   }
@@ -36,5 +44,16 @@
   .disclaimer {
     color: #888;
     margin-top: 20px;
-  } */
+  }
+
+  .topcontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .topcontainer h3 {
+    margin-right: 15px;
+  }
+
   

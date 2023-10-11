@@ -11,7 +11,7 @@
     flex-direction: center;
     align-items: center;
   }
-  
+
   .timegroup {
     margin-bottom: 10px;
   }
@@ -35,10 +35,16 @@
     margin-bottom: 10px;
   }
   
-  .infogroup,
   .chartgroup {
     margin-top: 10px;
   }
+
+  .topcontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   
   
   
