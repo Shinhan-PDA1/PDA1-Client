@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../../style/detail/detailGlobal.css'
+import '../../../styles/detail/detailGlobal.css'
 
 import styles from './NewsAnnouncements.module.css';
 import mockAnnouncementsData from '../../../data/detail/mockAnnouncementsData';

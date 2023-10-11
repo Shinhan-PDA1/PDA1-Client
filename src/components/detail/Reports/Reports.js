@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../style/detail/detailGlobal.css'
+import '../../../styles/detail/detailGlobal.css'
 import styles from './Report.module.css';
 import mockReportsData from '../../../data/detail/mockReportsData';
 

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import sol from"../../../assets/images/detail/sol01.png"
-import '../../../style/detail/detailGlobal.css'
+import '../../../styles/detail/detailGlobal.css'
 import styles from './Chart.module.css';
 import mockChartData from '../../../data/detail/mockChartData';
 import ReactApexChart from 'react-apexcharts'

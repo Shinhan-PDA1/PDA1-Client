@@ -1,0 +1,41 @@
+/* CoFooter.module.css */
+
+.footer {
+    background-color: lightgray;
+    padding: auto 10%; /* 상하좌우 여백 설정 */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+
+.footerSection {
+    display: inline-block;
+    margin: 1% 0; /* 위아래 여백을 좁히고 좌우 여백을 0으로 설정 */
+    color: black;
+    width: 25%; /* 각 섹션의 최대 넓이를 33%로 설정 */
+    text-align: center; /* 텍스트를 가운데 정렬 */
+}
+
+.footerSection2 {
+    display: block;
+    margin: 1% 0; /* 위아래 여백을 좁히고 좌우 여백을 0으로 설정 */
+    color: black;
+    width: 100%; /* 전체 넓이를 차지하도록 설정 */
+    text-align: center; /* 텍스트를 가운데 정렬 */
+}
+
+.footerSection h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5%;
+}
+
+.footerSection p {
+    margin: 1% 0;
+}
+
+#num {
+    color: rgba(135, 207, 235, 0.842);
+    font-size: 2rem;
+    font-weight: bold;
+}

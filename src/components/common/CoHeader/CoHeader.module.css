@@ -1,0 +1,58 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px silver solid;
+    margin: 2% 2%;
+}
+
+.topSection {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 12vw; /* Adjust as needed */
+    height: auto;
+}
+
+.welcomeMessage {
+    display: flex;
+    align-items: center;
+}
+
+.editIcon {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.mainNav {
+    display: flex;
+    gap: 8%;
+    margin-top: 20px;
+    background-color: #fff; /* White background for the main nav */
+    padding: 10px 0;
+    width: 90%;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.mainNav a {
+    padding: 1% 2%;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.3s;
+}
+
+.mainNav a:hover {
+    background-color: #f0f0f0; /* Gray background on hover */
+    border-bottom: 3px skyblue solid;
+
+}
+
+.mainNav .active {
+    background-color: #d9d9d9; /* Darker gray for the active link */
+}
