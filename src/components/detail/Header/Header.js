@@ -1,6 +1,6 @@
 // Header.js
 import React from 'react';
-import "../../../style/detail/detailGlobal.css"
+import "../../../styles/detail/detailGlobal.css"
 import styles from './Header.module.css';
 
 function Header() {

@@ -1,15 +1,18 @@
-
 .side-nav {
-    position: fixed; /* 고정 위치 */
-    left: 7%; /* 화면의 왼쪽에서 시작 */
-    width: ; /* 너비는 원하는대로 조정 */
-    background-color: #f0f0f0; /* 배경색 */
-    overflow-y: auto; /* 내용이 넘치면 스크롤 표시 */
+    position: fixed;
+    left: 7%;
+    height: 25vh;  /* 기존의 높이 지정 */
+    background-color: #f0f0f0;
+    overflow-y: auto;
+    transition: transform 0.3s, height 0.3s; /* 높이 변경에 대한 전환 효과 추가 */
+    border-radius: 5%;
     box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
+    transform: translateY(0);
     animation: float 3s infinite;
 
-
 }
+
+
 
 @keyframes float {
     0% {
@@ -22,6 +25,12 @@
         transform: translateY(0px);
     }
 }
+.side-navClosed {
+    overflow: hidden;  /* 내용을 숨김 */
+    transform: translateY(100%);  /* SideNav의 높이만큼 아래로 이동 */
+    visibility: hidden; /* 요소를 숨김 */
+    pointer-events: none; 
+}
 
 .side-nav ul {
     list-style: none;
@@ -30,25 +39,25 @@
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column; /* 세로로 배치 */
+    flex-direction: column;
     gap: 5%;
 }
 
 .side-nav li {
     padding: 5%;
-    text-align: center; /* 텍스트를 중앙에 위치 */
+    text-align: center;
     cursor: pointer;
     transition: background-color 0.3s;
     border-radius: 5px;
 }
 
 .side-nav li:hover {
-    background-color: #d9d9d9; /* 호버 시 색상 */
+    background-color: #d9d9d9;
 }
 
 .side-nav .active {
-    background-color: #555; /* 선택된 메뉴 항목의 배경색 */
-    color: white; /* 선택된 메뉴 항목의 글씨색 */
+    background-color: #555;
+    color: white;
 }
 
 .sideNav_button {
@@ -57,7 +66,7 @@
     position: fixed;
     padding: 1%;
     left: 7%;
-    top: 55%;
+    top: 72%;
     background-color: #f0f0f0;
     border: none;
     cursor: pointer;
