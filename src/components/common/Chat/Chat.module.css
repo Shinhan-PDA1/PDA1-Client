@@ -1,0 +1,84 @@
+.Chat,
+.ChatOpen {
+    position: fixed;
+    top: 25%;
+    right: 1%;
+    height: 73vh;
+    width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: width 0.3s;
+    border-radius: 5%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
+
+}
+
+.ChatOpen {
+    width: 15vw;
+}
+.toggleButton {
+    position: absolute; /* 절대 위치 */
+    left: -1.5vw; /* 버튼을 채팅창 왼쪽으로 이동 */
+    top: 20%; /* 버튼을 채팅창 중앙에 위치 */
+    transform: translateY(-50%); /* 버튼을 정확히 중앙에 위치 */
+    background-color: #f0f0f0;
+    border: none;
+    width: 1vw;
+    height: 8vh;
+    padding: 1%;
+    cursor: pointer;
+    border-radius: 5px 0 0 5px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
+
+}
+
+.toggleButton:hover {
+    background-color: #d9d9d9;
+}
+
+.chatBox {
+    width: 100%;
+    height: 90vh;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.message {
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.inputContainer {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+.input {
+    flex: 1;
+    padding: 10px;
+}
+
+.sendButton {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sendButton:hover {
+    background-color: #d9d9d9;
+}

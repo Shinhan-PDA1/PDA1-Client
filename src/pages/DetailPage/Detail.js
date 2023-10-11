@@ -8,6 +8,7 @@ import MarketTrend from '../../components/detail/MarketTrend/MarketTrend';
 import Finance from '../../components/detail/Finance/Finance';
 import NewsAnnouncements from '../../components/detail/NewsAnnouncements/NewsAnnouncements';
 import Reports from '../../components/detail/Reports/Reports';
+import Chat from '../../components/common/Chat/Chat';
 import styles from './Detail.module.css';
 
 function DetailPage() {
@@ -50,6 +51,7 @@ function DetailPage() {
             <div ref={financeRef}><Finance /></div>
             <div ref={newsAnnouncementsRef}><NewsAnnouncements /></div>
             <div ref={reportsRef}><Reports /></div>
+            <Chat />
         </div>
     );
 }
