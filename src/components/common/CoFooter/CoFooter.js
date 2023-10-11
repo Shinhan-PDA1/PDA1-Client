@@ -10,14 +10,14 @@ function CoFooter() {
                 <p>말로하는 AI 상담서비스</p>
                 <p>24시간 챗봇 상담(신한알파)</p>
             </div>
-            <div className={styles.footerSection}>  
-                 <h3>고객지원</h3>
+            <div className={styles.footerSection}>               
                 <p>해외주식팀 02-3772-2525</p>
                 <p>해외파생팀 02-3772-4365</p>
                 <p>해외사용자 ARS 82-2-6255-4510 (유료)</p>
                 <p>퇴직연금 고객센터 1588-1122</p>
                 <p>디지털PB센터 02-3772-1010</p>
                 <p>이벤트 전용센터 02-3772-2220</p>
+                <p>원격제어 FAQ 1:1상담 업무안내</p>
             </div>
             <div className={styles.footerSection}>
                 <h3>회사소개</h3>
