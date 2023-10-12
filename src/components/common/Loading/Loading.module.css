@@ -1,8 +1,66 @@
-/* LoadingIndicator.css */
-.loading-indicator {
+.loadingContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 50vh;
+    margin: auto;
+}
+.images {
+    display: flex;
+    width: 50%;
+    height: 10%;
+    margin-bottom: 5%;
+    animation: float 3s infinite;
+}
+
+.images img{
+    animation: float 3s infinite;
+    margin-right: 10%;
+
+}
+
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+
+.progressBar {
+    position: relative;
+    width: 50%;
+    height: 5%;
+    background-color: rgb(182, 182, 250);
+    border-radius: 20px;
+}
+
+.filler {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    background-color: rgb(115, 115, 255);
+    transition: width 0.2s;
+    border-radius: 20px;
+
+}
+
+.percentText {
+    width: 6%;
+    height: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* 높이는 원하는 대로 설정 */
-    font-size: 20px; /* 폰트 크기는 원하는 대로 설정 */
+    font-size: 1rem;
+    font-weight: bold;
 }

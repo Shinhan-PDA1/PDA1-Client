@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../../styles/detail/detailGlobal.css'
 import styles from './Chart.module.css';
 import sol from '../../../assets/images/detail/sol01.png'
@@ -6,6 +6,14 @@ import mockChartData from '../../../data/detail/mockChartData';
 import ReactApexChart from 'react-apexcharts'
 
 function Chart() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+      setTimeout(() => {
+          setIsLoading(false);
+      }, 2000);
+  }, []);
+
     const {
       tableData, aiReport, candleChartData, 
       barChartData, line5ChartData, line20ChartData,

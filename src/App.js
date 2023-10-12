@@ -7,6 +7,7 @@ import Chat from './components/common/Chat/Chat';
 import DetailPage from './pages/DetailPage/Detail';
 import FilterPage from './pages/FilterPage/Filter';
 import MainPage from './pages/MainPage/Main';
+import GuidePage from './pages/GuidePage/Guide'
 
 function App() {
     return (
@@ -15,6 +16,8 @@ function App() {
                 <CoHeader />
                 <Routes>
                     <Route path="/detail" element={<DetailPage />} />
+                    <Route path="/guide" element={<GuidePage />} />
+
                     <Route path="/filter" element={<FilterPage />} />
                     <Route path='/main' element={<MainPage />} />
                 </Routes>

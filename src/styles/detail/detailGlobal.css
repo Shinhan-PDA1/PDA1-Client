@@ -4,8 +4,9 @@
 .component-header {
     display: flex;
     margin: 1% 0% 1% 1%;
-    color: blue; /* 파란색으로 설정 */
+    color: rgb(74, 140, 216); /* 파란색으로 설정 */
     border-bottom: 1px silver solid;
+    font-weight: bold;
 }
 .component-header h2{
     margin-right: 1%;
