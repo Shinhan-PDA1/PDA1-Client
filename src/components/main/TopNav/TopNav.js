@@ -1,17 +1,23 @@
 // TopNav.js
 
 import React from 'react';
-import styles from './TopNav.module.css'
+import styles from './TopNav.module.css';
 
-function TopNav () {
+function TopNav({ scrollToComponent }) {
   return (
-    <div className={styles.topnav}>
-      <div className={styles.navitem}>증권홈</div>
-      <div className={styles.navitem}>국내 증시</div>
-      <div className={styles.navitem}>해외 증시</div>
-      <div className={styles.navitem}>주린이 가이드</div>
-      <div className={styles.navitem}>레포트</div>
-      <div className={styles.navitem}>뉴스</div>
+    <div className={styles.container}>
+      <nav className={styles.navitem}>
+        <ul>
+          {['이 시각 증시', '관심 분야 종목', '인기 종목', '핫 이슈 종목', '시장 이슈', '투자 전략'].map((item, index) => (
+            <li
+              key={index}
+              onClick={() => scrollToComponent(item)}
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   );
 }
