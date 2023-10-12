@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import TextLogo from "../../../assets/images/common/TextLogo01.png"
+import ZutopiaLogo from "../../../assets/images/common/zutopiaLogo.png"
 import styles from './CoHeader.module.css';
 
 function Header() {
@@ -9,7 +10,9 @@ function Header() {
     return (
         <header className={styles.header}>
             <div className={styles.topSection}>
-                <img src={TextLogo} alt="Zootopia Logo" className={styles.logo} />
+                <img src={TextLogo} alt="Text Logo" id={styles.TextLogo} />
+                <img src={ZutopiaLogo} alt="Zootopia Logo" id={styles.ZutopiaLogo} />
+
                 <div className={styles.welcomeMessage}>
                     Welcome, {fanID} <span className={styles.editIcon}>✎</span>
                 </div>

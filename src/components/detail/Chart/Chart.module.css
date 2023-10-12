@@ -6,6 +6,7 @@
 .content-container {
 
     display: flex;
+    
     flex-direction: row;
     justify-content: space-between; /* 차트와 테이블 간의 간격을 균등하게 */
 }
@@ -31,6 +32,7 @@
     display: flex;
     flex-direction: column;
 
+
 }
 
 
@@ -38,12 +40,15 @@
 .textarea-container {
     display: flex; /* textarea와 이미지를 나란히 배치 */
     gap: 3%; /* 여백 */
+
 }
 
 .ai-image {
     width: 20%; /* 이미지의 크기 */
     border: 2px solid skyblue; /* 이미지 경계 */
     border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
+
 
     
 }
@@ -53,8 +58,11 @@ textarea {
     padding:2%;
     background-color: aliceblue;
     border: 2px solid skyblue; /* 이미지 경계 */
-    border-radius: 10% 10% 10% 10%;
+    border-radius: 5%;
     resize: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
+
+
 }
 
 
