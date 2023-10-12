@@ -10,7 +10,8 @@ function CoFooter() {
                 <p>말로하는 AI 상담서비스</p>
                 <p>24시간 챗봇 상담(신한알파)</p>
             </div>
-            <div className={styles.footerSection}>               
+            <div className={styles.footerSection}>        
+                 <h3>문의하기</h3>
                 <p>해외주식팀 02-3772-2525</p>
                 <p>해외파생팀 02-3772-4365</p>
                 <p>해외사용자 ARS 82-2-6255-4510 (유료)</p>
