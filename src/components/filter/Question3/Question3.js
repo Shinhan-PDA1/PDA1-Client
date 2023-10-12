@@ -2,8 +2,8 @@
 
 import React from 'react';
 import styles from './Question3.module.css';
-import longimg from '../../../assets/images/filter/longterm.png';
-import shortimg from '../../../assets/images/filter/shortterm.png';
+import longtermImage from '../../../assets/images/filter/LongTerm.png'; // 대문자 'L'과 'T'를 사용
+import shorttermImage from '../../../assets/images/filter/ShortTerm.png'; // 대문자 'S'와 'T'를 사용
 
 const Question3 = () => {
   return (
@@ -12,11 +12,11 @@ const Question3 = () => {
       <h3 className={styles.questionText}>자금의 투자 가능 기간을 골라주세요</h3>
       <div className={styles.answerContainer}>
         <div className={styles.answerOption}>
-          <img src={longimg} alt="장기" />
+          <img src={longtermImage} alt="장기" />
           <p>장기(1년 초과)</p>
         </div>
         <div className={styles.answerOption}>
-          <img src={shortimg} alt="단기" />
+          <img src={shorttermImage} alt="단기" />
           <p>단기(1년 이하)</p>
         </div>
       </div>
