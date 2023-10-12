@@ -1,6 +1,7 @@
 /* Chart.module.css */
 .price-chart {
      padding: 2%;
+
 }
 
 .content-container {
@@ -19,6 +20,7 @@
 }
 
 .chart-table {
+
     width: 30%;
     margin: 10px;
 
@@ -31,6 +33,7 @@
     margin:  auto;
     display: flex;
     flex-direction: column;
+
 
 
 }
