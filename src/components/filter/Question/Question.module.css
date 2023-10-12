@@ -17,7 +17,7 @@
   margin-left: 0.13em;
   font-weight: bold;
   font-family: 'Nanum Gothic', sans-serif;
-  margin-top: 100px;
+  margin-top: 1.8em;
 }
 
 .questionText {
@@ -25,31 +25,32 @@
   transform-origin: 50% 50%;
   transform: scale(1) translate3d(0px, 0px, 0px);
   visibility: visible;
-  margin-top: 80px;
+  margin-top: 5em;
 }
 
 
 .answerContainer {
   display: flex;
   justify-content: space-between;
-  margin-top: 100px;
+  margin-top: 6.25em;
+  margin-bottom: 18.75em;
 }
 
 .answerOption {
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 0.625em;
+  padding: 0.625em;
   background: rgb(239, 78, 96);
-  box-shadow: rgba(239, 78, 96, 0.34) 0px 5px 20px;
+  box-shadow: rgba(239, 78, 96, 0.34) 0px 0.3125em 1.25em;
   width: 80%;
   transition: transform 0.2s ease-in-out 0s, background-color 0.2s ease 0s, opacity 0.2s ease 0s;
 }
 
 .answerOption img {
-  width: 100px; /* 이미지의 너비를 조정하세요 */
-  height: 100px; /* 이미지의 높이를 조정하세요 */
+  width: 6.25em; /* 이미지의 너비를 조정하세요 */
+  height: 6.25em; /* 이미지의 높이를 조정하세요 */
 }
 
 .answerOption p {
-  margin-top: 10px;
+  margin-top: 0.625em;
   text-align: center;
 }
