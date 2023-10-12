@@ -1,27 +1,27 @@
 .Chat,
 .ChatOpen {
     position: fixed;
-    top: 25%;
+    top: 27%;
     right: 1%;
-    height: 73vh;
+    height: 70vh;
     width: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     transition: width 0.3s;
-    border-radius: 5%;
+    border-radius: 10%;
     box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
 
 }
 
 .ChatOpen {
-    width: 15vw;
+    width: 16vw;
 }
 .toggleButton {
     position: absolute; /* 절대 위치 */
     left: -1.5vw; /* 버튼을 채팅창 왼쪽으로 이동 */
     top: 20%; /* 버튼을 채팅창 중앙에 위치 */
-    transform: translateY(-50%); /* 버튼을 정확히 중앙에 위치 */
+    transform: translateY(-50%); 
     background-color: #f0f0f0;
     border: none;
     width: 1vw;
@@ -41,44 +41,111 @@
 .chatBox {
     width: 100%;
     height: 90vh;
-    background-color: white;
+    background-color: rgb(232, 248, 253);
     border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
-    margin-top: 10px;
+    border-radius:  3%;
+    margin-top: 5%;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    
 }
 
 .messages {
     flex: 1;
     overflow-y: auto;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-.message {
-    padding: 5px;
-    border-bottom: 1px solid #eee;
+.userMessage,
+.aiMessage {
+    display: flex;
+    margin: 4% 2%;
+    align-items: center;
+    font-size: 1.1em;
+}
+
+.userMessage {
+    justify-content: flex-end;
+    color: white;
+}
+
+.aiMessage {
+    justify-content: flex-start;
+}
+
+.messageBubble {
+    padding: 3%;
+    border-radius: 18px;
+    max-width: 70%; /* 말풍선의 최대 너비 */
+    word-wrap: break-word;
+}
+
+.userMessage .messageBubble {
+    background-color: #679aff; /* 사용자 메시지의 말풍선 색상(카카오톡과 유사하게) */
+}
+
+.aiMessage .messageBubble {
+    background-color: #f0f0f0; /* AI 메시지의 말풍선 색상 */
 }
 
 .inputContainer {
     display: flex;
-    border-top: 1px solid #ccc;
+    margin: 5%;
+    border-radius: 20px;
+
 }
 
 .input {
     flex: 1;
-    padding: 10px;
+    padding: 5%;
+    border: none;
+
+
 }
 
 .sendButton {
     padding: 10px;
-    background-color: #f0f0f0;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+
+}
+
+.sendIcon {
+    width: 20px;  /* You can adjust the size as per the icon's requirements */
+    height: 20px;
 }
 
 .sendButton:hover {
     background-color: #d9d9d9;
 }
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    border-bottom: 1px solid #ccc;
+    background-color: #d3e7f5;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0.2, 0.1);
+
+
+}
+
+#aiBot{
+    width: 50%;
+}
+
+
+
+
+.sender {
+    font-weight: bold;
+}
+
+
+

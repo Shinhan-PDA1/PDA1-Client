@@ -1,0 +1,15 @@
+.container{
+    margin: auto 20%; /* Adjusted from 18% to 10% for a wider content area */
+}
+.component-header {
+    display: flex;
+    margin: 1% 0% 1% 1%;
+    color: blue; /* 파란색으로 설정 */
+    border-bottom: 1px silver solid;
+}
+.component-header h2{
+    margin-right: 1%;
+}
+.component-header p{
+    margin-top: 3%;
+}

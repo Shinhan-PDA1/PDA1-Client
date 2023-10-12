@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import sol from"../../../assets/images/detail/sol01.png"
 
-import '../../../style/detail/detailGlobal.css'
+import '../../../styles/detail/detailGlobal.css'
 import styles from './Finance.module.css';
 import { summaryData, annualData, quarterlyData, aiReport } from '../../../data/detail/mockFinance';  // 경로는 적절하게 변경
 

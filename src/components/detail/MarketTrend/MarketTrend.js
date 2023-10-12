@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../../style/detail/detailGlobal.css'
+import '../../../styles/detail/detailGlobal.css'
 import styles from './MarketTrend.module.css';
 import mockTrendsData from '../../../data/detail/mockTrendsData';
 
