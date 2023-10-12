@@ -1,13 +1,24 @@
 /* DecreaseSector.module.css */
 
-.decreasesector {
+.hotsector {
     text-align: center;
-    margin: 20px;
+    margin: auto 20%;
   }
 
-  .decreasesector h2 {
+  .topgroup {
+    display: flex;
+    align-items: center; /* Optional: Center content vertically */
+  }
+
+  .topgroup h2 {
     margin-bottom: 2px;
   }
+
+  .topgroup p {
+    margin-bottom: 2px;
+    margin-left: 280px;
+  }
+
   
   .line {
     border: 1px solid #ccc;
@@ -15,7 +26,7 @@
   }
   
   .rectangle {
-    width: 300px;
+    width: 350px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;

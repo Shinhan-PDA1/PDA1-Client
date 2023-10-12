@@ -1,18 +1,28 @@
-// SideNav.js
+import React, { useState } from 'react';
+import styles from './SideNav.module.css';
 
-import React from 'react';
-import styles from './SideNav.module.css'; 
+function SideNav({ scrollToComponent }) {
+    const [isOpen, setIsOpen] = useState(true);
 
-
-function SideNav () {
-  return (
-    <div className={styles.sidenav}>
- <    div className={styles.navitem}>이 시각 증시</div>
-      <div className={styles.navitem}>관심 분야 종목</div>
-      <div className={styles.navitem}>순위별 종목</div>
-      <div className={styles.navitem}>종목 분석 / 뉴스</div>
-    </div>
-  );
+    return (
+        <div className={styles.container}>
+            <nav className={`${styles['side-nav']} ${isOpen ? '' : styles['side-navClosed']}`}>
+                <ul>
+                    {['이 시각 증시', '관심 분야 종목', '인기 종목', '핫 이슈 종목', '시장 이슈', '투자 전략'].map((item, index) => (
+                        <li 
+                            key={index} 
+                            onClick={() => scrollToComponent(item)}
+                        >
+                            {item}
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+            <button className={styles['sideNav_button']} onClick={() => setIsOpen(!isOpen)}>
+                {isOpen ? 'SideNav▲' : 'SideNav▼'}
+            </button>
+        </div>
+    );
 }
 
 export default SideNav;

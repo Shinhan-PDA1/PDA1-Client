@@ -1,12 +1,15 @@
-// IncreaseSector.js
+// DecreaseSector.js
 
 import React from 'react';
-import styles from './IncreaseSector.module.css'; 
+import styles from './HotStock.module.css';
 
-const IncreaseSector = () => {
+function HotStock () {
   return (
-    <div className={styles.increasesector}>
-      <h2>상승률 상위</h2>
+    <div className={styles.hotsector}>
+      <div className={styles.topgroup}>
+        <h2>핫 이슈 종목</h2>
+        <p>거래량/주가상승률/외국인매수/기관매수 기준에 따른 시장 상위종목</p>
+      </div>
       <div className={styles.line}></div>
       <div className={styles.rectangle}>
         <img src="#" alt="1-5위 차트" />
@@ -24,4 +27,4 @@ const IncreaseSector = () => {
   );
 }
 
-export default IncreaseSector;
+export default HotStock;
