@@ -11,12 +11,18 @@
     justify-content: space-between;
     width: 80%;
     padding: 0 20px;
+
 }
 
-.logo {
-    width: 12vw; /* Adjust as needed */
-    height: auto;
+#TextLogo{
+    width: 15%;
+    height: 20%;
 }
+#ZutopiaLogo{
+    width: 40%; /* Adjust as needed */
+
+}
+
 
 .welcomeMessage {
     display: flex;
