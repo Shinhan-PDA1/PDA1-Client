@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../../styles/detail/detailGlobal.css'
 import styles from './Chart.module.css';
+import sol from '../../../assets/images/detail/sol01.png'
 import mockChartData from '../../../data/detail/mockChartData';
 import ReactApexChart from 'react-apexcharts'
 
@@ -145,7 +146,7 @@ function Chart() {
           <hr />
           <div className={styles["textarea-container"]}>
             <img
-              src="path-to-image.jpg"
+              src={sol}
               alt="AI Icon"
               className={styles["ai-image"]}
             />
