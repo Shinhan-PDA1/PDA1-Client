@@ -1,23 +1,16 @@
 // SideNav.js
 
 import React from 'react';
-import './SideNav.module.css'; // CSS 파일을 import
+import styles from './SideNav.module.css'; 
 
-function SideNavItem ({ label }) {
-  return (
-    <div className="side-nav-item">
-      {label}
-    </div>
-  );
-}
 
 function SideNav () {
   return (
-    <div className="side-nav">
-      <SideNavItem label="이 시각 증시" />
-      <SideNavItem label="관심 분야 종목" />
-      <SideNavItem label="순위별 종목" />
-      <SideNavItem label="종목 분석 / 뉴스" />
+    <div className={styles.sidenav}>
+ <    div className={styles.navitem}>이 시각 증시</div>
+      <div className={styles.navitem}>관심 분야 종목</div>
+      <div className={styles.navitem}>순위별 종목</div>
+      <div className={styles.navitem}>종목 분석 / 뉴스</div>
     </div>
   );
 }

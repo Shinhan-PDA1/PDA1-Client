@@ -1,13 +1,16 @@
 /* IncreaseSector.module.css */
 
-/* .increase-sector {
+.increasesector {
     text-align: center;
     margin: 20px;
+  }
+
+  .increasesector h2 {
+    margin-bottom: 2px;
   }
   
   .line {
     border: 1px solid #ccc;
-    margin-top: 10px;
     margin-bottom: 10px;
   }
   
@@ -25,21 +28,27 @@
     height: auto;
   }
   
-  .time-group {
+  .timegroup {
     font-size: 14px;
     color: #555;
     margin-top: 10px;
   }
+
+  .bottomgroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   
-  .more-info {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+  .moreinfo {
     cursor: pointer;
     color: #007bff;
+    margin-top: 9px;
   }
   
-  .more-info:hover {
+  .moreinfo:hover {
     text-decoration: underline;
   }
-   */
+
+
+  

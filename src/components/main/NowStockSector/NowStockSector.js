@@ -2,6 +2,7 @@
 
 import React from 'react';
 import styles from './NowStockSector.module.css';
+import infoimg from '../../../assets/images/main/info.png';
 
 function NowStockSector () {
   return (
@@ -14,27 +15,27 @@ function NowStockSector () {
       <hr className={styles.line} />
       <div className={styles.rectanglegroup}>
         <div className={styles.rectangle}>
-          <h3>코스피</h3>
-          <div className={styles.infogroup}>
-            <img src="#" alt="아이콘" />
+          <div className={styles.topcontainer}>
+            <h3>코스피</h3>
+            <img src={infoimg} alt="아이콘" style={{ width: '15px', height: '15px' }}/>
           </div>
           <div className={styles.chartgroup}>
             <img src="#" alt="지수 + 차트" />
           </div>
         </div>
         <div className={styles.rectangle}>
-          <h3>코스닥</h3>
-          <div className={styles.infogroup}>
-            <img src="#" alt="아이콘" />
+        <div className={styles.topcontainer}>
+            <h3>코스닥</h3>
+            <img src={infoimg} alt="아이콘" style={{ width: '15px', height: '15px' }}/>
           </div>
           <div className={styles.chartgroup}>
             <img src="#" alt="지수 + 차트" />
           </div>
         </div>
         <div className={styles.rectangle}>
-          <h3>코스피200</h3>
-          <div className={styles.infogroup}>
-            <img src="#" alt="아이콘" />
+        <div className={styles.topcontainer}>
+            <h3>코스피 200</h3>
+            <img src={infoimg} alt="아이콘" style={{ width: '15px', height: '15px' }}/>
           </div>
           <div className={styles.chartgroup}>
             <img src="#" alt="지수 + 차트" />
