@@ -3,6 +3,7 @@ import Loading from '../../components/common/Loading/Loading';
 import GuideHeader from '../../components/guide/GuideHeader/GuideHeader';
 import Term from '../../components/guide/Term/Term'
 import styles from './Guide.module.css';
+import Concept from '../../components/guide/Concept/Concept';
 
 function DetailPage() {
     const [isLoading, setIsLoading] = useState(true); // 로딩 상태를 관리하는 state
@@ -26,6 +27,7 @@ function DetailPage() {
             <>
                 <GuideHeader />
                 <Term />
+                <Concept />
             
             </>
         )}
