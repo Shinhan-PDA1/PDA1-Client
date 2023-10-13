@@ -11,7 +11,7 @@ function DetailPage() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false); // 3초 후 로딩 상태를 false로 변경
-        }, 1); // 1000 밀리초 (1초) 후 실행
+        }, 2000); // 1000 밀리초 (1초) 후 실행
 
         return () => clearTimeout(timer); // 컴포넌트가 언마운트될 때 타이머를 정리
     }, []); // 빈 의존성 배열을 사용하여 컴포넌트가 마운트될 때만 실행
