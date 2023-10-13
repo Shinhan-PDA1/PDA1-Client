@@ -1,0 +1,48 @@
+.container{
+    margin: auto 20%; /* Adjusted from 18% to 10% for a wider content area */
+}
+
+
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 5px;
+}
+
+
+.title img {
+    height: 50%;   
+}
+
+.title p {
+    height: 50%;
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review .myConcept {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.load-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.record-btn {
+    background-color: #e74c3c;
+    color: white;
+}

@@ -286,7 +286,7 @@ return (
         <hr />
         <div className={styles["textarea-container"]}>
           <img
-            src="sol01.jpg"
+            src={sol}
             alt="AI Icon"
             className={styles["ai-image"]}
           />
