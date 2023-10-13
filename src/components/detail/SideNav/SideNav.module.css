@@ -9,6 +9,8 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
     transform: translateY(0);
     animation: float 3s infinite;
+    font-size: 1rem;
+    font-weight: bold;
 
 }
 
@@ -73,6 +75,7 @@
     transition: background-color 0.3s;
     box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
     font-size: 1rem;
+    font-weight: bold;    
 }
 
 .sideNav_button:hover {

@@ -10,7 +10,7 @@ function Reports({ reportsData = mockReportsData }) {  // 기본값으로 mockRe
         <div className={styles['securities-reports']}>
                <div className="component-header">
                 <h2>증권 레포트</h2>
-                <p> 전문가들의 의견을 어떻까요?</p>
+                <p> 전문가들의 의견을 어떨까요?</p>
             </div>
             {reportsData.map((report, index) => (
                 <div key={index} className={styles.report}>

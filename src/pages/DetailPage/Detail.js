@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Header from "../../components/detail/Header/Header";
 import StockInfo from "../../components/detail/StockInfo/StockInfo";
 import TopNav from "../../components/detail/TopNav/TopNav";
 import SideNav from "../../components/detail/SideNav/SideNav"; // 1. SideNav를 import
