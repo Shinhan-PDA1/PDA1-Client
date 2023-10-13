@@ -9,29 +9,44 @@
     flex-direction: column;
     align-items: flex-end;
     transition: width 0.3s;
-    border-radius: 10%;
+    border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
 
 }
 
 .ChatOpen {
-    width: 16vw;
+    width: 17vw;
 }
 .toggleButton {
     position: absolute; /* 절대 위치 */
     left: -1.5vw; /* 버튼을 채팅창 왼쪽으로 이동 */
     top: 20%; /* 버튼을 채팅창 중앙에 위치 */
     transform: translateY(-50%); 
-    background-color: #f0f0f0;
+    background-color: #e1e9ef;
     border: none;
     width: 1vw;
-    height: 8vh;
+    height: 6vh;
     padding: 1%;
     cursor: pointer;
-    border-radius: 5px 0 0 5px;
+    border-radius: 10px 0 0 10px;
     transition: background-color 0.3s;
     box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
+    animation: float 3s infinite;
 
+}
+
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .toggleButton:hover {
@@ -41,9 +56,9 @@
 .chatBox {
     width: 100%;
     height: 90vh;
-    background-color: rgb(232, 248, 253);
+    background-color: rgb(240, 228, 241);
     border: rgb(232, 248, 253) 1px solid;
-    border-radius:  3%;
+    border-radius: 20px ;
     margin-top: 5%;
     display: flex;
     flex-direction: column;
@@ -62,9 +77,9 @@
 .userMessage,
 .aiMessage {
     display: flex;
-    margin: 4% 2%;
+    margin: 2% 2%;
     align-items: center;
-    font-size: 1.1em;
+    font-size: 0.8rem;
 }
 
 .userMessage {
@@ -88,20 +103,24 @@
 }
 
 .aiMessage .messageBubble {
-    background-color: #f0f0f0; /* AI 메시지의 말풍선 색상 */
+    background-color: white; /* AI 메시지의 말풍선 색상 */
 }
 
 .inputContainer {
     display: flex;
+    height: 6%;
     margin: 5%;
-    border-radius: 20px;
+    border-radius: 25px;
+    
 
 }
 
 .input {
     flex: 1;
-    padding: 5%;
+    padding: 3%;
     border: none;
+    border-radius: 25px 0px 0px 25px;
+
 
 
 }
@@ -111,11 +130,13 @@
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    border-radius: 0px 25px 25px 0px;
+
 
 }
 
 .sendIcon {
-    width: 20px;  /* You can adjust the size as per the icon's requirements */
+    width: 20px;  
     height: 20px;
 }
 
@@ -128,16 +149,14 @@
     flex-direction: column;
     align-items: center;
     padding: 1%;
-    border-bottom: 1px solid #ccc;
-    background-color: #d3e7f5;
+    background-color: rgba(255, 255, 255, 0.5);
     font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0, 0, 0.2, 0.1);
 
 
 }
 
 #aiBot{
-    width: 50%;
+    width: 40%;
 }
 
 
