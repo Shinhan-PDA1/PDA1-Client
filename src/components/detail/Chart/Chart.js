@@ -14,6 +14,7 @@ function Chart() {
   const [lineData5, setLineData5] = useState();
   const [lineData20, setLineData20] = useState();
   const [lineData60, setLineData60] = useState();
+  const [lineData120, setLineData120] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(()=>{
@@ -25,44 +26,60 @@ function Chart() {
     axios.get(apiUrl)
     .then((response) =>{
 
-      const inputData = response.data.output2.reverse();
+      const inputData = response.data.chartData.reverse();
 
       const dailyCandleData = [];
       const volumeData = [];
       const movingAverageData5 = [];
       const movingAverageData20 = [];
       const movingAverageData60 = [];
+      const movingAverageData120 = [];
 
       let sum5 = 0;
       let sum20 = 0;
       let sum60 = 0;
+      let sum120 = 0;
 
       for(let i = 0; i < inputData.length; i++) {
-        sum5 += Number(inputData[i].stck_clpr);
-        sum20 += Number(inputData[i].stck_clpr);
-        sum60 += Number(inputData[i].stck_clpr);
+        sum120 += Number(inputData[i].close_price);
 
-        const date = inputData[i].stck_bsop_date;
-        const year = date.substring(0,4);
-        const month = date.substring(4,6);
-        const day = date.substring(6,8);
+        if (i >= 60) {
+          sum60 += Number(inputData[i].close_price);
+        }
 
-        dailyCandleData.push({
-          x: `${year}-${month}-${day}`,
-          y: [
-            inputData[i].stck_oprc,
-            inputData[i].stck_hgpr,
-            inputData[i].stck_lwpr,
-            inputData[i].stck_clpr
-          ],
-        });
+        if (i >= 100) {
+          sum20 += Number(inputData[i].close_price);
+        }
 
-        volumeData.push({
-          x: `${year}-${month}-${day}`,
-          y: inputData[i].acml_vol,
-        });
+        if (i >= 115) {
+          sum5 += Number(inputData[i].close_price);
+        }
 
-        if(i >= 59) {
+        if (i >= 119) {
+          const date = inputData[i].date;
+          const year = date.substring(0,4);
+          const month = date.substring(4,6);
+          const day = date.substring(6,8);
+
+          dailyCandleData.push({
+            x: `${year}-${month}-${day}`,
+            y: [
+              inputData[i].open_price,
+              inputData[i].high_price,
+              inputData[i].low_price,
+              inputData[i].close_price
+            ],
+          });
+  
+          volumeData.push({
+            x: `${year}-${month}-${day}`,
+            y: inputData[i].trading_volume,
+          });
+
+          movingAverageData120.push({
+            x: `${year}-${month}-${day}`,
+            y: `${Math.floor(sum120/120)}`,
+          });
           movingAverageData60.push({
             x: `${year}-${month}-${day}`,
             y: `${Math.floor(sum60/60)}`,
@@ -75,59 +92,16 @@ function Chart() {
             x: `${year}-${month}-${day}`,
             y: `${sum5/5}`,
           });
-          sum60 -= Number(inputData[i-59].stck_clpr);
-          sum20 -= Number(inputData[i-19].stck_clpr);
-          sum5 -= Number(inputData[i-4].stck_clpr);
-        } else if(i >= 19) {
-          movingAverageData60.push({
-            x: `${year}-${month}-${day}`,
-            y: `${Math.floor(sum60/i)}`,
-          });
-          movingAverageData20.push({
-            x: `${year}-${month}-${day}`,
-            y: `${sum20/20}`,
-          });
-          movingAverageData5.push({
-            x: `${year}-${month}-${day}`,
-            y: `${sum5/5}`,
-          });
-          sum20 -= Number(inputData[i-19].stck_clpr);
-          sum5 -= Number(inputData[i-4].stck_clpr);
-        } else if(i >= 4) {
-          movingAverageData60.push({
-            x: `${year}-${month}-${day}`,
-            y: `${Math.floor(sum60/i)}`,
-          });
-          movingAverageData20.push({
-            x: `${year}-${month}-${day}`,
-            y: `${Math.floor(sum20/i)}`,
-          });
-          movingAverageData5.push({
-            x: `${year}-${month}-${day}`,
-            y: `${sum5/5}`,
-          });
-          sum5 -= Number(inputData[i-4].stck_clpr);
-        } else {
-          movingAverageData60.push({
-            x: `${year}-${month}-${day}`,
-            y: `${Math.floor(sum60/(i+1))}`,
-          });
-          movingAverageData20.push({
-            x: `${year}-${month}-${day}`,
-            y: `${Math.floor(sum20/(i+1))}`,
-          });
-          movingAverageData5.push({
-            x: `${year}-${month}-${day}`,
-            y: `${Math.floor(sum5/(i+1))}`,
-          });
+          sum120 -= Number(inputData[i-119].close_price);
+          sum60 -= Number(inputData[i-59].close_price);
+          sum20 -= Number(inputData[i-19].close_price);
+          sum5 -= Number(inputData[i-4].close_price);
         }
       }
-      console.log("5이평선", movingAverageData5);
-      console.log("20이평선", movingAverageData20);
-      console.log("60이평선", movingAverageData60);
       setLineData5(movingAverageData5);
       setLineData20(movingAverageData20);
       setLineData60(movingAverageData60);
+      setLineData120(movingAverageData120);
       setVolumeData(volumeData); 
       setCandleData(dailyCandleData);
     })
@@ -173,11 +147,12 @@ function Chart() {
           data: lineData60,
           color: '#FF0000',
       },
-      // {
-      //     name: "120일 이동평균선", // 범례에 표시될 이름
-      //     type: "line", // 꺾은선 그래프로 설정
-      //     data: line120ChartData,
-      // },
+      {
+          name: "120일 이동평균선", // 범례에 표시될 이름
+          type: "line", // 꺾은선 그래프로 설정
+          data: lineData120,
+          color: '#663399',
+      },
   ];
 
   // 차트 옵션 설정
