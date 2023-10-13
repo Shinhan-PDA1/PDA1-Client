@@ -7,10 +7,7 @@ import ReactApexChart from 'react-apexcharts'
 import axios from 'axios';
 
 function Chart() {
-  const {
-    tableData, aiReport, candleChartData, 
-    barChartData, line5ChartData, line20ChartData,
-    line60ChartData, line120ChartData } = mockChartData;
+  const { tableData, aiReport } = mockChartData;
   
   const [candleData, setCandleData] = useState();
   const [volumeData, setVolumeData] = useState();
@@ -23,44 +20,43 @@ function Chart() {
     const apiUrl = 'http://localhost:8080/api/v1/stock/information/test?code=005930';
     axios.get(apiUrl)
     .then((response) =>{
-      const newAPIData = response.data.output2.map(item => {
-        const year = item?.stck_bsop_date.substring(0,4);
-        const month = item?.stck_bsop_date.substring(4,6);
-        const day = item?.stck_bsop_date.substring(6,8);
-        return {
-            x: `${year}-${month}-${day}`,
-            y: [item?.stck_oprc,
-            item?.stck_hgpr,
-            item?.stck_lwpr,
-            item?.stck_clpr],
-          };        
-      });
-      const volumeData = response.data.output2.map(item => {
-        const year = item?.stck_bsop_date.substring(0,4);
-        const month = item?.stck_bsop_date.substring(4,6);
-        const day = item?.stck_bsop_date.substring(6,8);
-        return {
-            x: `${year}-${month}-${day}`,
-            y: item?.acml_vol,
-          };        
-      });
 
+      const inputData = response.data.output2.reverse();
+
+      const dailyCandleData = [];
+      const volumeData = [];
       const movingAverageData5 = [];
       const movingAverageData20 = [];
       const movingAverageData60 = [];
 
-      const inputData = response.data.output2.reverse();
       let sum5 = 0;
       let sum20 = 0;
       let sum60 = 0;
+
       for(let i = 0; i < inputData.length; i++) {
         sum5 += Number(inputData[i].stck_clpr);
         sum20 += Number(inputData[i].stck_clpr);
         sum60 += Number(inputData[i].stck_clpr);
+
         const date = inputData[i].stck_bsop_date;
         const year = date.substring(0,4);
         const month = date.substring(4,6);
         const day = date.substring(6,8);
+
+        dailyCandleData.push({
+          x: `${year}-${month}-${day}`,
+          y: [
+            inputData[i].stck_oprc,
+            inputData[i].stck_hgpr,
+            inputData[i].stck_lwpr,
+            inputData[i].stck_clpr
+          ],
+        });
+
+        volumeData.push({
+          x: `${year}-${month}-${day}`,
+          y: inputData[i].acml_vol,
+        });
 
         if(i >= 59) {
           movingAverageData60.push({
@@ -128,8 +124,8 @@ function Chart() {
       setLineData5(movingAverageData5);
       setLineData20(movingAverageData20);
       setLineData60(movingAverageData60);
-      setVolumeData(volumeData.reverse()); 
-      setCandleData(newAPIData.reverse());
+      setVolumeData(volumeData); 
+      setCandleData(dailyCandleData);
     })
     .catch((error) => {
       console.error('데이터 불러오기 실패!', error);
@@ -286,7 +282,7 @@ return (
         <hr />
         <div className={styles["textarea-container"]}>
           <img
-            src="path-to-image.jpg"
+            src="sol01.jpg"
             alt="AI Icon"
             className={styles["ai-image"]}
           />
