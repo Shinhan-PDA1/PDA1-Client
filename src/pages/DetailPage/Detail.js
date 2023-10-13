@@ -53,7 +53,7 @@ function DetailPage() {
                 <div ref={newsAnnouncementsRef}><NewsAnnouncements /></div>
                 <div ref={reportsRef}><Reports /></div>
             </>
-        }
+        
     </div>
 );
 }

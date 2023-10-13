@@ -1,70 +1,71 @@
-// Interested.js
+// InterestedSector3.js
 
 import React from 'react';
-import styles from './InterestedSector.module.css'; 
+import styles from './InterestedSector3.module.css'; 
 
-function InterestedSector () {
+
+function InterestedSector3 () {
   return (
     <div className={styles.interested}>
       <div className={styles.container}>
-      <h2>항공사 테마 종목</h2>
+      <h2>주류 테마 종목</h2>
       <p className="disclaimer">AI 전문가의 해석을 보고 싶으면 종목이름을 클릭하세요</p>
       </div>
       <hr className={styles.line} />
       <div className={styles.rectanglegroup}>
       <span className={styles.scrollIcon}>&#9664;</span>
         <div className={styles.rectangle}>
-          <h3>대한항공우</h3>
+          <h3>신한지주</h3>
+          <div className={styles.topcontainer}>
+            <div className={styles.downnowpirce}>
+            <h3>35,500</h3>
+            <p>▼50</p>
+            </div>
+            <div className={styles.downpercentage}>
+            <p>-0.14%</p>
+            </div>
+          </div>
+        </div>
+        <div className={styles.rectangle}>
+        <h3>기업은행</h3>
           <div className={styles.topcontainer}>
             <div className={styles.upnowpirce}>
-            <h3>23,400</h3>
-            <p>▲50</p>
+            <h3>11,750</h3>
+            <p>▲170</p>
             </div>
             <div className={styles.uppercentage}>
-            <p>0.21%</p>
+            <p>+1.47%</p>
             </div>
           </div>
         </div>
         <div className={styles.rectangle}>
-        <h3>아시아나항공</h3>
+        <h3>카카오배으</h3>
           <div className={styles.topcontainer}>
             <div className={styles.downnowpirce}>
-            <h3>10,030</h3>
-            <p>▼90</p>
+            <h3>23,250</h3>
+            <p>▼900</p>
             </div>
             <div className={styles.downpercentage}>
-            <p>-0.89%</p>
+            <p>-2.11%</p>
             </div>
           </div>
         </div>
         <div className={styles.rectangle}>
-        <h3>대한항공</h3>
+        <h3>KB금융</h3>
           <div className={styles.topcontainer}>
-            <div className={styles.downnowpirce}>
-            <h3>20,150</h3>
-            <p>▼450</p>
+            <div className={styles.upnowpirce}>
+            <h3>56,600</h3>
+            <p>▲100</p>
             </div>
-            <div className={styles.downpercentage}>
-            <p>-2.18%</p>
+            <div className={styles.uppercentage}>
+            <p>0.18%</p>
             </div>
           </div>
         </div>
-        <div className={styles.rectangle}>
-        <h3>제주항공</h3>
-          <div className={styles.topcontainer}>
-            <div className={styles.downnowpirce}>
-            <h3>10,340</h3>
-            <p>▼280</p>
-            </div>
-            <div className={styles.downpercentage}>
-            <p>-2.64%</p>
-            </div>
-          </div>
-        </div>
-        <span className={styles.scrollIcon} >&#9654;</span>
+        <span className={styles.scrollIcon}>&#9654;</span>
       </div>
     </div>
   );
 }
 
-export default InterestedSector;
+export default InterestedSector3;

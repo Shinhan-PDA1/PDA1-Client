@@ -48,6 +48,7 @@
   cursor: pointer;
   transition: background-color 0.3s;
   border-radius: 5px;
+  font-size: 0.8rem;
 }
 
 .side-nav li:hover {
@@ -72,7 +73,7 @@
   border-radius: 5px;
   transition: background-color 0.3s;
   box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .sideNav_button:hover {

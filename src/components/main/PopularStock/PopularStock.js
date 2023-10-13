@@ -6,42 +6,10 @@ import styles from './PopularStock.module.css';
 
 const PopularStock = () => {
 
-  const [stockData, setStockData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        // 요청이 시작 할 때에는 error 와 users 를 초기화하고
-        setError(null);
-        setStockData(null);
-        // loading 상태를 true 로 바꿉니다.
-        setLoading(true);
-
-        const response = await axios.get(
-          'https://gapi.shinhansec.com:8443/openapi/v1.0/ranking/rising',
-          // {
-          //   headers: {
-          //     'Authorization': `Bearer ${apiKey}`,
-          //     // Add other headers as needed
-          //   },
-          // }
-        );
-        setStockData(response.data.dataBody.list); // 데이터는 response.data 안에 들어있습니다.
-      } catch (e) {
-        setError(e);
-      }
-      setLoading(false);
-    };
-
-    fetchUsers();
-  }, []);
-
-  // if (loading) return <div>로딩중..</div>;
-  // if (error) return <div>에러가 발생했습니다</div>;
-  // if (!stockData) return null;
-
+  const [users, setUsers] = useState(null);   // 결과값
+  const [loading, setLoading] = useState(false); // 로딩되는지 여부
+  const [error, setError] = useState(null); // 에러
+  
   return (
     <div className={styles.popularsector}>
       <div className={styles.topgroup}>
@@ -50,13 +18,6 @@ const PopularStock = () => {
       </div>
       <div className={styles.line}></div>
       <div className={styles.rectangle}>
-        {/* <ul>
-        {stockData.map(stock  => (
-          <li key={stock.dd_cmpr_rank}>
-              {`${stock.stbd_nm} (${stock.stock_code})`}
-          </li>
-        ))}
-        </ul> */}
         <div className={styles.bottomgroup}>
           <div className={styles.timegroup}>
               <p>현재 시간(추후)</p>
