@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './GuideHeader.module.css';
-import doremi from '../../../assets/images/common/doremi01.png'
+import rino from '../../../assets/images/guide/rino01.png'
 
 function GuideHeader() {
     const [activeButton, setActiveButton] = useState(null);
@@ -8,7 +8,7 @@ function GuideHeader() {
     return (
         <div className={styles.container}>
             <div className={styles.title}>
-                <img src={doremi}></img>
+                <img src={rino}></img>
                 <p>희빈님의 개인 위키 </p>
             </div>
             <div className={styles.nav}>
