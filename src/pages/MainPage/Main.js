@@ -1,9 +1,10 @@
 // MainPage.js
 
 import React, { useRef } from 'react';
-import TopNav from '../../components/main/TopNav/TopNav';
 import NowStockSector from '../../components/main/NowStockSector/NowStockSector';
 import InterestedSector from '../../components/main/InterestedSector/InterestedSector';
+import InterestedSector2 from '../../components/main/InterestedSector2/InterestedSector2';
+import InterestedSector3 from '../../components/main/InterestedSector3/InterestedSector3';
 import PopularStock from '../../components/main/PopularStock/PopularStock';
 import HotStock from '../../components/main/HotStock/HotStock';
 import SideNav from '../../components/main/SideNav/SideNav';
@@ -55,7 +56,6 @@ function MainPage() {
 
   return (
     <div>
-      <TopNav scrollToComponent={scrollToComponent} />
       <SideNav scrollToComponent={scrollToComponent} />
       {/* Sections you want to scroll to */}
       <div ref={nowStockRef}><NowStockSector /></div>
