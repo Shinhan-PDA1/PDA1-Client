@@ -14,8 +14,12 @@ function Chart() {
   const [lineData5, setLineData5] = useState();
   const [lineData20, setLineData20] = useState();
   const [lineData60, setLineData60] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(()=>{
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
     console.log("GET API DATA...");
     const apiUrl = 'http://localhost:8080/api/v1/stock/information/test?code=005930';
     axios.get(apiUrl)
