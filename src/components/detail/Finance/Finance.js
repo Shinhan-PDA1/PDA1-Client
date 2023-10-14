@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import sol from"../../../assets/images/detail/sol01.png"
+import sol from '../../../assets/images/detail/sol04.png'
 
 import '../../../styles/detail/detailGlobal.css'
 import styles from './Finance.module.css';

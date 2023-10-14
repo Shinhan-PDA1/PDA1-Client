@@ -26,16 +26,18 @@
 }
 
 .footerSection h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 5%;
 }
 
+
 .footerSection p {
     margin: 1% 0;
+    font-size: 0.8rem;
 }
 
 #num {
     color: rgba(135, 207, 235, 0.842);
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-weight: bold;
 }

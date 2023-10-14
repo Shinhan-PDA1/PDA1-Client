@@ -13,10 +13,6 @@
 }
 
 
-.showChart {
-    
-
-}
 
 #chartTableCol{
     font-weight: bold;
@@ -53,10 +49,12 @@
 }
 
 .ai-image {
-    width: 20%; /* 이미지의 크기 */
-    border: 2px solid rgb(147, 164, 171); /* 이미지 경계 */
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
+    width: 17%; /* 이미지의 크기 */
+    border-bottom: 1px solid silver;
+    border-radius: 30px;
+    box-shadow: 0px 1px 2px  rgba(0, 0, 0.3, 0.1);
+
+
 
 
     
@@ -65,11 +63,11 @@
 textarea {
     flex: 1; /* 가능한 모든 공간 차지 */
     padding:2%;
-    background-color: rgb(224, 230, 234);
-    border: 2px solid rgb(170, 193, 201); /* 이미지 경계 */
+    background-color: rgb(197, 219, 234);
+    border: 2px solid rgb(194, 217, 225); /* 이미지 경계 */
     border-radius: 10px;
     resize: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.2);
 }
 
 

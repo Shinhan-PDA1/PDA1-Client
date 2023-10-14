@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../../../styles/detail/detailGlobal.css'
 import styles from './Chart.module.css';
-import sol from '../../../assets/images/detail/sol01.png'
+import sol from '../../../assets/images/detail/sol04.png'
 import mockChartData from '../../../data/detail/mockChartData';
 import ReactApexChart from 'react-apexcharts'
 import axios from 'axios';
@@ -172,7 +172,7 @@ function Chart() {
           type: "category",
           labels: {
             formatter: function (value) {
-              return value;
+              return //value;
               // const date = new Date(value);
               // console.log(value);  
               // console.log(date);

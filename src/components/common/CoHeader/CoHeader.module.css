@@ -17,16 +17,17 @@
 #TextLogo{
     width: 10%;
     height: 20%;
+    padding-left: 10%;
 }
 #ZutopiaLogo{
-    width: 20%; /* Adjust as needed */
-
+    width: 20%; 
 }
 
 
 .welcomeMessage {
     display: flex;
     align-items: center;
+    padding-right: 12%;
 }
 
 .editIcon {

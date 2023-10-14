@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Chat.module.css';
-import doremi from '../../../assets/images/common/doremi01.png';
+import lulu from '../../../assets/images/common/chat01.png';
 import send from '../../../assets/images/common/send.png';
 import mockChatData from '../../../data/common/mockChatData';
 
@@ -27,8 +27,8 @@ function Chatting() {
         <div className={isOpen ? styles.ChatOpen : styles.Chat}>    
             <div className={styles.chatBox}>
                 <div className={styles.header}>
-                    <img src={doremi} alt="User" id={styles.aiBot}/>
-                    <p>척척박사 도레미</p>
+                    <img src={lulu} alt="User" id={styles.aiBot}/>
+                    <p>척척박사 루루</p>
                 </div>
                 <div className={styles.messages}>
                     {messages.map((msg, index) => (
