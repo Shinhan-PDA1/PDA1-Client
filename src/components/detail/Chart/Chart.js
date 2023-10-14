@@ -172,7 +172,7 @@ function Chart() {
           type: "category",
           labels: {
             formatter: function (value) {
-              return value;
+              return //value;
               // const date = new Date(value);
               // console.log(value);  
               // console.log(date);
