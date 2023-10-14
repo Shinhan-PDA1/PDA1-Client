@@ -1,12 +1,12 @@
-// PopularStock.js
+// RecommendStock.js
 
 import React, { useState, useEffect } from 'react';
-import styles from './PopularStock.module.css'; 
+import styles from './RecommendStock.module.css'; 
 import axios from 'axios';
-import PopularStockItem  from '../PopularStockItem/PopularStockItem';
+import StockItem from '../RecommendStockItem/RecommendStockItem';
 
 
-const PopularStock = () => {
+const RecommendStock = () => {
 
   const [stocks, setStocks] = useState([]); // Updated state name to better represent the data
   const [loading, setLoading] = useState(false);
@@ -16,7 +16,7 @@ const PopularStock = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://localhost:8080/api/v1/shinhan/ranking/rising');
+        const response = await axios.get('http://localhost:8080/api/v1/shinhan/recommend/portfolio');
         setStocks(response.data.slice(0, 4));
       } catch (error) {
         setError(error);
@@ -33,24 +33,21 @@ const PopularStock = () => {
   return (
     <div className={styles.popularsector}>
       <div className={styles.topgroup}>
-        <h2>실시간 인기 종목</h2>
-        <p>실시간 현재가 조회수가 높은 종목</p>
+        <h2>추천 국내 종목</h2>
+        <p>신한 리서치 센터에서 제공하는 추천 국내 종목 포트폴리오</p>
       </div>
       <div className={styles.line}></div>
-      <div className={styles.title}>
-      <p>종목</p>
-      <p>종목번호</p>
-      <p>카테고리</p>
-      </div>
+      <div className={styles.rectangle}>
       <div className={styles.popularStockList}>
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error.message}</p>}
         {stocks.map((stock) => (
-          <PopularStockItem key={stock.stock_code} stock={stock} />
+          <StockItem key={stock.stock_code} stock={stock} />
           ))}
+      </div>
       </div>
     </div>
   );
 }
 
-export default PopularStock;
+export default RecommendStock;
