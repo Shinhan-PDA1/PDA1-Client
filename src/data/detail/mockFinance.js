@@ -5,7 +5,7 @@ export const summaryData = [
 ];
 
 export const annualData = {
-    "2019.012": {
+    "2019.0": {
       "BPS(원)": 46937.0,
       "EPS(원)": 1613.0,
       "PBR(배)": 1.21,
