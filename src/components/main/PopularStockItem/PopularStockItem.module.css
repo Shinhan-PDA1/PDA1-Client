@@ -1,0 +1,34 @@
+/* PopularStockItem.module.css */
+
+.stockContainer {
+    border: 1px solid #ccc; /* Add border styling */
+    padding: 10px; /* Add padding for spacing */
+    margin: 5px; /* Add margin for spacing between containers */
+    display: inline-block; /* Make containers display inline */
+    width: 170px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+  }
+
+  .red {
+    color: red;
+  }
+  
+  .blue {
+    color: blue;
+  }
+
+  .stockContainer h3 {
+    color: black; /* Set the color to black or your preferred color */
+  }
+
+  .bottomgroup {
+    display: flex; /* Display the children in a row */
+    justify-content: space-between; /* Add space between the children */
+    align-items: center; /* Align the items vertically */
+  }
+
+ 
