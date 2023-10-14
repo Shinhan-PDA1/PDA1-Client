@@ -7,24 +7,34 @@
 .content-container {
 
     display: flex;
-    
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
     justify-content: space-between; /* 차트와 테이블 간의 간격을 균등하게 */
 }
 
 
-.TestChart {
-    width: 70%;
-    margin: 1%;
+.showChart {
+    width: 100%;
+    margin: auto 10%;
+   
 
 }
 
+#chartTableCol{
+    font-weight: bold;
+}
+
 .chart-table {
+    width: 95%;
 
-    width: 30%;
-    margin: 10px;
+    margin: 1%;
+    border-radius: 5px;
+    
+}
 
-
+.chart-table td {
+    text-align: center;
 }
 
 .ai-report {
@@ -48,7 +58,7 @@
 
 .ai-image {
     width: 20%; /* 이미지의 크기 */
-    border: 2px solid skyblue; /* 이미지 경계 */
+    border: 2px solid rgb(147, 164, 171); /* 이미지 경계 */
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
 
@@ -59,13 +69,12 @@
 textarea {
     flex: 1; /* 가능한 모든 공간 차지 */
     padding:2%;
-    background-color: aliceblue;
-    border: 2px solid skyblue; /* 이미지 경계 */
-    border-radius: 5%;
+    background-color: rgb(224, 230, 234);
+    border: 2px solid rgb(170, 193, 201); /* 이미지 경계 */
+    border-radius: 10px;
     resize: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
 }
-
 
 
 

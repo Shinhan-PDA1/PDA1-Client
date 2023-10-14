@@ -51,33 +51,29 @@ function Finance() {
                 </div>
             )}
 
-            {mainTab === 'financial' && (
-                <table>
-                    <thead>
-                        <tr>
-                            <th>{activeTab === 'annual' ? 'Year' : 'Quarter'}</th>
-                            <th>Revenue</th>
-                            <th>Profit</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {activeTab === 'annual' && annualData.map(data => (
-                            <tr key={data.year}>
-                                <td>{data.year}</td>
-                                <td>{data.revenue}</td>
-                                <td>{data.profit}</td>
+                {mainTab === 'financial' && (
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>{activeTab === 'annual' ? 'Year' : 'Quarter'}</th>
+                                {Object.keys(activeTab === 'annual' ? annualData : quarterlyData).map(period => (
+                                    <th key={period}>{period}</th>
+                                ))}
                             </tr>
-                        ))}
-                        {activeTab === 'quarterly' && quarterlyData.map(data => (
-                            <tr key={data.quarter}>
-                                <td>{data.quarter}</td>
-                                <td>{data.revenue}</td>
-                                <td>{data.profit}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            )}
+                        </thead>
+                        <tbody>
+                            {(activeTab === 'annual' ? annualData : quarterlyData) &&
+                                Object.keys((activeTab === 'annual' ? annualData : quarterlyData)[Object.keys((activeTab === 'annual' ? annualData : quarterlyData))[0]]).map(key => (
+                                    <tr key={key}>
+                                        <td>{key}</td>
+                                        {Object.keys(activeTab === 'annual' ? annualData : quarterlyData).map(period => (
+                                            <td key={period}>{(activeTab === 'annual' ? annualData : quarterlyData)[period][key]}</td>
+                                        ))}
+                                    </tr>
+                                ))}
+                        </tbody>
+                    </table>
+                )}
 
             <div className="component-header">
                 <h2>AI REPORT</h2>

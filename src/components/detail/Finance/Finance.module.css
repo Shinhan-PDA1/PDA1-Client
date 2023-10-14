@@ -17,6 +17,8 @@
 .tabs button {
     font-size: 1rem;
     font-weight: bold;
+    border-radius: 5px;
+
     background-color: #e0e0e0; /* 연한 회색 배경 */
     color: black; /* 기본 글씨 색을 검은색으로 설정 */
     border: none; /* 테두리 제거 */
@@ -48,6 +50,8 @@
     background-color: #e0e0e0; /* 연한 회색 배경 */
     color: black; /* 기본 글씨 색을 검은색으로 설정 */
     border: none; /* 테두리 제거 */
+    border-radius: 5px;
+
     padding: 10px 15px; /* 버튼 패딩 설정 */
     cursor: pointer; /* 마우스 포인터를 손가락 모양으로 설정 */
     transition: background-color 0.3s, color 0.3s; /* 배경 색과 글씨 색 변화 효과 */
@@ -95,7 +99,7 @@ td, th {
 
 .ai-image {
     width: 20%; /* 이미지의 크기 */
-    border: 2px solid skyblue; /* 이미지 경계 */
+    border: 2px solid rgb(147, 164, 171); /* 이미지 경계 */
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
 
@@ -106,9 +110,9 @@ td, th {
 textarea {
     flex: 1; /* 가능한 모든 공간 차지 */
     padding:2%;
-    background-color: aliceblue;
-    border: 2px solid skyblue; /* 이미지 경계 */
-    border-radius: 5%;
+    background-color: rgb(224, 230, 234);
+    border: 2px solid rgb(170, 193, 201); /* 이미지 경계 */
+    border-radius: 10px;
     resize: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.3);
 }
