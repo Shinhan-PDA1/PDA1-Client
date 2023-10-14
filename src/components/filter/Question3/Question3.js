@@ -5,9 +5,10 @@ import styles from './Question3.module.css';
 import longimg from '../../../assets/images/filter/longterm.png';
 import shortimg from '../../../assets/images/filter/shortterm.png';
 
-const Question3 = ({ onNextQuestion }) => {
+const Question3 = ({ onNextQuestion, onAnswer }) => { // onAnswer prop 추가
   const handleOptionSelection = (selectedOption) => {
     onNextQuestion(selectedOption);
+    onAnswer('Q3', selectedOption); // 사용자의 응답을 상위 컴포넌트로 전달
   };
 
   return (
@@ -19,7 +20,7 @@ const Question3 = ({ onNextQuestion }) => {
           <img src={longimg} alt="장기" />
           <p>장기(1년 초과)</p>
         </div>
-        <div className={styles.answerOption} onClick={() => handleOptionSelection('단기(1년 이하)')}>
+        <div id={styles.option2} className={styles.answerOption} onClick={() => handleOptionSelection('단기(1년 이하)')}>
           <img src={shortimg} alt="단기" />
           <p>단기(1년 이하)</p>
         </div>

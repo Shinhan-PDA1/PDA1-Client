@@ -5,9 +5,10 @@ import styles from './Question4.module.css';
 import increaseimg from '../../../assets/images/filter/increase.png';
 import decreaseimg from '../../../assets/images/filter/decrease.png';
 
-const Question4 = ({ onNextQuestion }) => {
+const Question4 = ({ onNextQuestion, onAnswer }) => { // onAnswer prop 추가
   const handleOptionSelection = (selectedOption) => {
     onNextQuestion(selectedOption);
+    onAnswer('Q4', selectedOption); // 사용자의 응답을 상위 컴포넌트로 전달
   };
 
   return (
@@ -19,7 +20,7 @@ const Question4 = ({ onNextQuestion }) => {
           <img src={increaseimg} alt="향후 증가" />
           <p>향후 증가</p>
         </div>
-        <div className={styles.answerOption} onClick={() => handleOptionSelection('향후 감소')}>
+        <div id={styles.option2} className={styles.answerOption} onClick={() => handleOptionSelection('향후 감소')}>
           <img src={decreaseimg} alt="향후 감소" />
           <p>향후 감소</p>
         </div>

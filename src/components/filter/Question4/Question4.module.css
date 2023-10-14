@@ -1,52 +1,59 @@
-/* question4.module.css */
+/* question3.module.css */
 
 .container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .questionTitle {
-    color: rgb(239, 78, 96);
-    font-size: 2em;
-    text-align: center;
-    transition: color 0.8s cubic-bezier(0.075, 0.820, 0.165, 1.000);
-    margin-left: 0.13em;
-    font-weight: bold;
-    font-family: 'Nanum Gothic', sans-serif;
-    margin-top: 1.8em;
-  }
-  
-  .questionText {
-    opacity: 1;
-    transform-origin: 50% 50%;
-    transform: scale(1) translate3d(0px, 0px, 0px);
-    visibility: visible;
-    margin-top: 2em;
-  }
-  
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.questionTitle {
+  color: rgb(80, 105, 232);
+  font-size: 2em;
+  text-align: center;
+  transition: color 0.8s cubic-bezier(0.075, 0.820, 0.165, 1.000);
+  margin-left: 0.13em;
+  font-weight: bold;
+  font-family: 'Nanum Gothic', sans-serif;
+  margin-top: 1.5em;
+}
+
+.questionText {
+  opacity: 1;
+  transform-origin: 50% 50%;
+  transform: scale(1) translate3d(0px, 0px, 0px);
+  visibility: visible;
+  margin-top: 1em;
+}
   
   .answerContainer {
     display: flex;
     justify-content: space-between;
     margin-top: 3em;
     margin-bottom: 8em;
+    width: 35%;
+    height: 35vh;
   }
+  
+  
+  #option2{
+    background: rgba(81, 92, 245, 0.5);
+  }
+
+
   
   .answerOption {
     border-radius: 0.625em;
     padding: 0.625em;
-    background: rgb(239, 78, 96);
+    background: rgba(233, 118, 223, 0.5);
     box-shadow: rgba(239, 78, 96, 0.34) 0px 0.3125em 1.25em;
     width: 80%;
     transition: transform 0.2s ease-in-out 0s, background-color 0.2s ease 0s, opacity 0.2s ease 0s;
     margin-right: 2em;
     margin-left: 2em;
   }
-  
   .answerOption img {
     width: 6.25em; /* 이미지의 너비를 조정하세요 */
     height: 6.25em; /* 이미지의 높이를 조정하세요 */

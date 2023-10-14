@@ -1,96 +1,69 @@
-// Question5.js
-
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import styles from './Question5.module.css';
-import ITimg from '../../../assets/images/filter/IT.png';
-import Financeimg from '../../../assets/images/filter/Finance.png';
-import Flightimg from '../../../assets/images/filter/Flight.png';
-import Drinkimg from '../../../assets/images/filter/Drink.png';
-import Medicalimg from '../../../assets/images/filter/Medical.png';
-import Energyimg from '../../../assets/images/filter/Energy.png';
+import age1img from '../../../assets/images/filter/age1.png';
+import age2img from '../../../assets/images/filter/age2.png';
+import age3img from '../../../assets/images/filter/age3.png';
+import age4img from '../../../assets/images/filter/age4.png';
+import { Link } from 'react-router-dom';
 
-const Question5 = () => {
-  const [selectedOptions, setSelectedOptions] = useState([]);
+const Question5 = ({ onNextQuestion, onAnswer }) => {
+  const [selectedAge, setSelectedAge] = useState(null); // 선택한 연령 값을 상태로 관리
 
-  const handleOptionClick = (option) => {
-    const isSelected = selectedOptions.includes(option);
-
-    if (isSelected) {
-      setSelectedOptions(selectedOptions.filter((selected) => selected !== option));
-    } else {
-      setSelectedOptions([...selectedOptions, option]);
-    }
+  const handleAgeSelection = (selectedAgeOption) => {
+    setSelectedAge(selectedAgeOption); // 선택한 연령 값을 설정
+    onAnswer('Q5', selectedAgeOption); // 선택한 연령 값을 상위 컴포넌트로 전달
   };
 
   return (
     <div className={styles.container}>
       <h2 className={styles.questionTitle}>Q5.</h2>
-      <h3 className={styles.questionText}>관심있는 주식 분야 3개를 골라주세요</h3>
+      <h3 className={styles.questionText}>당신의 연령을 골라주세요</h3>
       <div className={styles.group}>
         <div className={styles.ageOptionsContainer}>
           <div
             className={`${styles.ageOption} ${
-              selectedOptions.includes('Finance') && styles.selected
+              selectedAge === '20세 미만' ? styles.selected : ''
             }`}
-            onClick={() => handleOptionClick('Finance')}
+            onClick={() => handleAgeSelection('20세 미만')}
           >
-            <img src={Financeimg} alt="금융" />
-            <p>금융</p>
+            <img src={age1img} alt="20세 미만" />
+            <p>만 20세 미만</p>
           </div>
-          <div
+          <div id={styles.option2}
             className={`${styles.ageOption} ${
-              selectedOptions.includes('IT') && styles.selected
+              selectedAge === '40세 미만' ? styles.selected : ''
             }`}
-            onClick={() => handleOptionClick('IT')}
+            onClick={() => handleAgeSelection('40세 미만')}
           >
-            <img src={ITimg} alt="IT" />
-            <p>IT</p>
-          </div>
-          <div
-            className={`${styles.ageOption} ${
-              selectedOptions.includes('Flight') && styles.selected
-            }`}
-            onClick={() => handleOptionClick('Flight')}
-          >
-            <img src={Flightimg} alt="항공" />
-            <p>항공</p>
+            <img src={age2img} alt="40세 미만" />
+            <p>만 20세 ~ 39세</p>
           </div>
         </div>
         <div className={styles.ageOptionsContainer}>
-          <div
+          <div  id={styles.option3}
             className={`${styles.ageOption} ${
-              selectedOptions.includes('Drink') && styles.selected
+              selectedAge === '60세 미만' ? styles.selected : ''
             }`}
-            onClick={() => handleOptionClick('Drink')}
+            onClick={() => handleAgeSelection('60세 미만')}
           >
-            <img src={Drinkimg} alt="주류" />
-            <p>주류</p>
+            <img src={age3img} alt="60세 미만" />
+            <p>만 40 ~ 59세</p>
           </div>
-          <div
+          <div  id={styles.option4}
             className={`${styles.ageOption} ${
-              selectedOptions.includes('Medical') && styles.selected
+              selectedAge === '60세 이상' ? styles.selected : ''
             }`}
-            onClick={() => handleOptionClick('Medical')}
+            onClick={() => handleAgeSelection('60세 이상')}
           >
-            <img src={Medicalimg} alt="의료" />
-            <p>의료</p>
-          </div>
-          <div
-            className={`${styles.ageOption} ${
-              selectedOptions.includes('Energy') && styles.selected
-            }`}
-            onClick={() => handleOptionClick('Energy')}
-          >
-            <img src={Energyimg} alt="에너지" />
-            <p>에너지</p>
+            <img src={age4img} alt="60세 이상" />
+            <p>만 60세 이상</p>
           </div>
         </div>
       </div>
       <div className={styles.submitContainer}>
-      <Link to="/main" className={styles.submitButton}>
-        제출
-      </Link>
+        <Link to="/main" className={styles.submitButton} onClick={() => onNextQuestion('Q5')}>
+          제출
+        </Link>
       </div>
     </div>
   );

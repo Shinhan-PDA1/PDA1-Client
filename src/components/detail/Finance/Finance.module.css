@@ -96,6 +96,7 @@ td, th {
     display: flex; /* textarea와 이미지를 나란히 배치 */
     gap: 3%; /* 여백 */
 }
+
 .ai-image {
     width: 17%; /* 이미지의 크기 */
     border-bottom: 1px solid silver;
