@@ -38,6 +38,8 @@
 .item{
     padding: 0.5% ;
     border-bottom: 1px silver solid;
+    transition: background-color 0.3s ease;
+
 }
 
 .item:hover {
