@@ -231,32 +231,28 @@ return (
               options={mainChartOptions}
               series={candlestickSeries.concat(lineSeries)}
               type="candlestick"
-              width={800}
-              height={500}
+              width={600}
+              height={400}
             />
             <ReactApexChart
               options={volumeChartOptions}
               series={barSeries}
               type="line"
-              width={800}
+              width={600}
               height={200}
             />
           </div>
           <table className={styles["chart-table"]}>
             <tbody>
-              <tr id={styles["chartTableCol"]}>
-                {Object.entries(tableData).map(([key, value], index) => (
-                  <td key={index}>{key}</td>
-                ))}
-              </tr>
-              <tr>
-                {Object.entries(tableData).map(([key, value], index) => (
-                  <td key={index}>{value}</td>
-                ))}
-              </tr>
+              {Object.entries(tableData).map(([key, value], index) => (
+                <tr key={index}>
+                  <td>{key}</td>
+                  <td>{value}</td>
+                </tr>
+                
+              ))}
             </tbody>
           </table>
-
       </div>
       <div className="component-header">
         <h2>AI REPORT</h2>

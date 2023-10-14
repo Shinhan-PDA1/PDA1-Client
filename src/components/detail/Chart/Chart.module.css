@@ -7,7 +7,6 @@
 .content-container {
 
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-content: center;
     justify-content: space-between; /* 차트와 테이블 간의 간격을 균등하게 */
@@ -15,9 +14,7 @@
 
 
 .showChart {
-    width: 100%;
-    margin: auto 10%;
-   
+    
 
 }
 
@@ -26,8 +23,7 @@
 }
 
 .chart-table {
-    width: 95%;
-
+    width: 30%;
     margin: 1%;
     border-radius: 5px;
     
