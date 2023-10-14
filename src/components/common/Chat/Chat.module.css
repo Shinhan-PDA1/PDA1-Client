@@ -22,7 +22,7 @@
     left: -1.5vw; /* 버튼을 채팅창 왼쪽으로 이동 */
     top: 20%; /* 버튼을 채팅창 중앙에 위치 */
     transform: translateY(-50%); 
-    background-color: #e1e9ef;
+    background-color: #aed0ea;
     border: none;
     width: 1vw;
     height: 6vh;
@@ -56,13 +56,15 @@
 .chatBox {
     width: 100%;
     height: 90vh;
-    background-color: rgb(240, 228, 241);
+    background-color: rgb(189, 212, 238);
     border: rgb(232, 248, 253) 1px solid;
     border-radius: 20px ;
     margin-top: 5%;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    box-shadow: 0 6px 8px rgba(0, 0, 0.3, 0.3);
+
     
 }
 
@@ -151,13 +153,15 @@
     padding: 1%;
     background-color: rgba(255, 255, 255, 0.5);
     font-weight: bold;
+    font-size: 0.8rem;
 
 
 }
 
 #aiBot{
-    width: 40%;
+    width: 25%;
 }
+
 
 
 
