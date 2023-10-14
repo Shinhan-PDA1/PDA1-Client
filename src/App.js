@@ -8,6 +8,7 @@ import DetailPage from './pages/DetailPage/Detail';
 import FilterPage from './pages/FilterPage/Filter';
 import MainPage from './pages/MainPage/Main';
 import GuidePage from './pages/GuidePage/Guide'
+import FeedbackPage from './pages/FeedBackPage/FeedBack';
 
 function App() {
     return (
@@ -17,9 +18,10 @@ function App() {
                 <Routes>
                     <Route path="/detail" element={<DetailPage />} />
                     <Route path="/guide" element={<GuidePage />} />
-
                     <Route path="/filter" element={<FilterPage />} />
                     <Route path='/main' element={<MainPage />} />
+                    <Route path='/feedback' element={<FeedbackPage />} />
+
                 </Routes>
                 <Chat />
                 <Cofooter />

@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import StockInfo from "../../components/detail/StockInfo/StockInfo";
 import TopNav from "../../components/detail/TopNav/TopNav";
 import SideNav from "../../components/detail/SideNav/SideNav"; // 1. SideNav를 import
@@ -10,6 +12,8 @@ import Reports from '../../components/detail/Reports/Reports';
 import styles from './Detail.module.css';
 
 function DetailPage() {
+    const navigate = useNavigate();
+
 
     const chartRef = useRef(null);
     const marketTrendRef = useRef(null);
@@ -51,7 +55,14 @@ function DetailPage() {
                 <div ref={financeRef}><Finance /></div>
                 <div ref={newsAnnouncementsRef}><NewsAnnouncements /></div>
                 <div ref={reportsRef}><Reports /></div>
+                <button 
+            className={styles['sell-button']} 
+            onClick={() => navigate('/feedback')}
+        >
+            ▶ 매도하러 가기
+        </button>
             </>
+       
         
     </div>
 );
