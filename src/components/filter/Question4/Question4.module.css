@@ -25,15 +25,15 @@
     transform-origin: 50% 50%;
     transform: scale(1) translate3d(0px, 0px, 0px);
     visibility: visible;
-    margin-top: 5em;
+    margin-top: 2em;
   }
   
   
   .answerContainer {
     display: flex;
     justify-content: space-between;
-    margin-top: 6.25em;
-    margin-bottom: 18.75em;
+    margin-top: 3em;
+    margin-bottom: 8em;
   }
   
   .answerOption {
@@ -43,6 +43,8 @@
     box-shadow: rgba(239, 78, 96, 0.34) 0px 0.3125em 1.25em;
     width: 80%;
     transition: transform 0.2s ease-in-out 0s, background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+    margin-right: 2em;
+    margin-left: 2em;
   }
   
   .answerOption img {
@@ -53,4 +55,10 @@
   .answerOption p {
     margin-top: 0.625em;
     text-align: center;
+  }
+
+  
+  .answerOption:hover {
+    /* 원하는 크기로 확대 */
+    transform: scale(1.1);
   }

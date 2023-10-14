@@ -16,7 +16,7 @@
     margin-left: 0.13em;
     font-weight: bold;
     font-family: 'Nanum Gothic', sans-serif;
-    margin-top: 1.8em;
+    margin-top: 0.1em;
   }
   
   .questionText {
@@ -24,7 +24,8 @@
     transform-origin: 50% 50%;
     transform: scale(1) translate3d(0px, 0px, 0px);
     visibility: visible;
-    margin-top: 3.75em;
+    margin-top: 0.5em;
+    margin-bottom: -2em;
   }
 
   .group {
@@ -44,6 +45,9 @@
     box-shadow: rgba(239, 78, 96, 0.34) 0px 0.3125em  1.25em;
     width: 80%;
     transition: transform 0.2s ease-in-out 0s, background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+    margin-right: 2em;
+    margin-left: 2em;
+    margin-top: 2em;
   }
   
   .ageOption img {
@@ -55,6 +59,11 @@
   .ageOption p {
     margin-top: 10px;
     text-align: 0.625em;
+    text-align: center;
   }
   
+  .ageOption:hover {
+    /* 원하는 크기로 확대 */
+    transform: scale(1.1);
+  }
   
