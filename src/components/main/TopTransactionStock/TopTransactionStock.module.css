@@ -1,10 +1,9 @@
-/* RecommendStock.module.css */
+/* TopTransactionStock.module.css */
 
 .popularsector {
     text-align: center;
     margin: auto 30%;
     margin-right: 3em;
-    margin-top: 3em;
   }
 
   .topgroup {
@@ -20,7 +19,7 @@
 
   .topgroup p {
     margin-bottom: 2px;
-    margin-left: 75px;
+    margin-left: 330px;
   }
   
   .line {

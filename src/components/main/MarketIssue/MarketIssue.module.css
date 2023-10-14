@@ -1,36 +1,51 @@
-/* CompanyInfoSector.module.css */
+/* TopTransactionStock.module.css */
 
-.marketissue {
-    text-align: center;
-    margin: auto 20%;
-  }
-  
-  .icongroup {
-    margin-top: 10px;
-    margin-left: 60px;
-  }
+.popularsector {
+  text-align: center;
+  margin: auto 30%;
+  margin-left: 16em;
+  width: 72%;
+  margin-bottom: 1em;
+  margin-top: 2em;
+}
 
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: -25px;
-  }
-  
-  .line {
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-  }
-  
-  .rectangle {
-    width: 300px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    position: relative;
-  }
+.topgroup {
+  display: flex;
+  align-items: center; /* Optional: Center content vertically */
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+
+.topgroup h2 {
+  margin-bottom: 2px;
+}
+
+.topgroup p {
+  margin-bottom: 2px;
+  margin-left: 300px;
+}
+
+.line {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.rectangle {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px; /* Adjust padding as needed */
+}
 
 
-  
-  
+/* .rectangle {
+  width: 350px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  position: relative;
+} */
+
+
+
+

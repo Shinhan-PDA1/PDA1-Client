@@ -1,13 +1,16 @@
-/* PopularStock.module.css */
+/* TopTransactionStock.module.css */
 
 .popularsector {
     text-align: center;
-    margin: auto 20%;
+    margin: auto 30%;
+    margin-left: 3em;
   }
 
   .topgroup {
     display: flex;
     align-items: center; /* Optional: Center content vertically */
+    font-size: 0.8em;
+    white-space: nowrap;
   }
 
   .topgroup h2 {
@@ -16,7 +19,7 @@
 
   .topgroup p {
     margin-bottom: 2px;
-    margin-left: 480px;
+    margin-left: 300px;
   }
   
   .line {
@@ -24,16 +27,21 @@
     margin-bottom: 10px;
   }
 
-  .title {
+  .rectangle {
     display: flex;
     justify-content: space-between;
     padding: 10px; /* Adjust padding as needed */
   }
 
-  .title p:nth-child(2) {
-    margin-left: 25px; /* Example: add a right margin to the second p tag */
-  }
   
+  /* .rectangle {
+    width: 350px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+  } */
   
 
 
