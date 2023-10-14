@@ -226,32 +226,37 @@ return (
         <p>차트를 통해 시세를 살펴볼까요?</p>
       </div>
       <div className={styles["content-container"]}>
-        <div className="showChart">
-          <ReactApexChart
-            options={mainChartOptions}
-            series={candlestickSeries.concat(lineSeries)}
-            type="candlestick"
-            width={800}
-            height={500}
-          />
-          <ReactApexChart
-            options={volumeChartOptions}
-            series={barSeries}
-            type="line"
-            width={800}
-            height={200}
-          />
-        </div>
-        <table className={styles["chart-table"]}>
-          <tbody>
-            {Object.entries(tableData).map(([key, value], index) => (
-              <tr key={index}>
-                <td>{key}</td>
-                <td>{value}</td>
+          <div className={styles["showChart"]}>
+            <ReactApexChart
+              options={mainChartOptions}
+              series={candlestickSeries.concat(lineSeries)}
+              type="candlestick"
+              width={800}
+              height={500}
+            />
+            <ReactApexChart
+              options={volumeChartOptions}
+              series={barSeries}
+              type="line"
+              width={800}
+              height={200}
+            />
+          </div>
+          <table className={styles["chart-table"]}>
+            <tbody>
+              <tr id={styles["chartTableCol"]}>
+                {Object.entries(tableData).map(([key, value], index) => (
+                  <td key={index}>{key}</td>
+                ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
+              <tr>
+                {Object.entries(tableData).map(([key, value], index) => (
+                  <td key={index}>{value}</td>
+                ))}
+              </tr>
+            </tbody>
+          </table>
+
       </div>
       <div className="component-header">
         <h2>AI REPORT</h2>

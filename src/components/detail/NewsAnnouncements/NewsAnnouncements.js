@@ -13,7 +13,7 @@ function NewsAnnouncements() {
 
         <div className={styles['news-announcements']}>
             <div className="component-header">
-                <h2>뉴스 ＊ 공시</h2>
+                <h2>뉴스 º 공시</h2>
                 <p>소식을 알아보고 미리 대응하세요.</p>
             </div>
             <div className={styles.tabs}>
