@@ -8,7 +8,7 @@ function SideNav({ scrollToComponent }) {
         <div className={styles.container}>
             <nav className={`${styles['side-nav']} ${isOpen ? '' : styles['side-navClosed']}`}>
                 <ul>
-                    {['이 시각 증시', '관심 분야 종목', '인기 종목', '핫 이슈 종목', '시장 이슈', '투자 전략'].map((item, index) => (
+                    {['이 시각 증시', '관심 테마 종목', '추천 국내 종목', '실시간 이슈 종목', '시장 이슈', '투자 전략'].map((item, index) => (
                         <li 
                             key={index} 
                             onClick={() => scrollToComponent(item)}

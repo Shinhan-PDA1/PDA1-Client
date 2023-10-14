@@ -1,4 +1,4 @@
-/* PopularStock.module.css */
+/* RecommendStock.module.css */
 
 .popularsector {
     text-align: center;
@@ -16,24 +16,22 @@
 
   .topgroup p {
     margin-bottom: 2px;
-    margin-left: 480px;
+    margin-left: 320px;
   }
   
   .line {
     border: 1px solid #ccc;
     margin-bottom: 10px;
   }
-
-  .title {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px; /* Adjust padding as needed */
-  }
-
-  .title p:nth-child(2) {
-    margin-left: 25px; /* Example: add a right margin to the second p tag */
-  }
   
+  /* .rectangle {
+    width: 350px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+  } */
   
 
 
