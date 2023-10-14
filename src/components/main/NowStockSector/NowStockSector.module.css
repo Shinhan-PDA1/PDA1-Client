@@ -2,7 +2,7 @@
 
 .nowstocksector {
     text-align: center;
-    margin: auto 20%;
+    margin: auto 16%;
   }
 
   .container {
@@ -10,6 +10,10 @@
     justify-content: space-between;
     flex-direction: center;
     align-items: center;
+  }
+
+  .container h2 {
+    font-size: 1.2em;
   }
 
   .timegroup {
@@ -48,6 +52,8 @@
   .hide {
     display: none;
     }
+
+    
   
 
   
