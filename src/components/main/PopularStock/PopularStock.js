@@ -1,14 +1,34 @@
 // PopularStock.js
 
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import styles from './PopularStock.module.css'; 
+import axios from 'axios';
+import StockItem from '../PopularStockItem/PopularStockItem';
+
 
 const PopularStock = () => {
 
-  const [users, setUsers] = useState(null);   // 결과값
-  const [loading, setLoading] = useState(false); // 로딩되는지 여부
-  const [error, setError] = useState(null); // 에러
+  const [stocks, setStocks] = useState([]); // Updated state name to better represent the data
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get('http://localhost:8080/api/v1/shinhan/recommend/portfolio');
+        setStocks(response.data.slice(0, 4));
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []); // Empty dependency array to run the effect only once when the component mounts
+
+
   
   return (
     <div className={styles.popularsector}>
@@ -18,15 +38,13 @@ const PopularStock = () => {
       </div>
       <div className={styles.line}></div>
       <div className={styles.rectangle}>
-        <div className={styles.bottomgroup}>
-          <div className={styles.timegroup}>
-              <p>현재 시간(추후)</p>
-            {/* 여기에 실시간 시간을 표시하는 코드를 추가 */}
-          </div>
-          <div className={styles.moreinfo}>
-            <p>더보기</p>
-          </div>
-        </div>
+      <div className={styles.popularStockList}>
+        {loading && <p>Loading...</p>}
+        {error && <p>Error: {error.message}</p>}
+        {stocks.map((stock) => (
+          <StockItem key={stock.stock_code} stock={stock} />
+          ))}
+      </div>
       </div>
     </div>
   );
