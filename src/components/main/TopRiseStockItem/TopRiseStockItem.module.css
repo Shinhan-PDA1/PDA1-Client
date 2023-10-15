@@ -5,10 +5,10 @@
     flex-direction: row;
     justify-content: space-between;
     /* border: 1px solid #ccc; */
-    padding: 10px;
-    margin: 5px;
+    padding: 0.63em;
+    margin: 0.31em;
     width: 120%;
-    margin-left: -70px;
+    margin-left: -4.5em;
     }
 
     .stockItem p {

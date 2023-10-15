@@ -5,8 +5,8 @@
     flex-direction: row;
     justify-content: space-between;
     /* border: 1px solid #ccc; */
-    padding: 10px;
-    margin: 5px;
+    padding: 0.63em;
+    margin: 0.31em;
     width: 98%;
 
 
@@ -16,4 +16,6 @@
         width: 30%;
       }
 
-  
+  .companyinfo {
+    margin-left: -1.3em;
+  }

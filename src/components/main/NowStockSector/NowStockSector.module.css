@@ -28,19 +28,20 @@
   .rectanglegroup {
     display: flex;
     justify-content: space-around;
-    margin-top: 20px;
+    margin-top: 0.63em;
   }
   
   .rectangle {
-    width: 230px;
-    padding: 10px;
+    width: 20em;
+    height: 14em;
+    padding: 0.63em;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    border-radius: 0.5em;
+    margin-bottom: 0.63em;
   }
   
   .chartgroup {
-    margin-top: 10px;
+    margin-top: 0.63em;
   }
 
   .topcontainer {

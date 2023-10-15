@@ -1,0 +1,48 @@
+.container {
+    text-align: center;
+    margin: auto 16%;
+  }
+
+  .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -1em;
+  }
+
+  .headerContainer h2 {
+    font-size: 1.2em;
+  }
+  .headerContainer p {
+    font-size: 0.8em;
+  }
+  
+  .themeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .arrow {
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0 5px;
+    /* margin-left: 20em;
+    margin-right: 20em; */
+  }
+  
+  .item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+  }
+  
+  .themeItems {
+    display: flex;
+    gap: 5px; /* Adjust the gap to control the spacing between theme items */
+  }
+  
+  /* Add any additional styles here */
+  

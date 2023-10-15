@@ -13,6 +13,7 @@ import TopRiseStock from '../../components/main/TopRiseStock/TopRiseStock';
 import SideNav from '../../components/main/SideNav/SideNav';
 import MarketIssue from '../../components/main/MarketIssue/MarketIssue';
 import StockStrategy from '../../components/main/StockStrategy/StockStrategy';
+import MockInterested from '../../components/main/MockInterested/MockInterested';
 import styles from './Main.module.css';
 
 function MainPage() {
@@ -25,6 +26,7 @@ function MainPage() {
   const topRiseStockRef = useRef(null);
   const marketIssueRef = useRef(null);
   const stockStrategyRef = useRef(null);
+  const mockInterested = useRef(null);
 
   const scrollToComponent = (componentName) => {
     // Use the appropriate ref based on the componentName
@@ -34,7 +36,7 @@ function MainPage() {
         targetRef = nowStockRef;
         break;
       case '관심 테마 종목':
-        targetRef = interestedSectorRef;
+        targetRef = mockInterested;
         break;
       case '추천 종목':
         targetRef = recommendStockRef;
@@ -64,7 +66,8 @@ function MainPage() {
       <SideNav scrollToComponent={scrollToComponent} />
       {/* Sections you want to scroll to */}
       <div ref={nowStockRef}><NowStockSector /></div>
-      <div ref={interestedSectorRef}><InterestedSector /></div>
+      {/* <div ref={interestedSectorRef}><InterestedSector /></div> */}
+      <div ref={mockInterested}><MockInterested /></div>
       <div style={{ display: 'flex'}}>
         <div ref={recommendStockRef} style={{ flex: 1}}>
           <RecommendStock />
