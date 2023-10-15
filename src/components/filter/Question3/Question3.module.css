@@ -1,55 +1,103 @@
 /* question3.module.css */
 
 .container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-  }
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.questionTitle {
+  color: rgb(80, 105, 232);
+  font-size: 2em;
+  text-align: center;
+  transition: color 0.8s cubic-bezier(0.075, 0.820, 0.165, 1.000);
+  margin-left: 0.13em;
+  font-weight: bold;
+  font-family: 'Nanum Gothic', sans-serif;
+  margin-top: 1.5em;
+}
+
+.questionText {
+  opacity: 1;
+  transform-origin: 50% 50%;
+  transform: scale(1) translate3d(0px, 0px, 0px);
+  visibility: visible;
+  margin-top: 1em;
+}
+
+#option2{
+  background: rgba(76, 205, 83, 0.5);
+}
   
-  .questionTitle {
-    color: rgb(239, 78, 96);
-    font-size: 2em;
-    text-align: center;
-    transition: color 0.8s cubic-bezier(0.075, 0.820, 0.165, 1.000);
-    margin-left: 0.13em;
-    font-weight: bold;
-    font-family: 'Nanum Gothic', sans-serif;
-    margin-top: 1.8em;
-  }
-  
-  .questionText {
-    opacity: 1;
-    transform-origin: 50% 50%;
-    transform: scale(1) translate3d(0px, 0px, 0px);
-    visibility: visible;
-    margin-top: 2em;
-  }
-  
-  
-  .answerContainer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 3em;
-    margin-bottom: 8em;
-  }
-  
-  .answerOption {
+.answerContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3em;
+  margin-bottom: 8em;
+  width: 35%;
+  height: 35vh;
+}
+
+.answerOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
     border-radius: 0.625em;
     padding: 0.625em;
-    background: rgb(239, 78, 96);
+    background: rgba(240, 113, 54, 0.5);
     box-shadow: rgba(239, 78, 96, 0.34) 0px 0.3125em 1.25em;
     width: 80%;
     transition: transform 0.2s ease-in-out 0s, background-color 0.2s ease 0s, opacity 0.2s ease 0s;
     margin-right: 2em;
     margin-left: 2em;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+
+    animation: float 2s ease normal; /* float 애니메이션을 추가하고 반복되도록 설정 */
+
+  }
+
+  .answerOption p{
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding-top: 10%;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px); /* 위로 약간 띄우는 애니메이션 */
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  
+  @keyframes scaleAndMove {
+    0% {
+      transform: scale(1);
+      margin-left: 2em;
+      margin-right: 2em;
+    }
+    50% {
+      transform: scale(1.2) translateX(50%);
+    }
+    100% {
+      transform: scale(1.3);
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   
   .answerOption img {
-    width: 6.25em; /* 이미지의 너비를 조정하세요 */
-    height: 6.25em; /* 이미지의 높이를 조정하세요 */
+    width: 12em; /* 이미지의 너비를 조정하세요 */
+    height: 10em; /* 이미지의 높이를 조정하세요 */
   }
   
   .answerOption p {
@@ -60,5 +108,5 @@
   
   .answerOption:hover {
     /* 원하는 크기로 확대 */
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
