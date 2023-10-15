@@ -25,7 +25,7 @@ const Question2 = ({ onAnswer, onNextQuestion }) => { // onAnswer와 onNextQuest
 
   if (newSelectedOptions.length === 3) { // 3개의 옵션이 선택되면
     onNextQuestion(); // 다음 질문으로 넘어갑니다.
-    onAnswer('Q2', newSelectedOptions); // 선택된 옵션을 상위 컴포넌트로 전달합니다.
+    onAnswer('theme', newSelectedOptions); // 선택된 옵션을 상위 컴포넌트로 전달합니다.
   }
 };
 

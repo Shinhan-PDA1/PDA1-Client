@@ -11,7 +11,7 @@ const Question5 = ({ onNextQuestion, onAnswer }) => {
 
   const handleAgeSelection = (selectedAgeOption) => {
     setSelectedAge(selectedAgeOption); // 선택한 연령 값을 설정
-    onAnswer('Q5', selectedAgeOption); // 선택한 연령 값을 상위 컴포넌트로 전달
+    onAnswer('age', selectedAgeOption); // 선택한 연령 값을 상위 컴포넌트로 전달
   };
 
   return (
@@ -61,7 +61,7 @@ const Question5 = ({ onNextQuestion, onAnswer }) => {
         </div>
       </div>
       <div className={styles.submitContainer}>
-        <Link to="/main" className={styles.submitButton} onClick={() => onNextQuestion('Q5')}>
+        <Link to="/main" className={styles.submitButton} onClick={() => onNextQuestion('age')}>
           제출
         </Link>
       </div>

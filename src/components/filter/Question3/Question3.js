@@ -8,7 +8,7 @@ import shortimg from '../../../assets/images/filter/shortterm.png';
 const Question3 = ({ onNextQuestion, onAnswer }) => { // onAnswer prop 추가
   const handleOptionSelection = (selectedOption) => {
     onNextQuestion(selectedOption);
-    onAnswer('Q3', selectedOption); // 사용자의 응답을 상위 컴포넌트로 전달
+    onAnswer('term', selectedOption); // 사용자의 응답을 상위 컴포넌트로 전달
   };
 
   return (

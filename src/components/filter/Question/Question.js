@@ -11,7 +11,7 @@ const Question = ({ onNextQuestion, onAnswer }) => {
   const handleAnswer = (answer) => {
     setSelectedOption(answer);
     onNextQuestion(answer);
-    onAnswer('Q1', answer); // 사용자의 응답을 상위 컴포넌트로 전달
+    onAnswer('experience', answer); // 사용자의 응답을 상위 컴포넌트로 전달
   };
 
   return (

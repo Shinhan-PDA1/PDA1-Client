@@ -36,11 +36,11 @@ const FilterPage = () => {
   }, [answers, currentQuestion]);
   return (
     <div>
-      {currentQuestion === 1 && <Question onNextQuestion={(answer) => handleNextQuestion('Q1', answer)} onAnswer={handleAnswer} />}
-      {currentQuestion === 2 && <Question2 onNextQuestion={(answer) => handleNextQuestion('Q2', answer)} onAnswer={handleAnswer} />}
-      {currentQuestion === 3 && <Question3 onNextQuestion={(answer) => handleNextQuestion('Q3', answer)} onAnswer={handleAnswer} />}
-      {currentQuestion === 4 && <Question4 onNextQuestion={(answer) => handleNextQuestion('Q4', answer)} onAnswer={handleAnswer} />}
-      {currentQuestion === 5 && <Question5 onNextQuestion={(answer) => handleNextQuestion('Q5', answer)} onAnswer={handleAnswer} />}
+      {currentQuestion === 1 && <Question onNextQuestion={(answer) => handleNextQuestion('experience', answer)} onAnswer={handleAnswer} />}
+      {currentQuestion === 2 && <Question2 onNextQuestion={(answer) => handleNextQuestion('theme', answer)} onAnswer={handleAnswer} />}
+      {currentQuestion === 3 && <Question3 onNextQuestion={(answer) => handleNextQuestion('term', answer)} onAnswer={handleAnswer} />}
+      {currentQuestion === 4 && <Question4 onNextQuestion={(answer) => handleNextQuestion('income', answer)} onAnswer={handleAnswer} />}
+      {currentQuestion === 5 && <Question5 onNextQuestion={(answer) => handleNextQuestion('age', answer)} onAnswer={handleAnswer} />}
 
     </div>
   );

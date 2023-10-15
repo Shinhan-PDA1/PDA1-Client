@@ -8,7 +8,7 @@ import decreaseimg from '../../../assets/images/filter/decrease.png';
 const Question4 = ({ onNextQuestion, onAnswer }) => { // onAnswer prop 추가
   const handleOptionSelection = (selectedOption) => {
     onNextQuestion(selectedOption);
-    onAnswer('Q4', selectedOption); // 사용자의 응답을 상위 컴포넌트로 전달
+    onAnswer('income', selectedOption); // 사용자의 응답을 상위 컴포넌트로 전달
   };
 
   return (
