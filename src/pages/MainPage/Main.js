@@ -2,31 +2,26 @@
 
 import React, { useRef } from 'react';
 import NowStockSector from '../../components/main/NowStockSector/NowStockSector';
-import InterestedSector from '../../components/main/InterestedSector/InterestedSector';
-import InterestedSector2 from '../../components/main/InterestedSector2/InterestedSector2';
-import InterestedSector3 from '../../components/main/InterestedSector3/InterestedSector3';
 import RecommendStock from '../../components/main/RecommendStock/RecommendStock';
 import NowPopularStock from '../../components/main/NowPopularStock/NowPopularStock';
-// import HotStock from '../../components/main/HotStock/HotStock';
+import MockInterested from '../../components/main/MockInterested/MockInterested';
 import TopTransactionStock from '../../components/main/TopTransactionStock/TopTransactionStock';
 import TopRiseStock from '../../components/main/TopRiseStock/TopRiseStock';
 import SideNav from '../../components/main/SideNav/SideNav';
 import MarketIssue from '../../components/main/MarketIssue/MarketIssue';
 import StockStrategy from '../../components/main/StockStrategy/StockStrategy';
-import MockInterested from '../../components/main/MockInterested/MockInterested';
 import styles from './Main.module.css';
 
 function MainPage() {
 
   const nowStockRef = useRef(null);
-  const interestedSectorRef = useRef(null);
+  const mockInterested = useRef(null);
   const recommendStockRef = useRef(null);
   const nowPopularStockRef = useRef(null);
   const topTrnasactionStockRef = useRef(null);
   const topRiseStockRef = useRef(null);
   const marketIssueRef = useRef(null);
   const stockStrategyRef = useRef(null);
-  const mockInterested = useRef(null);
 
   const scrollToComponent = (componentName) => {
     // Use the appropriate ref based on the componentName
@@ -66,7 +61,6 @@ function MainPage() {
       <SideNav scrollToComponent={scrollToComponent} />
       {/* Sections you want to scroll to */}
       <div ref={nowStockRef}><NowStockSector /></div>
-      {/* <div ref={interestedSectorRef}><InterestedSector /></div> */}
       <div ref={mockInterested}><MockInterested /></div>
       <div style={{ display: 'flex'}}>
         <div ref={recommendStockRef} style={{ flex: 1}}>
