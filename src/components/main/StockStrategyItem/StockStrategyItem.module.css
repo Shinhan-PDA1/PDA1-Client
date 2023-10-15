@@ -1,14 +1,17 @@
-/* PopularStockItem.module.css */
-.popularStockItem {
+/* RecommendStockItem.module.css */
+
+.stockItem {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   /* border: 1px solid #ccc; */
   padding: 10px;
   margin: 5px;
-}
+  width: 98%;
 
-.popularStockItem p {
-  margin: 0; /* Remove default paragraph margin */
-}
+  }
+
+  .stockItem p {
+      width: 30%;
+    }
 
