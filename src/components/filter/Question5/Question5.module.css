@@ -37,8 +37,8 @@
 .ageOptionsContainer {
   display: flex;
   justify-content: space-between;
-  width: 40vw;
-  height: 30vh;
+  width: 35vw;
+  height: 25vh;
   margin-bottom: 5%;
 }
 

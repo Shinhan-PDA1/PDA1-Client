@@ -31,14 +31,13 @@
 #option2{
   background: rgba(76, 205, 83, 0.5);
 }
-  
 .answerContainer {
   display: flex;
   justify-content: space-between;
   margin-top: 3em;
   margin-bottom: 8em;
-  width: 35%;
-  height: 35vh;
+  width: 30%;
+  height: 30vh;
 }
 
 .answerOption {
