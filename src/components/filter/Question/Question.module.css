@@ -47,7 +47,7 @@
   justify-content: center;
   border-radius: 0.625em;
   padding: 0.625em;
-  background: rgba(64, 239, 41, 0.5);
+  background: rgba(112, 164, 255, 0.5);
   box-shadow: rgba(239, 78, 96, 0.34) 0px 0.3125em 1.8em;
   width: 80%;
   transition: transform 0.2s ease-in-out 0s, background-color 0.2s ease 0s, opacity 0.2s ease 0s;
