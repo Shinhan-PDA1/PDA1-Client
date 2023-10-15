@@ -31,16 +31,14 @@
     background: rgba(81, 92, 245, 0.5);
   }
 
-  
   .answerContainer {
     display: flex;
     justify-content: space-between;
     margin-top: 3em;
     margin-bottom: 8em;
-    width: 35%;
-    height: 35vh;
+    width: 30%;
+    height: 30vh;
   }
-  
   .answerOption {
     display: flex;
     flex-direction: column;
