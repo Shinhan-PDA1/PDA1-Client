@@ -8,7 +8,7 @@ function InterestedSector3 () {
   return (
     <div className={styles.interested}>
       <div className={styles.container}>
-      <h2>주류 테마 종목</h2>
+      <h2>금융 테마 종목</h2>
       <p className="disclaimer">AI 전문가의 해석을 보고 싶으면 종목이름을 클릭하세요</p>
       </div>
       <hr className={styles.line} />
@@ -39,7 +39,7 @@ function InterestedSector3 () {
           </div>
         </div>
         <div className={styles.rectangle}>
-        <h3>카카오배으</h3>
+        <h3>카카오뱅크</h3>
           <div className={styles.topcontainer}>
             <div className={styles.downnowpirce}>
             <h3>23,250</h3>

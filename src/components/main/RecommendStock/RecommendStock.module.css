@@ -15,23 +15,23 @@
   }
 
   .topgroup h2 {
-    margin-bottom: 2px;
+    margin-bottom: 0.13em;
   }
 
   .topgroup p {
-    margin-bottom: 2px;
-    margin-left: 75px;
+    margin-bottom: 0.13em;
+    margin-left: 6em;
   }
   
   .line {
     border: 1px solid #ccc;
-    margin-bottom: 10px;
+    margin-bottom: 0.63em;
   }
 
   .rectangle {
     display: flex;
     justify-content: space-between;
-    padding: 10px; /* Adjust padding as needed */
+    padding: 0.63em; /* Adjust padding as needed */
   }
 
   
