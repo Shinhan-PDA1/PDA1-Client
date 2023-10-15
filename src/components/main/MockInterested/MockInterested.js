@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import styles from './MockInterested.module.css';
+import { Link } from 'react-router-dom';
+import mockInterestedData from '../../../data/main/mockInterestedData';
 
-const themes = {
-  aviation: ["항공종목1", "항공종목2", "항공종목3", "항공종목4"],
-  finance: ["금융종목1", "금융종목2", "금융종목3", "금융종목4"],
-  mainstream: ["주류종목1", "주류종목2", "주류종목3", "주류종목4"]
-};
 
 function MockInterested() {
-  const themeNames = Object.keys(themes);
+  const themeNames = Object.keys(mockInterestedData);
   const [currentThemeIndex, setCurrentThemeIndex] = useState(0);
 
   const switchTheme = (direction) => {
@@ -32,9 +29,35 @@ function MockInterested() {
       <div className={styles.themeContainer}>
         <span className={styles.arrow} onClick={() => switchTheme(-1)}>&#9664;</span>
         <div className={styles.themeItems}>
-          {themes[themeNames[currentThemeIndex]].map((item, index) => (
-            <div key={index} className={styles.item}>{item}</div>
-          ))}
+          {mockInterestedData[themeNames[currentThemeIndex]].items.map((item, index) => (
+            <Link
+            key={index}
+            to={`/detail`}
+            className={styles.itemLink}
+            style={{ textDecoration: 'none', color: 'black' }}
+          >
+            <div className={styles.item}>
+              <div className={styles.nameCodeContainer}>
+                <h3>{item.item_name}</h3>
+                <p>({item.stock_code})</p>
+              </div>
+              <div className={styles.priceChangeRateContainer}>
+                <div className={styles.priceContainer}>
+                  <h3>{item.curr_pric}</h3>
+                  <p className={item.change_number >= 0 ? styles.positive : styles.negative}>
+                    {item.change_number}
+                  </p>
+                </div>
+                <div
+                  className={styles.changeRateContainer}
+                  style={{ backgroundColor: item.change_rate.includes('-') ? 'red' : 'blue' }}
+                >
+                  <p>{item.change_rate}</p>
+                </div>
+              </div>
+            </div>
+          </Link>
+        ))}
         </div>
         <span className={styles.arrow} onClick={() => switchTheme(1)}>&#9654;</span>
       </div>

@@ -37,12 +37,59 @@
     border-radius: 5px;
     padding: 10px;
     margin: 5px;
-  }
+    width: 14em;
+    height: 10em;
+}
+  
   
   .themeItems {
     display: flex;
     gap: 5px; /* Adjust the gap to control the spacing between theme items */
   }
   
+  .nameCodeContainer {
+    display: flex; /* Add this line to make it a flex container */
+  }
+
+  .nameCodeContainer h3 {
+    margin-left: 1.2em;
+    font-size: 1.1em;
+  }
+
+  .nameCodeContainer p {
+    margin-left: 2em;
+    margin-top: 1.2em;
+  }
+
+  .priceChangeRateContainer {
+    display: flex; /* Add this line to make it a flex container */
+    margin-left: 1.3em;
+  }
+
+  .priceContainer p{
+    margin-top: -0.8em;
+  }
+
+  .changeRateContainer {
+    color: white;
+    padding: 4px;
+    border-radius: 4px;
+    margin-left: 3em;
+    height: 2.7em;
+    width: 3em;
+    margin-top: 1.2em;
+  }
+
+  .changeRateContainer p {
+    margin-top: 0.6em;
+  }
+  
+  .positive {
+    color: blue;
+  }
+  
+  .negative {
+    color: red;
+  }
   /* Add any additional styles here */
   
