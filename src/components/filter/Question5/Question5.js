@@ -17,7 +17,7 @@ const Question5 = ({ onNextQuestion, onAnswer }) => {
   return (
     <div className={styles.container}>
       <h2 className={styles.questionTitle}>Q5.</h2>
-      <h3 className={styles.questionText}>당신의 연령을 골라주세요</h3>
+      <h3 className={styles.questionText}>연령을 선택해주세요.</h3>
       <div className={styles.group}>
         <div className={styles.ageOptionsContainer}>
           <div
@@ -62,7 +62,7 @@ const Question5 = ({ onNextQuestion, onAnswer }) => {
       </div>
       <div className={styles.submitContainer}>
         <Link to="/main" className={styles.submitButton} onClick={() => onNextQuestion('age')}>
-          제출
+          완료
         </Link>
       </div>
     </div>
