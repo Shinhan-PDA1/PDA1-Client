@@ -59,7 +59,7 @@ function DetailPage() {
             className={styles['sell-button']} 
             onClick={() => navigate('/feedback')}
         >
-            ▶ 매도하러 가기
+            ▶ 매매하러 가기
         </button>
             </>
        
