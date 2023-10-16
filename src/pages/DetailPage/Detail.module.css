@@ -16,7 +16,7 @@
 
 
 .animated-container {
-    visibility: visible; /* Make the element initially visible */
+    visibility: visible; 
     opacity: 1;
 }
 @keyframes slideUp {
@@ -37,6 +37,6 @@
     animation-duration: 1s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
-    opacity: 0; /* Initially make the element invisible */
+    opacity: 0; 
     visibility: hidden;
 }
