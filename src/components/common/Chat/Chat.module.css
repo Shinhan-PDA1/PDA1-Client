@@ -121,7 +121,6 @@
     flex: 1;
     padding: 3%;
     border: none;
-    border-radius: 25px 0px 0px 25px;
 
 
 
@@ -162,13 +161,37 @@
     width: 25%;
 }
 
-
-
-
-
 .sender {
     font-weight: bold;
 }
 
+
+
+
+
+.toggleTypeButton {
+    margin-right: 0px;
+    padding: 5px 5px;
+    border: none;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    border-radius: 25px 0px 0px 25px;
+    font-size: 0.8rem;
+    transition: background-color 0.3s;
+}
+
+
+
+#mode{
+    border-radius: 25px;
+    transition: background-color 0.5s ease, font-weight 0.5s ease;
+
+
+}
+
+#mode:hover {
+    background-color: lightblue;
+    font-weight: bold;
+}
 
 
