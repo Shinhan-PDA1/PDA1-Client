@@ -93,7 +93,7 @@ const mockInterestedData = {
                     stock_code : "002345"
                 },
                 {
-                    item_name : "제주항공",
+                    item_name : "국민지주",
                     curr_pric : "23400",
                     change_number : "▲50",
                     change_rate : "0.21%",
