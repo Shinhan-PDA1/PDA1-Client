@@ -1,0 +1,67 @@
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .loginForm {
+    width: 18em;
+    margin: auto 20%;
+    padding: 2em; /* Adjusted padding */
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+    margin-bottom: 7em;
+    background-color: #ffffff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 0px 2em skyblue; /* Pastel blue shadow */
+  }
+
+  .loginHeader {
+    margin-top: -1.2em;
+  }
+
+  .loginHeader p{
+    margin-top: -1.4em;
+    margin-bottom: 1.2em;
+    font-size: 0.8em;
+  }
+  
+  .loginForm input {
+    height: 1.5em;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-bottom: 1.2em;
+  }
+  
+  .loginForm label {
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .loginContainer button {
+    background-color: blue; /* Sky blue color */
+    color: #ffffff; /* White text */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 0.8em;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  button:hover {
+    background-color: lightseagreen; /* Change to a slightly different shade on hover */
+  }
+
+  .pw {
+    margin-top: -3.5em;
+    margin-left: 0.2em;
+    font-size: 0.7em;
+    font-weight: bold;
+    color: blue;
+  }
