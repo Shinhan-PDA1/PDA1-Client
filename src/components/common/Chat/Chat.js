@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { css } from "@emotion/react";
-import BeatLoader from "react-spinners/BeatLoader";
+import PulseLoader from "react-spinners/PulseLoader";
 import styles from './Chat.module.css';
 import lulu from '../../../assets/images/common/chat01.png';
 import send from '../../../assets/images/common/send.png';
@@ -54,7 +54,7 @@ function Chatting() {
                         <div key={index} className={msg.user === 'You' ? styles.userMessage : styles.aiMessage}>
                             <span className={styles.messageBubble}>
                                 {msg.isLoading ? 
-                                    <BeatLoader color={"#123abc"} loading={true} css={override} size={10} /> : 
+                                    <PulseLoader color={"#123abc"} loading={true} css={override} size={10} /> : 
                                     msg.text}
                             </span>
                         </div>

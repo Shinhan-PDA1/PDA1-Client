@@ -1,38 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import styles from './Loading.module.css';
-import loading from '../../../assets/images/common/loadingIcon.png'
+import React, { useEffect } from 'react';
 
-function Loading() {
-    const [percent, setPercent] = useState(0);
+import PropagateLoader from "react-spinners/PropagateLoader";
+import styles from './Loading.module.css';
+import loading from '../../../assets/images/common/chat01.png';
+
+function Loading({ onLoadingComplete }) {
+
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setPercent((prevPercent) => {
-                if (prevPercent >= 100) {
-                    clearInterval(interval);
-                    return 100;
-                }
-                return prevPercent + 10; // 10%씩 증가
-            });
-        }, 200); // 0.2초 간격으로 퍼센트 증가
+         
+        // 실제 서버로부터 데이터를 받아오려면  API 호출 로직을 추가
+        /*
+        fetchData().then(data => {
+            setIsLoading(false);
+            if (onLoadingComplete) {
+                onLoadingComplete();
+            }
+        });
+        */
 
-        return () => clearInterval(interval); // 컴포넌트 unmount 시에 interval 해제
-    }, []);
+        // 이 타이머는 임시사용 ,  실제 서버 통신이 구현되면 제거
+        const timer = setTimeout(() => {
+            if (onLoadingComplete) {
+                onLoadingComplete();
+            }
+        }, 5000); // 5초 후에 로딩 완료 (이 시간은 서버 응답 시간에 따라 조절 가능)
+
+        return () => clearTimeout(timer);
+    }, [onLoadingComplete]);
 
     return (
         <div className={styles.loadingContainer}>
-             <div className={styles.images}>
-                {percent >= 10 && <img src={loading} alt="loading 1" />}
-                {percent >= 40 && <img src={loading} alt="loading 2" />}
-                {percent >= 60 && <img src={loading} alt="loading 3" />}
-                {percent >= 80 && <img src={loading} alt="loading 4" />}
-                {percent >= 100 && <img src={loading} alt="loading 5" />}
+            <div className={styles.images}>
+                <img src={loading} alt="loading" />
+                <img src={loading} alt="loading" />
+                <img src={loading} alt="loading" />
 
             </div>
-            <div className={styles.progressBar}>
-                <div className={styles.filler} style={{ width: `${percent}%` }}></div>
-            </div>
-            <div className={styles.percentText}>{percent}%</div>
+            <PropagateLoader color={"#123abc"} size={15} /> : 
+
         </div>
     );
 }
