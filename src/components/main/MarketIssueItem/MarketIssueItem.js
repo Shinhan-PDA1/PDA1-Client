@@ -2,6 +2,7 @@
 
 import React from 'react';
 import styles from './MarketIssueItem.module.css';  // Assuming you have a CSS module for styling
+import pdfimg from '../../../assets/images/main/pdficon.jpg';
 
 const StockItem = ({ stock }) => {
 
@@ -18,9 +19,18 @@ const StockItem = ({ stock }) => {
       };
 
     return (
-      <div className={styles.stockItem} onClick={handleClick}>
+      <div className={styles.stockItem} >
       <div className={styles.companyinfo}>신한투자증권</div>
-      <div className={styles.issueTitle}>{extractTitle(content)}</div>
+      <a href={url} target="_blank" className={styles.issueTitle}>
+        {extractTitle(content)}
+      </a>      
+      <img 
+          onClick={handleClick}
+          src={pdfimg} 
+          alt="PDF Icon" 
+          className={styles.pdfIcon}
+          style={{ width: '1em', height: '1em' }}
+          />
       <div className={styles.issueInfo}>
         <div className={styles.date}>{date}</div>
       </div>

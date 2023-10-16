@@ -36,6 +36,7 @@ const NowPopularStock = () => {
         <p>실시간 현재가 조회수가 높은 종목</p>
       </div>
       <div className={styles.line}></div>
+      <div className={styles.topthinline}></div>
       <div className={styles.rectangle}>
       <p>종목코드</p>
       <p>종목명</p>
@@ -43,6 +44,7 @@ const NowPopularStock = () => {
       <p>현재 순위</p>
       <p>카테고리</p>
       </div>
+      <div className={styles.topthinline}></div>
       <div className={styles.popularStockList}>
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error.message}</p>}

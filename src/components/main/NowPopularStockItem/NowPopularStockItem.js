@@ -10,7 +10,7 @@ const StockItem = ({ stock }) => {
         <p>{stock.stock_code}</p>
         <p>{stock.stock_name}</p>
         <p className={colorClass}>{stock.variable_ranking}</p>
-        <p>{stock.ranking}%</p>
+        <p>{stock.ranking}</p>
         <p>{stock.category}</p>
       </div>
     );

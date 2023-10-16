@@ -45,7 +45,7 @@ const mockInterestedData = {
                     stock_code : "002345"
                 },
                 {
-                    item_name : "국순당",
+                    item_name : "한국주류",
                     curr_pric : "23400",
                     change_number : "▲50",
                     change_rate : "0.21%",

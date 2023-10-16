@@ -13,6 +13,26 @@
 
     .stockItem p {
         width: 40%;
+        white-space: nowrap;
       }
+
+    
+.stockItem p:first-child {
+  width: 25%; /* Adjust width as needed */
+  text-align: right; /* Align the text to the right */
+}
+
+.stockItem p:nth-child(2) {
+  width: 1%; /* Adjust width as needed */
+  text-align: center; /* Align the text to the right */
+}
+
+.stockItem p:last-child {
+  width: 36%; /* Adjust width as needed */
+  text-align: center; /* Align the text to the left */
+}
+
+
+
 
   
