@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import "./styles/global.css";
 import CoHeader from './components/common/CoHeader/CoHeader';
@@ -9,8 +9,10 @@ import FilterPage from './pages/FilterPage/Filter';
 import MainPage from './pages/MainPage/Main';
 import GuidePage from './pages/GuidePage/Guide'
 import FeedbackPage from './pages/FeedBackPage/FeedBack';
+import LoginPage from './pages/LoginPage/Login';
 
 function App() {
+
     return (
         <Router>
             <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
@@ -21,7 +23,7 @@ function App() {
                     <Route path="/filter" element={<FilterPage />} />
                     <Route path='/main' element={<MainPage />} />
                     <Route path='/feedback' element={<FeedbackPage />} />
-
+                    <Route path="/login" element={<LoginPage />} />
                 </Routes>
                 <Chat />
                 <Cofooter />
