@@ -1,5 +1,6 @@
 .container {
     margin: auto 20%;
+    margin-bottom: 5%;
 }
 
 .term {
@@ -9,7 +10,6 @@
     align-items: center;
     border-radius: 5px;
     padding: 5px 10px;
-    margin-bottom: 10%;
 }
 
 .termHeader h3{
@@ -37,6 +37,12 @@
 
 .content{
     width: 90%;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+    margin-bottom: 0%;
 }
 
 .contentHeader {

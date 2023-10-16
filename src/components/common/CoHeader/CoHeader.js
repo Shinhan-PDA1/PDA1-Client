@@ -60,7 +60,7 @@ function Header() {
                 <div className={styles.searchContainer}>
                     <input
                         type="text"
-                        placeholder="원하시는 종목을 검색하세요."
+                        placeholder="종목명 또는 종목코드를 입력하세요"
                         className={styles.searchInput}
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}

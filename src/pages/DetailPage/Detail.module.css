@@ -12,5 +12,31 @@
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0.3, 0.2);
 
-    
+}
+
+
+.animated-container {
+    visibility: visible; 
+    opacity: 1;
+}
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(5%);
+        visibility: visible;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+}
+
+.slide-up-on-scroll {
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    opacity: 0; 
+    visibility: hidden;
 }

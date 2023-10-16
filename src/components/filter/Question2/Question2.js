@@ -46,50 +46,50 @@ const Question2 = ({ onAnswer, onNextQuestion }) => {
           </div>
           <div id={styles.option2}
             className={`${styles.ageOption} ${
-              selectedOptions.includes('IT') && styles.selected
+              selectedOptions.includes('service') && styles.selected
             }`}
-            onClick={() => handleOptionClick('IT')}
+            onClick={() => handleOptionClick('service')}
           >
-            <img src={ITimg} alt="IT" />
-            <p>IT</p>
+            <img src={ITimg} alt="service" />
+            <p>서비스</p>
           </div>
           <div id={styles.option3}
             className={`${styles.ageOption} ${
-              selectedOptions.includes('Flight') && styles.selected
+              selectedOptions.includes('manufacture') && styles.selected
             }`}
-            onClick={() => handleOptionClick('Flight')}
+            onClick={() => handleOptionClick('manufacture')}
           >
-            <img src={Flightimg} alt="항공" />
-            <p>항공</p>
+            <img src={Flightimg} alt="제조업" />
+            <p>제조업</p>
           </div>
         </div> 
         <div className={styles.ageOptionsContainer}>
           <div id={styles.option4}
             className={`${styles.ageOption} ${
-              selectedOptions.includes('Drink') && styles.selected
+              selectedOptions.includes('chemistry') && styles.selected
             }`}
-            onClick={() => handleOptionClick('Drink')}
+            onClick={() => handleOptionClick('chemistry')}
           >
-            <img src={Drinkimg} alt="주류" />
-            <p>주류</p>
+            <img src={Drinkimg} alt="화학" />
+            <p>화학</p>
           </div>
           <div id={styles.option5}
             className={`${styles.ageOption} ${
-              selectedOptions.includes('Medical') && styles.selected
+              selectedOptions.includes('electronic') && styles.selected
             }`}
-            onClick={() => handleOptionClick('Medical')}
+            onClick={() => handleOptionClick('electronic')}
           >
-            <img src={Medicalimg} alt="의료" />
-            <p>의료</p>
+            <img src={Medicalimg} alt="전기＊전자" />
+            <p>전기 전자</p>
           </div>
           <div id={styles.option6}
             className={`${styles.ageOption} ${
-              selectedOptions.includes('Energy') && styles.selected
+              selectedOptions.includes('distribution') && styles.selected
             }`}
-            onClick={() => handleOptionClick('Energy')}
+            onClick={() => handleOptionClick('distribution')}
           >
-            <img src={Energyimg} alt="에너지" />
-            <p>에너지</p>
+            <img src={Energyimg} alt="유통업" />
+            <p>유통업</p>
           </div>
         </div>
       </div>

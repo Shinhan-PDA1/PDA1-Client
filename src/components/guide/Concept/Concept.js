@@ -1,36 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { conceptData as initialConceptData } from '../../../data/guide/mockConceptData';
 import styles from './Concept.module.css';
 
 function Concept() {
+    const [conceptData, setConceptData] = useState(initialConceptData); // 상태 초기화
+
+    const handleCheckboxChange = (id) => {
+        setConceptData(conceptData.map(data => 
+            data.id === id ? {...data, checked: !data.checked} : data
+        )); // 체크박스 상태 토글
+    };
 
     return (
         <div className={styles.container}>
-            <div className={styles.concept}>
-                <div className={styles.conceptHeader}>
-                    <h3>응용 개념</h3>
-                    <p>희빈님이 몰랐던 부분들을 다시 한 번 복습해보세요.</p>
-                </div>
-                <div className={styles.content}>
-                    <div className={styles.contentHeader}>
-                        <h4>💙  재무재표를 확인해야 하는 이유는 뭐야?</h4>
-                        <input type="checkbox" id="option1" />
-                    </div> 
-                    <p>재무재표를 확인해야지 이녀석 어쩓고도거 이동펴균선이란 어쩓고도거 이동펴균선이란 어쩓고도거 이동펴균선이란 어쩓고도거이동펴균선이란 어쩓고도거이동펴균선이란 어쩓고도거이동펴균선이란 어쩓고도거</p>
-                </div>
-
-                <div className={styles.content}>
-                    <div className={styles.contentHeader}>
-                        <h4>💙  PER이 높다라는 건 구체적으로 어떤 의미야?</h4>
-                        <input type="checkbox" id="option1" />
-                    </div> 
-                    <p>이동평균선이란 어쩓고도거 이동펴균선이란 어쩓고도거 이동펴균선이란 어쩓고도거 이동펴균선이란 어쩓고도거이동펴균선이란 어쩓고도거이동펴균선이란 어쩓고도거이동펴균선이란 어쩓고도거</p>
-                </div>
-               
-
+            <div className={styles.conceptHeader}>
+                <h3>응용</h3>
+                <p>과거에 몰랐던 내용들을 복습해보세요.</p>
             </div>
-
-       
-          
+            {conceptData.map(item => (
+                <div className={styles.term} key={item.id}>
+                    <div className={styles.content}>
+                        <div className={styles.contentHeader}>
+                            <h4>💙{item.title}</h4>
+                            <input 
+                                type="checkbox" 
+                                id={`option${item.id}`} 
+                                checked={item.checked} 
+                                onChange={() => handleCheckboxChange(item.id)} 
+                            />
+                        </div> 
+                        <p>{item.description}</p>
+                    </div>
+                </div>
+            ))}
         </div>
     );
 }
