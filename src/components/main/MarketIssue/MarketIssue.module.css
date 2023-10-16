@@ -14,6 +14,7 @@
   align-items: center; /* Optional: Center content vertically */
   font-size: 0.8em;
   white-space: nowrap;
+  margin-bottom: 0.8em;
 }
 
 .topgroup h2 {
