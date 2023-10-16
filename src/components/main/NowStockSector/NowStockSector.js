@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './NowStockSector.module.css';
-import infoimg from '../../../assets/images/main/info.png';
 
 function NowStockSector () {
 

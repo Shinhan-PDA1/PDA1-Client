@@ -17,12 +17,12 @@
   }
 
   .timegroup {
-    margin-bottom: 10px;
+    margin-bottom: 0.63em;
   }
   
   .line {
-    margin-top: -10px;
-    border: 1px solid #ccc;
+    margin-top: -0.63em;
+    border: 1px solid black;
   }
   
   .rectanglegroup {
@@ -38,6 +38,7 @@
     border: 1px solid #ccc;
     border-radius: 0.5em;
     margin-bottom: 0.63em;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
   
   .chartgroup {
@@ -50,9 +51,30 @@
     align-items: center;
   }
 
+  .topcontainer h3 {
+    margin-left: 1em;
+    font-size: 1.2em;
+  }
+
+  .topcontainer button {
+    margin-right:1em;
+  }
+
   .hide {
     display: none;
     }
+
+    /* Add spacing between rectangles */
+.rectanglegroup .rectangle {
+  margin-right: 0.63em; /* Adjust the margin value for the desired spacing */
+}
+
+/* Ensure the last rectangle doesn't have right margin */
+.rectanglegroup .rectangle:last-child {
+  margin-right: 0;
+}
+
+  
 
     
   

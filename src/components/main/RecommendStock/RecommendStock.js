@@ -37,13 +37,15 @@ const RecommendStock = () => {
         <p>신한 리서치 센터에서 제공하는 추천 국내 종목 포트폴리오</p>
       </div>
       <div className={styles.line}></div>
+      <div className={styles.topthinline}></div>
       <div className={styles.rectangle}>
       <p>종목코드</p>
       <p>종목명</p>
       <p>현재가</p>
       <p>수익률</p>
-      <p>편일일</p>
+      <p>편입일</p>
       </div>
+      <div className={styles.bottomthinline}></div>
       <div className={styles.popularStockList}>
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error.message}</p>}

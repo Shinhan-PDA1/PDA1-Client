@@ -34,13 +34,17 @@ const MarketIssue = () => {
     <div className={styles.popularsector}>
       <div className={styles.topgroup}>
         <h2>마켓 이슈</h2>
+        <p>원하는 항목을 클릭하면 해당페이지로 이동합니다.</p>
       </div>
+      <div className={styles.topthinline}></div>
       <div className={styles.line}></div>
       <div className={styles.rectangle}>
       <p>증권사</p>
       <p>제목</p>
+      <p>첨부</p>
       <p>작성일</p>
       </div>
+      <div className={styles.bottomthinline}></div>
       <div className={styles.popularStockList}>
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error.message}</p>}

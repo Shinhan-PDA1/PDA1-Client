@@ -10,7 +10,24 @@
     }
     .stockItem p {
         width: 20%;
+        white-space: nowrap;
       }
+
+      .stockItem p:first-child {
+        width: 25%; /* Adjust width as needed */
+        text-align: center; /* Align the text to the right */
+      }
+
+      .stockItem p:nth-child(2) {
+        margin-right: 1em;
+        text-align: center; /* Align the text to the right */
+      }
+
+      .stockItem p:last-child {
+        width: 16%; /* Adjust width as needed */
+        text-align: left; /* Align the text to the left */
+      }
+
       .red {
         color: red; /* Set background color to red for negative revenue_rate */
       }

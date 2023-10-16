@@ -16,6 +16,33 @@
     }
 
 .companyinfo {
-  margin-left: -1.3em;
+  margin-left: 1em;
 }
+
+.date {
+  margin-right: 1.5em;
+}
+.issueTitle {
+  flex: 1; /* Allow the title to take up remaining space */
+  margin-right: 3em; /* Adjust the margin as needed */
+  cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+  color: black;
+  text-decoration: none; /* Initially, no underline */
+  transition: text-decoration 0.3s ease; /* Add smooth transition */
+}
+.issueTitle:hover {
+text-decoration: underline; /* Underline when hovering */
+}
+
+.pdfIcon {
+  cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+  margin-right: 8.5em;
+}
+
+.issueInfo {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5em;
+}
+
 

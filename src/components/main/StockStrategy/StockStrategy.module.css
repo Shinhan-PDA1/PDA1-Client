@@ -3,6 +3,7 @@
 .popularsector {
   text-align: center;
   margin: auto 20%;
+  margin-bottom: 5em;
 }
 
 .topgroup {
@@ -10,7 +11,7 @@
   align-items: center; /* Optional: Center content vertically */
   font-size: 0.8em;
   white-space: nowrap;
-  margin-bottom: 0.8em;
+  margin-bottom: 0.8em
 }
 
 .topgroup h2 {
@@ -19,19 +20,50 @@
 
 .topgroup p {
   margin-bottom: 0.13em;
-  margin-left: 18.75em;
+  margin-left: 50em;
 }
 
 .line {
-  border: 1px solid #ccc;
+  border: 1px solid black;
   margin-bottom: 0.63em;
+}
+
+.topthinline {
+  border: 1px solid #ccc;
+  /* margin-bottom: 0.5em; */
+}
+
+.bottomthinline {
+  border: 1px solid #ccc;
+  margin-bottom: 0.5em;
 }
 
 .rectangle {
   display: flex;
   justify-content: space-between;
-  padding: 10px; /* Adjust padding as needed */
+  padding: 0.005em; /* Adjust padding as needed */
+  /* margin-top: -1em; */
+  background-color: #f0f0f0;
 }
+
+.rectangle p {
+  flex: 1;
+  text-align: center;
+}
+
+.rectangle p:nth-child(1) {
+  margin-left: -6em; /* Adjust as needed */
+}
+
+.rectangle p:nth-child(3) {
+  margin-right: -10em; /* Adjust as needed */
+}
+
+.rectangle p:nth-child(4) {
+  margin-right: -6em; /* Adjust as needed */
+}
+
+
 
 
 /* .rectangle {
