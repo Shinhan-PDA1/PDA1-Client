@@ -2,7 +2,7 @@
 
 .popularsector {
     text-align: center;
-    margin: auto 30%;
+    margin: auto 38%;
     margin-left: 3em;
     margin-top: 3em;
   }
@@ -12,6 +12,7 @@
     align-items: center; /* Optional: Center content vertically */
     font-size: 0.8em;
     white-space: nowrap;
+    margin-bottom: 0.5em;
   }
 
   .topgroup h2 {
@@ -20,7 +21,7 @@
 
   .topgroup p {
     margin-bottom: 0.13em;
-    margin-left: 15em;
+    margin-left: 11.5em;
   }
   
   .line {

@@ -1,6 +1,6 @@
 .container {
     text-align: center;
-    margin: auto 16%;
+    margin: auto 20%;
   }
 
   .headerContainer {
@@ -22,14 +22,13 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
+    margin-left: -3em; /* Adjust the left margin to move the entire group to the left */
   }
   
   .arrow {
     font-size: 24px;
     cursor: pointer;
     margin: 0 5px;
-    /* margin-left: 20em;
-    margin-right: 20em; */
   }
   
   .item {

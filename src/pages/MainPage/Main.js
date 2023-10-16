@@ -63,7 +63,7 @@ function MainPage() {
       <div ref={nowStockRef}><NowStockSector /></div>
       <div ref={mockInterested}><MockInterested /></div>
       <div style={{ display: 'flex'}}>
-        <div ref={recommendStockRef} style={{ flex: 1}}>
+        <div ref={recommendStockRef} style={{ flex: 1, marginRight: '-4em'}}>
           <RecommendStock />
         </div>
         <div ref={nowPopularStockRef} style={{ flex: 1}}>
@@ -71,7 +71,7 @@ function MainPage() {
         </div>
       </div>
       <div style={{ display: 'flex'}}>
-      <div ref={topTrnasactionStockRef} style={{ flex: 1}}><TopTransactionStock /></div>
+      <div ref={topTrnasactionStockRef} style={{ flex: 1, marginRight: '-4em'}}><TopTransactionStock /></div>
       <div ref={topRiseStockRef} style={{ flex: 1}}><TopRiseStock /></div>
       </div>
       <div ref={marketIssueRef}><MarketIssue /></div>

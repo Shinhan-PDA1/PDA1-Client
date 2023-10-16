@@ -59,7 +59,7 @@ function NowStockSector () {
     <div className={styles.nowstocksector}>
       <div className={styles.container}>
       <h2>이 시각 증시</h2>
-        <p>현재 시간: {currentTime.toLocaleTimeString()}</p>
+        <p>{currentTime.toLocaleTimeString()}</p>
       </div>
       <hr className={styles.line} />
       <div className={styles.rectanglegroup}>
@@ -77,7 +77,7 @@ function NowStockSector () {
           {showStockInfo.kospi && (
             <div className={styles.stockInfo}>
               <p>증권거래소에 상장된 종목들의 주식 가격을 종합적으로 표시한 수치이다.</p>
-              <p>시장전체의 주가 움직임을 측정하는 지표로 이용되며, 투자성과 측정, 다른 금융상품과의 수익률 비교척도, 경제상황 예측지표로도 이용된다.</p>
+              <p>시장 전체의 주가 움직임을 측정하는 지표로 이용되며, 투자성과 측정, 다른 금융상품과의 수익률 비교척도, 경제 상황 예측지표로도 이용된다.</p>
             </div>
           )}
         </div>
@@ -113,7 +113,7 @@ function NowStockSector () {
           {showStockInfo.kospi200 && (
             <div className={styles.stockInfo}>
               <p>시장 대표성, 유동성, 업종 대표성을 고려하여 선정된 한국을 대표하는 주식 200개 종목의 시가총액을 지수화한 것이다.</p>
-              <p>상장종목수의 20%밖에 되지 않으나 전종목 시가총액의 70%를 차지하여 코스피의 움직임과 일치한다.</p>
+              <p>상장종목 수의 20%밖에 되지 않으나 전 종목 시가총액의 70%를 차지하여 코스피의 움직임과 일치한다.</p>
             </div>
           )}
         </div>
