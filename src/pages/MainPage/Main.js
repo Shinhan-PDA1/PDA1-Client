@@ -39,7 +39,7 @@ function MainPage() {
       case '핫 이슈 종목':
         targetRef = topTrnasactionStockRef;
         break;
-      case '시장 이슈':
+      case '마켓 이슈':
         targetRef = marketIssueRef;
         break;
       case '투자 전략':
