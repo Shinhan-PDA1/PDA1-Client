@@ -24,5 +24,4 @@ function SideNav({ scrollToComponent }) {
         </div>
     );
 }
-
 export default SideNav;

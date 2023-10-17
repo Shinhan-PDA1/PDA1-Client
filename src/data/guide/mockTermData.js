@@ -3,7 +3,7 @@ export const termsData = [
         id: 1,
         title: "이동평균선",
         description: "이동평균선이란 어쩓고도거...",
-        checked: false
+        checked: true
     },
     {
         id: 2,

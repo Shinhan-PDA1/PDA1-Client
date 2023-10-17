@@ -14,7 +14,7 @@ const override = css`
 `;
 
 function Chatting() {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
     const [messages, setMessages] = useState(mockChatData);
     const [inputValue, setInputValue] = useState('');
     const [isTerm, setIsTerm] = useState(false);

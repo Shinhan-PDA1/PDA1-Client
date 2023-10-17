@@ -14,7 +14,7 @@ function Term() {
     return (
         <div className={styles.container}>
             <div className={styles.termHeader}>
-                <h3>용어</h3>
+                <h3>용어 검색</h3>
                 <p>과거에 몰랐던 용어들을 복습해보세요.</p>
             </div>
             {data.map(item => (

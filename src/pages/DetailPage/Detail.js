@@ -20,6 +20,35 @@ function DetailPage() {
     const newsAnnouncementsRef = useRef(null);
     const reportsRef = useRef(null);
 
+    const scrollToComponent = (componentName) => {
+        let ref;
+        switch (componentName) {
+            case '시세차트':
+                ref = chartRef;
+                break;
+            case '매매동향':
+                ref = marketTrendRef;
+                break;
+            case '재무':
+                ref = financeRef;
+                break;
+            case '뉴스 및 공시':
+                ref = newsAnnouncementsRef;
+                break;
+            case '증권 레포트':
+                ref = reportsRef;
+                break;
+            default:
+                break;
+        }
+    
+        if (ref && ref.current) {
+            ref.current.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    };
+
     useEffect(() => {
         const handleScroll = () => {
             const components = [chartRef, marketTrendRef, financeRef, newsAnnouncementsRef, reportsRef];
@@ -39,9 +68,7 @@ function DetailPage() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const scrollToComponent = (componentName) => {
-        // ... (existing code)
-    };
+
 
     return (
         <div className={styles['detail-page']}>
