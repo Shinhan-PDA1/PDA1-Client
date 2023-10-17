@@ -5,11 +5,16 @@ import styles from './NowPopularStockItem.module.css';  // Assuming you have a C
 
 const StockItem = ({ stock }) => {
   const colorClass = stock.variable_ranking > 0 ? styles.blue : stock.variable_ranking < 0 ? styles.red : '';
+
+  const icon = stock.variable_ranking > 0 ? '▲' : stock.variable_ranking < 0 ? '▼' : '';
+
+
+  
     return (
       <div className={styles.stockItem}>
         <p>{stock.stock_code}</p>
         <p>{stock.stock_name}</p>
-        <p className={colorClass}>{stock.variable_ranking}</p>
+        <p className={colorClass}>{icon} {stock.variable_ranking}</p>
         <p>{stock.ranking}</p>
         <p>{stock.category}</p>
       </div>

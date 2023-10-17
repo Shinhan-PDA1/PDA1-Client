@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'; // Import useHistory
 function LoginPage({ onLogin }) {
 
     const navigate  = useNavigate();
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const [Id, setId] = useState("");
     const [Password, setPassword] = useState("");
@@ -21,14 +22,17 @@ function LoginPage({ onLogin }) {
 
         console.log('Id', Id);
         console.log('Password', Password);
-        
+
+        onLogin();
+
         navigate('/main');
+      
 
     }
 
     return (
         <div className={styles.loginContainer}>
-        <form className={styles.loginForm} onSubmit={onSubmitHandler}>
+        <form className={styles.loginForm} onSubmit={onSubmitHandler} >
         <div className={styles.loginHeader}>
             <h2>로그인하세요</h2>
             <p>맞춤형 관심 종목을 확인할 수 있습니다</p>

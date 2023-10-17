@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import styles from './Question2.module.css';
-import ITimg from '../../../assets/images/filter/IT.png';
 import Financeimg from '../../../assets/images/filter/Finance.png';
-import Flightimg from '../../../assets/images/filter/Flight.png';
-import Drinkimg from '../../../assets/images/filter/Drink.png';
-import Medicalimg from '../../../assets/images/filter/Medical.png';
-import Energyimg from '../../../assets/images/filter/Energy.png';
+import Chemicalimg from '../../../assets/images/filter/Chemical.png';
+import Electricimg from '../../../assets/images/filter/Electric.png';
+import Menufectureimg from '../../../assets/images/filter/Menufecture.png';
+import Serviceimg from '../../../assets/images/filter/Service.png';
+import Distributionimg from '../../../assets/images/filter/Distribution.png';
 
 const Question2 = ({ onAnswer, onNextQuestion }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
@@ -50,7 +50,7 @@ const Question2 = ({ onAnswer, onNextQuestion }) => {
             }`}
             onClick={() => handleOptionClick('service')}
           >
-            <img src={ITimg} alt="service" />
+            <img src={Serviceimg} alt="service" />
             <p>서비스</p>
           </div>
           <div id={styles.option3}
@@ -59,8 +59,8 @@ const Question2 = ({ onAnswer, onNextQuestion }) => {
             }`}
             onClick={() => handleOptionClick('manufacture')}
           >
-            <img src={Flightimg} alt="제조업" />
-            <p>제조업</p>
+            <img src={Menufectureimg} alt="제조" />
+            <p>제조</p>
           </div>
         </div> 
         <div className={styles.ageOptionsContainer}>
@@ -70,7 +70,7 @@ const Question2 = ({ onAnswer, onNextQuestion }) => {
             }`}
             onClick={() => handleOptionClick('chemistry')}
           >
-            <img src={Drinkimg} alt="화학" />
+            <img src={Chemicalimg} alt="화학" />
             <p>화학</p>
           </div>
           <div id={styles.option5}
@@ -79,7 +79,7 @@ const Question2 = ({ onAnswer, onNextQuestion }) => {
             }`}
             onClick={() => handleOptionClick('electronic')}
           >
-            <img src={Medicalimg} alt="전기＊전자" />
+            <img src={Electricimg} alt="전기＊전자" />
             <p>전기 전자</p>
           </div>
           <div id={styles.option6}
@@ -88,8 +88,8 @@ const Question2 = ({ onAnswer, onNextQuestion }) => {
             }`}
             onClick={() => handleOptionClick('distribution')}
           >
-            <img src={Energyimg} alt="유통업" />
-            <p>유통업</p>
+            <img src={Distributionimg} alt="유통" />
+            <p>유통</p>
           </div>
         </div>
       </div>

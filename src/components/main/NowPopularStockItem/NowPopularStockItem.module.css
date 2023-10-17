@@ -3,8 +3,8 @@
     flex-direction: row;
     justify-content: space-between;
     /* border: 1px solid #ccc; */
-    padding: 0.63em;
-    margin: 0.31em;
+    padding: 0.1em;
+    margin: 0.3em 0;margin: 0.31em;
     width: 110%;
     margin-left: -2.3em;
     }
@@ -13,8 +13,14 @@
         white-space: nowrap;
       }
 
+      .stockItem p:nth-child(2):hover,
+.stockItem p:first-child:hover {
+  text-decoration: underline; /* Add underline on hover */
+  cursor: pointer; /* Change cursor on hover */
+}
+
       .stockItem p:first-child {
-        width: 25%; /* Adjust width as needed */
+        width: 29%; /* Adjust width as needed */
         text-align: center; /* Align the text to the right */
       }
 
