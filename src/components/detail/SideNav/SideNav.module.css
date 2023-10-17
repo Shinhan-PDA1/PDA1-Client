@@ -1,3 +1,5 @@
+
+
 .side-nav {
     position: fixed;
     left: 7%;
@@ -13,6 +15,7 @@
     font-weight: bold;
 
 }
+
 
 @keyframes float {
     0% {
@@ -31,6 +34,7 @@
     visibility: hidden; /* 요소를 숨김 */
     pointer-events: none; 
 }
+
 .side-nav ul {
     list-style: none;
     width: 7vw;
@@ -41,6 +45,7 @@
     flex-direction: column;
     gap: 5%;
 }
+
 .side-nav li {
     padding: 5%;
     text-align: center;
@@ -48,13 +53,16 @@
     transition: background-color 0.3s;
     border-radius: 5px;
 }
+
 .side-nav li:hover {
     background-color: #d9d9d9;
 }
+
 .side-nav .active {
     background-color: #555;
     color: white;
 }
+
 .sideNav_button {
     width: 7vw;
     height: 5vh;
