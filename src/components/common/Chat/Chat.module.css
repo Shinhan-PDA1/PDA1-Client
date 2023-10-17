@@ -101,7 +101,7 @@
 }
 
 .userMessage .messageBubble {
-    background-color: #679aff; /* 사용자 메시지의 말풍선 색상(카카오톡과 유사하게) */
+    background-color: #679aff; /* 사용자 메시지의 말풍선 색상    */
 }
 
 .aiMessage .messageBubble {
@@ -121,6 +121,8 @@
     flex: 1;
     padding: 3%;
     border: none;
+    border-radius: 25px 0px 0px 25px;
+
 
 
 
@@ -169,28 +171,28 @@
 
 
 
-.toggleTypeButton {
-    margin-right: 0px;
+.modeButton {
+    width: 25%;
+    margin-left: 5%;
     padding: 5px 5px;
     border: none;
-    background-color: #f8f8f8;
     cursor: pointer;
-    border-radius: 25px 0px 0px 25px;
+    border-radius: 20px;
     font-size: 0.8rem;
     transition: background-color 0.3s;
 }
 
 
 
-#mode{
+#modeButton{
     border-radius: 25px;
     transition: background-color 0.5s ease, font-weight 0.5s ease;
 
 
 }
 
-#mode:hover {
-    background-color: lightblue;
+#modeButton:hover {
+    background-color: rgb(43, 184, 235);
     font-weight: bold;
 }
 

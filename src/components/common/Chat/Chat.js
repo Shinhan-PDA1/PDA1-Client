@@ -60,10 +60,10 @@ function Chatting() {
                         </div>
                     ))}
                 </div>
+                <button onClick={toggleTerm} className={styles.modeButton}>
+                        <div id={styles.mode}>{isTerm ? '▼ 용어 검색' : '▼ 질문 하기'}</div>
+                </button>
                 <div className={styles.inputContainer}>
-                    <button onClick={toggleTerm} className={styles.toggleTypeButton}>
-                        <div id={styles.mode}>{isTerm ? '[용어]' : '[응용]'}</div>
-                    </button>
                     <input 
                         type="text" 
                         className={styles.input} 
