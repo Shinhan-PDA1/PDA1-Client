@@ -5,8 +5,8 @@
     flex-direction: row;
     justify-content: space-between;
     /* border: 1px solid #ccc; */
-    padding: 0.63em;
-    margin: 0.31em;
+    padding: 0.005em;
+    margin: 0.2em 0;
     width: 120%;
     margin-left: -5.8em;
     }
@@ -14,7 +14,14 @@
     .stockItem p {
         width: 40%;
         white-space: nowrap;
+        margin: 0.7em;
       }
+
+      .stockItem p:nth-child(2):hover,
+      .stockItem p:nth-child(3):hover {
+  text-decoration: underline; /* Add underline on hover */
+  cursor: pointer; /* Change cursor on hover */
+}
 
     
 .stockItem p:first-child {
@@ -25,10 +32,11 @@
 .stockItem p:nth-child(2) {
   width: 1%; /* Adjust width as needed */
   text-align: center; /* Align the text to the right */
+  margin-left: 3em;
 }
 
 .stockItem p:last-child {
-  width: 36%; /* Adjust width as needed */
+  width: 42%; /* Adjust width as needed */
   text-align: center; /* Align the text to the left */
 }
 

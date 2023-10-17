@@ -5,8 +5,8 @@ import ZutopiaLogo from "../../../assets/images/common/zutopiaLogo.png";
 import searchIcon from '../../../assets/images/common/searchIcon.png';
 import styles from './CoHeader.module.css';
 
-function Header() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+function Header({ onLogin, isLoggedIn, onLogout }) {
+    // const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [fanID, setFanID] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
     const navigate = useNavigate();
@@ -24,10 +24,16 @@ function Header() {
 
     const handleLoginClick = () => {
         navigate('/login');
+        // setIsLoggedIn(true);
+    }
+
+    const handleSigninClick = () => {
+        // You can add your specific behavior for the "Signin" button here
+        // For now, let's just prevent any action
     }
 
     const handleLogoutClick = () => {
-        setIsLoggedIn(false);
+        onLogout();
         setFanID("");
     }
 
@@ -39,13 +45,13 @@ function Header() {
                 <div className={styles.welcomeMessage}>
                     {isLoggedIn ? (
                         <>
-                            Welcome, {fanID} 님
+                            Welcome, 고객님
                             <button className={styles.logBtn}  onClick={handleLogoutClick}>Logout</button>
                         </>
                     ) : (
                         <>
                             <button className={styles.logBtn} onClick={handleLoginClick}>Login</button>
-                            <button className={styles.logBtn} onClick={handleLoginClick}>Signin</button>
+                            <button className={styles.logBtn} onClick={handleSigninClick}>Signin</button>
                         </>
                     )}
                 </div>
