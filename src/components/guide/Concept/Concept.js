@@ -14,7 +14,7 @@ function Concept() {
     return (
         <div className={styles.container}>
             <div className={styles.conceptHeader}>
-                <h3>질문하기</h3>
+                <h3>응용</h3>
                 <p>과거에 몰랐던 내용들을 복습해보세요.</p>
             </div>
             {conceptData.map(item => (
@@ -36,5 +36,4 @@ function Concept() {
         </div>
     );
 }
-
 export default Concept;
