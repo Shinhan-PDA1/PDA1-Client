@@ -11,7 +11,23 @@ const NowPopularStock = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+
   useEffect(() => {
+    const storedToken = localStorage.getItem('token');
+    console.log("GET API DATA...");
+    const apiUrl = 'http://localhost:8081/jootopia/v1/users/system/shinhan/ranking/rising';
+    axios.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`;
+    axios.get(apiUrl)
+    .then((response) =>{
+      console.log("Now Popular: ", response);
+    })
+    .catch((error) => {
+      console.error('데이터 불러오기 실패!', error);
+    });
+
+
+
+
     const fetchData = async () => {
       try {
         setLoading(true);

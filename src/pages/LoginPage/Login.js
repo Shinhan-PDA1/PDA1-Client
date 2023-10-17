@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import styles from './Login.module.css';
 import { useNavigate } from 'react-router-dom'; // Import useHistory
+import axios from 'axios';
 
-function LoginPage({ onLogin }) {
+function LoginPage() {
 
     const navigate  = useNavigate();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const [Id, setId] = useState("");
     const [Password, setPassword] = useState("");
+    const [token, setToken] = useState();
 
     const onIdHandler = (event) => {
         setId(event.currentTarget.value);
@@ -23,10 +25,21 @@ function LoginPage({ onLogin }) {
         console.log('Id', Id);
         console.log('Password', Password);
 
-        onLogin();
+        const userData = {
+            account: Id,
+            password: Password
+        };
 
-        navigate('/main');
-      
+        const apiUrl = 'http://localhost:8081/jootopia/v1/users/login';
+        axios.post(apiUrl, userData)
+        .then(response => {
+            console.log('로그인 성공');
+            localStorage.setItem('token', response.data.jwt);            
+            navigate('/main');
+        })
+        .catch(error => {
+            console.error('로그인 실패', error);
+        });
 
     }
 
