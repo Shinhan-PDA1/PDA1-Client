@@ -44,11 +44,14 @@
   padding: 0.005em; /* Adjust padding as needed */
   /* margin-top: -1em; */
   background-color: #f0f0f0;
+  font-weight: bold;
+  height: 2.3em;
 }
 
 .rectangle p {
   flex: 1;
   text-align: center;
+  margin-top: 0.5em
 }
 
 .rectangle p:nth-child(1) {

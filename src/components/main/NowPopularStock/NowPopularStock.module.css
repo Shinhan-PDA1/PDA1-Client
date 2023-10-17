@@ -45,7 +45,8 @@
     padding: 0.005em; /* Adjust padding as needed */
     /* margin-top: -1em; */
     background-color: #f0f0f0;
-    height: 3.4em;
+    height: 2.3em;
+    font-weight: bold;
   }
 
   
@@ -54,6 +55,7 @@
     flex: 1;
     text-align: center;
     white-space: nowrap;
+    margin-top: 0.5em
   }
 
   .rectangle p:nth-child(2) {

@@ -46,11 +46,14 @@
     background-color: #f0f0f0;
     /* margin-right: 2.5em;
     width: 27.8em; */
+    font-weight: bold;
+    height: 2.3em
   }
 
   .rectangle p {
     flex: 1;
     text-align: center;
+    margin-top: 0.5em
   }
 
   .rectangle p:nth-child(2) {
