@@ -17,7 +17,7 @@
       }
 
       .companyinfo {
-        margin-left: 1em;
+        margin-left: 0.3em;
       }
       
       .date {
@@ -39,7 +39,7 @@
     
     .pdfIcon {
         cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
-        margin-right: 8.5em;
+        margin-right: 6em;
     }
     
     .issueInfo {

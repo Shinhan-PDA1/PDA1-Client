@@ -36,7 +36,7 @@
       }
       
       .stockItem p:last-child {
-        width: 40%; /* Adjust width as needed */
+        width: 35%; /* Adjust width as needed */
         text-align: center; /* Align the text to the left */
       }
       

@@ -22,7 +22,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
-    margin-left: -3em; /* Adjust the left margin to move the entire group to the left */
+    margin-left: -2em; /* Adjust the left margin to move the entire group to the left */
   }
 
   .line {
@@ -41,10 +41,11 @@
     border-radius: 5px;
     padding: 10px;
     margin: 5px;
-    width: 14em;
+    width: 12em;
     height: 10em;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    white-space: nowrap;
 }
 
 .item:hover {
@@ -57,6 +58,7 @@
   .themeItems {
     display: flex;
     gap: 5px; /* Adjust the gap to control the spacing between theme items */
+    margin-left:0.2em;
   }
   
   .nameCodeContainer {
@@ -64,18 +66,18 @@
   }
 
   .nameCodeContainer h3 {
-    margin-left: 1.2em;
+    margin-left: 0.5em;
     font-size: 1.1em;
   }
 
   .nameCodeContainer p {
-    margin-left: 2em;
+    margin-left: 1.2em;
     margin-top: 1.2em;
   }
 
   .priceChangeRateContainer {
     display: flex; /* Add this line to make it a flex container */
-    margin-left: 2em;
+    margin-left: 1em;
   }
 
   .priceContainer p{

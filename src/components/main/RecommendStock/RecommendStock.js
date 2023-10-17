@@ -34,7 +34,7 @@ const RecommendStock = () => {
     <div className={styles.popularsector}>
       <div className={styles.topgroup}>
         <h2>국내 추천 종목</h2>
-        <p>신한 리서치 센터에서 제공하는 추천 국내 종목 포트폴리오</p>
+        <p> 신한 리서치 센터 - 추천 국내 종목 포트폴리오</p>
       </div>
       <div className={styles.line}></div>
       <div className={styles.topthinline}></div>
