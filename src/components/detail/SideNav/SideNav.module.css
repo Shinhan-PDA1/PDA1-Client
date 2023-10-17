@@ -1,3 +1,5 @@
+
+
 .side-nav {
     position: fixed;
     left: 7%;
@@ -14,6 +16,7 @@
 
 }
 
+
 @keyframes float {
     0% {
         transform: translateY(0px);
@@ -24,6 +27,12 @@
     100% {
         transform: translateY(0px);
     }
+}
+.side-navClosed {
+    overflow: hidden;  /* 내용을 숨김 */
+    transform: translateY(100%);  /* SideNav의 높이만큼 아래로 이동 */
+    visibility: hidden; /* 요소를 숨김 */
+    pointer-events: none; 
 }
 
 .side-nav ul {
@@ -36,21 +45,24 @@
     flex-direction: column;
     gap: 5%;
 }
+
 .side-nav li {
     padding: 5%;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s;
     border-radius: 5px;
-    background-color: aqua;
 }
+
 .side-nav li:hover {
     background-color: #d9d9d9;
 }
-.side-nav li.active {
+
+.side-nav .active {
     background-color: #555;
     color: white;
 }
+
 .sideNav_button {
     width: 7vw;
     height: 5vh;
@@ -70,11 +82,4 @@
 
 .sideNav_button:hover {
     background-color: #d9d9d9;
-}
-
-.side-navClosed {
-    overflow: hidden;  /* 내용을 숨김 */
-    transform: translateY(100%);  /* SideNav의 높이만큼 아래로 이동 */
-    visibility: hidden; /* 요소를 숨김 */
-    pointer-events: none; 
 }
