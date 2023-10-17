@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './SideNav.module.css';
+import styles from './SideNav.module.css'
 
 function SideNav({ scrollToComponent }) {
     const [isOpen, setIsOpen] = useState(true);

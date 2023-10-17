@@ -25,12 +25,7 @@
         transform: translateY(0px);
     }
 }
-.side-navClosed {
-    overflow: hidden;  /* 내용을 숨김 */
-    transform: translateY(100%);  /* SideNav의 높이만큼 아래로 이동 */
-    visibility: hidden; /* 요소를 숨김 */
-    pointer-events: none; 
-}
+
 .side-nav ul {
     list-style: none;
     width: 7vw;
@@ -47,11 +42,12 @@
     cursor: pointer;
     transition: background-color 0.3s;
     border-radius: 5px;
+    background-color: aqua;
 }
 .side-nav li:hover {
     background-color: #d9d9d9;
 }
-.side-nav .active {
+.side-nav li.active {
     background-color: #555;
     color: white;
 }
@@ -74,4 +70,11 @@
 
 .sideNav_button:hover {
     background-color: #d9d9d9;
+}
+
+.side-navClosed {
+    overflow: hidden;  /* 내용을 숨김 */
+    transform: translateY(100%);  /* SideNav의 높이만큼 아래로 이동 */
+    visibility: hidden; /* 요소를 숨김 */
+    pointer-events: none; 
 }
