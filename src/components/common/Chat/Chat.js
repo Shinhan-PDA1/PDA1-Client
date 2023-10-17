@@ -24,8 +24,8 @@ function Chatting() {
             setMessages([...messages, { user: 'You', text: inputValue.trim(), isLoading: false }]);
             setInputValue('');
 
-            // TODO: 서버 통신 코드를 여기에 추가하세요.
-            setTimeout(() => { // 임시로 setTimeout을 사용하여 비동기 처리를 시뮬레이션합니다.
+            // TODO: 서버 통신 코드
+            setTimeout(() => { // 임시로 setTimeout을 사용하여 비동기 처리.
                 setMessages(prevMessages => [...prevMessages, { user: 'AI', text: 'AI 응답 메시지', isLoading: true }]);
             }, 10);
         }
