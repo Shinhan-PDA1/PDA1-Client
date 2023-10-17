@@ -109,7 +109,7 @@ function NowStockSector () {
           </div>
           {showStockInfo.kospi200 && (
             <div className={styles.stockInfo}>
-              <p>시장 대표성, 유동성, 업종 대표성을 <br></br>고려하여 선정된 한국을 대표하는 200개 주식의 시가총액을 지수화한 것</p>
+              <p>시장 대표성, 유동성, 업종 대표성을 고려하여 선정된 한국을 대표하는 200개 주식의 시가총액을 지수화한 것</p>
             </div>
           )}
         </div>

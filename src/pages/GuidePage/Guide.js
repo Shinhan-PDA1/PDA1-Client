@@ -13,10 +13,10 @@ function GuidePage() {
     useEffect(() => {
         const handleScroll = () => {
             const components = [headerRef, termRef, conceptRef];
-            
+
             components.forEach(compRef => {
                 const rect = compRef.current.getBoundingClientRect();
-                
+
                 if (rect.top < window.innerHeight && rect.bottom >= 0) {
                     compRef.current.classList.add(styles['slide-up-on-scroll']);
                 } else {
@@ -24,7 +24,7 @@ function GuidePage() {
                 }
             });
         };
-        
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -37,5 +37,4 @@ function GuidePage() {
         </div>
     );
 }
-
 export default GuidePage;

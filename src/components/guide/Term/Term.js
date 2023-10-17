@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { termsData as initialData } from '../../../data/guide/mockTermData';
+import { termData as initialData } from '../../../data/guide/mockTermData';
 import styles from './Term.module.css';
 
 function Term() {

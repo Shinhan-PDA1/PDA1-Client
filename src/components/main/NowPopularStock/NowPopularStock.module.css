@@ -13,6 +13,7 @@
     font-size: 0.8em;
     white-space: nowrap;
     margin-bottom: 0.5em;
+    justify-content: space-between;
   }
 
   .topgroup h2 {
@@ -21,7 +22,7 @@
 
   .topgroup p {
     margin-bottom: 0.13em;
-    margin-left: 11.5em;
+    margin-left: 7.5em;
   }
   
   .line {
@@ -45,7 +46,8 @@
     padding: 0.005em; /* Adjust padding as needed */
     /* margin-top: -1em; */
     background-color: #f0f0f0;
-    height: 3.4em;
+    height: 2.6em;
+    font-weight: bold;
   }
 
   
@@ -54,15 +56,20 @@
     flex: 1;
     text-align: center;
     white-space: nowrap;
+    margin-top: 0.5em
   }
 
   .rectangle p:nth-child(2) {
     text-align: left;
-    padding-left: 2.5em; /* Add padding for spacing */
+    padding-left: 2em; /* Add padding for spacing */
   }
 
   .rectangle p:nth-child(3) {
     padding-right: 1em;
+  }
+
+  .rectangle p:nth-child(4) {
+    padding-right: 0.7em;
   }
 
 

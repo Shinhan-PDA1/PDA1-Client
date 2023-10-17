@@ -12,6 +12,7 @@
     font-size: 0.8em;
     white-space: nowrap;
     margin-bottom: 0.5em;
+    justify-content: space-between;
   }
 
   .topgroup h2 {
@@ -20,7 +21,7 @@
 
   .topgroup p {
     margin-bottom: 0.13em;
-    margin-left: 20em;
+    margin-left: 16em;
   }
   
   .line {
@@ -44,13 +45,16 @@
     padding: 0.005em;
     /* margin-top: -1em; */
     background-color: #f0f0f0;
-    margin-right: 2.5em;
-    width: 31em;
+    /* margin-right: 2.5em;
+    width: 27.8em; */
+    font-weight: bold;
+    height: 2.3em
   }
 
   .rectangle p {
     flex: 1;
     text-align: center;
+    margin-top: 0.5em
   }
 
   .rectangle p:nth-child(2) {

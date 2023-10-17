@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import Loading from '../../components/common/Loading/Loading';
 import StockInfo from "../../components/detail/StockInfo/StockInfo";
 import TopNav from "../../components/detail/TopNav/TopNav";
 import SideNav from "../../components/detail/SideNav/SideNav";
@@ -19,6 +19,50 @@ function DetailPage() {
     const financeRef = useRef(null);
     const newsAnnouncementsRef = useRef(null);
     const reportsRef = useRef(null);
+
+
+    const [isLoading, setIsLoading] = useState(true); // 로딩 상태를 관리하는 상태 변수
+
+    
+    useEffect(() => {
+        // 로딩 컴포넌트가 2초 동안 나타나도록 설정
+        const timer = setTimeout(() => {
+            setIsLoading(false); // 2초 후 로딩 상태를 false로 변경
+        }, 2000);
+
+        return () => clearTimeout(timer); // 컴포넌트가 언마운트되면 타이머를 제거
+    }, []);
+
+
+
+    const scrollToComponent = (componentName) => {
+        let ref;
+        switch (componentName) {
+            case '시세차트':
+                ref = chartRef;
+                break;
+            case '매매동향':
+                ref = marketTrendRef;
+                break;
+            case '재무':
+                ref = financeRef;
+                break;
+            case '뉴스 및 공시':
+                ref = newsAnnouncementsRef;
+                break;
+            case '증권 레포트':
+                ref = reportsRef;
+                break;
+            default:
+                break;
+        }
+    
+        if (ref && ref.current) {
+            ref.current.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -39,25 +83,27 @@ function DetailPage() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const scrollToComponent = (componentName) => {
-        // ... (existing code)
-    };
+
 
     return (
-        <div className={styles['detail-page']}>
-            <>
-                <StockInfo />
-                <TopNav scrollToComponent={scrollToComponent} />
-                <SideNav scrollToComponent={scrollToComponent} /> 
-                <div ref={chartRef} className={styles['animated-container']}><Chart /></div>
-                <div ref={marketTrendRef} className={styles['animated-container']}><MarketTrend /></div>
-                <div ref={financeRef} className={styles['animated-container']}><Finance /></div>
-                <div ref={newsAnnouncementsRef} className={styles['animated-container']}><NewsAnnouncements /></div>
-                <div ref={reportsRef} className={styles['animated-container']}><Reports /></div>
-                <button className={styles['sell-button']} onClick={() => navigate('/feedback')}>
-                    ▶ 매매하러 가기
-                </button>
-            </>
+<       div className={styles['detail-page']}>
+            {isLoading ? ( // 로딩 상태에 따라 Loading 컴포넌트 또는 본문 컴포넌트를 보여줍니다.
+                <Loading /> // 로딩 중일 때 Loading 컴포넌트를 렌더링
+            ) : (
+                <>
+                    <StockInfo />
+                    <TopNav scrollToComponent={scrollToComponent} />
+                    <SideNav scrollToComponent={scrollToComponent} /> 
+                    <div ref={chartRef} className={styles['animated-container']}><Chart /></div>
+                    <div ref={marketTrendRef} className={styles['animated-container']}><MarketTrend /></div>
+                    <div ref={financeRef} className={styles['animated-container']}><Finance /></div>
+                    <div ref={newsAnnouncementsRef} className={styles['animated-container']}><NewsAnnouncements /></div>
+                    <div ref={reportsRef} className={styles['animated-container']}><Reports /></div>
+                    <button className={styles['sell-button']} onClick={() => navigate('/feedback')}>
+                        ▶ 매매하러 가기
+                    </button>
+                </>
+            )}
         </div>
     );
 }

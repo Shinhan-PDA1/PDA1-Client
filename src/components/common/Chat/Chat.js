@@ -14,7 +14,7 @@ const override = css`
 `;
 
 function Chatting() {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
     const [messages, setMessages] = useState(mockChatData);
     const [inputValue, setInputValue] = useState('');
     const [isTerm, setIsTerm] = useState(false);
@@ -27,7 +27,7 @@ function Chatting() {
             // TODO: 서버 통신 코드를 여기에 추가하세요.
             setTimeout(() => { // 임시로 setTimeout을 사용하여 비동기 처리를 시뮬레이션합니다.
                 setMessages(prevMessages => [...prevMessages, { user: 'AI', text: 'AI 응답 메시지', isLoading: true }]);
-            }, 2000);
+            }, 10);
         }
     };
 
@@ -60,10 +60,10 @@ function Chatting() {
                         </div>
                     ))}
                 </div>
+                <button onClick={toggleTerm} className={styles.modeButton}>
+                        <div id={styles.mode}>{isTerm ? '▼ 용어 검색' : '▼ 질문 하기'}</div>
+                </button>
                 <div className={styles.inputContainer}>
-                    <button onClick={toggleTerm} className={styles.toggleTypeButton}>
-                        <div id={styles.mode}>{isTerm ? '[용어]' : '[응용]'}</div>
-                    </button>
                     <input 
                         type="text" 
                         className={styles.input} 

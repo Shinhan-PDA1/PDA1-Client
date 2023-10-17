@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './SideNav.module.css';
 
 function SideNav({ scrollToComponent }) {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div className={styles.container}>
@@ -26,3 +26,4 @@ function SideNav({ scrollToComponent }) {
 }
 
 export default SideNav;
+

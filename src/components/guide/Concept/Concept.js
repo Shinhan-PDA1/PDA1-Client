@@ -36,5 +36,4 @@ function Concept() {
         </div>
     );
 }
-
 export default Concept;
