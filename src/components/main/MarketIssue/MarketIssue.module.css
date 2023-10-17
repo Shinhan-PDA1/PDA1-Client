@@ -11,6 +11,7 @@
 
 .topgroup {
   display: flex;
+  justify-content: space-between;
   align-items: center; /* Optional: Center content vertically */
   font-size: 0.8em;
   white-space: nowrap;

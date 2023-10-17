@@ -12,6 +12,7 @@
     font-size: 0.8em;
     white-space: nowrap;
     margin-bottom: 0.5em;
+    justify-content: space-between;
   }
 
   .topgroup h2 {
