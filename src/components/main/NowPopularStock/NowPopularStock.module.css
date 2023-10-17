@@ -21,7 +21,7 @@
 
   .topgroup p {
     margin-bottom: 0.13em;
-    margin-left: 11.5em;
+    margin-left: 7.5em;
   }
   
   .line {
@@ -58,11 +58,15 @@
 
   .rectangle p:nth-child(2) {
     text-align: left;
-    padding-left: 2.5em; /* Add padding for spacing */
+    padding-left: 2em; /* Add padding for spacing */
   }
 
   .rectangle p:nth-child(3) {
     padding-right: 1em;
+  }
+
+  .rectangle p:nth-child(4) {
+    padding-right: 0.7em;
   }
 
 
