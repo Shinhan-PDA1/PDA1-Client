@@ -58,7 +58,7 @@
 }
 
 .rectangle p:nth-child(1) {
-  margin-left: -1em; /* Adjust as needed */
+  margin-left: -2.5em; /* Adjust as needed */
 }
 
 .rectangle p:nth-child(2) {
