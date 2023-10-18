@@ -272,7 +272,7 @@ return (
       </div>
       <div className="component-header">
         <h2>AI REPORT</h2>
-        <p>차트 해석이 어렵다면 신한AI분석을 참고!해보세요.</p>
+        <p>고객님의 투자성향(단기/장기)맞춤 차트 AI REPORT</p>
       </div>
       <div className={styles["ai-report"]}>
         <hr />
