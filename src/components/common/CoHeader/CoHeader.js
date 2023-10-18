@@ -71,7 +71,7 @@ function Header({ onLogin, isLoggedIn, onLogout }) {
                 <nav className={styles.mainNav}>
                     <NavLink to="/main" activeClassName={styles.active}>Home</NavLink>
                     <NavLink to="/guide" activeClassName={styles.active}>Jourin's Guide</NavLink>
-                    <NavLink to="/detail" activeClassName={styles.active}>Shinhan Report</NavLink>
+                    <NavLink to="https://www.shinhansec.com/" activeClassName={styles.active}>Shinhan Report</NavLink>
                     <NavLink to="/filter" activeClassName={styles.active}>My Page</NavLink>
                 </nav>
                 <div className={styles.searchContainer}>
