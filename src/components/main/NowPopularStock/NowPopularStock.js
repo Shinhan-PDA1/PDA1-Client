@@ -11,39 +11,20 @@ const NowPopularStock = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-
-  useEffect(() => {
-    const storedToken = localStorage.getItem('token');
-    console.log("GET API DATA...");
-    const apiUrl = 'http://localhost:8081/jootopia/v1/users/system/shinhan/ranking/rising';
-    axios.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`;
-    axios.get(apiUrl)
-    .then((response) =>{
-      console.log("Now Popular: ", response);
-    })
-    .catch((error) => {
-      console.error('데이터 불러오기 실패!', error);
-    });
-
-
-
-
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const response = await axios.get('http://localhost:8080/api/v1/shinhan/ranking/rising');
-        setStocks(response.data.slice(0, 4));
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          setLoading(true);
+          const response = await axios.get('http://localhost:8080/api/v1/shinhan/ranking/rising');
+          setStocks(response.data.slice(0, 4));
+        } catch (error) {
+          setError(error);
+        } finally {
+          setLoading(false);
+        }
     };
-
     fetchData();
   }, []); // Empty dependency array to run the effect only once when the component mounts
-
-
   
   return (
     <div className={styles.popularsector}>

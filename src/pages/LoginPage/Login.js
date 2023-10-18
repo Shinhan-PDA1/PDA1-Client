@@ -34,7 +34,7 @@ function LoginPage() {
         axios.post(apiUrl, userData)
         .then(response => {
             console.log('로그인 성공');
-            localStorage.setItem('token', response.data.jwt);            
+            axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.jwt}`;            
             navigate('/main');
         })
         .catch(error => {

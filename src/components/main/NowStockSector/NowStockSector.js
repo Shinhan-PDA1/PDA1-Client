@@ -26,23 +26,23 @@ function NowStockSector () {
     axios.post(apiUrl)
     .then((response) =>{
       const inputData = response.data;
-
+    
       const kospiData = [];
       const kosdaqData = [];
       const kospi200Data = [];
-
+  
       for(let i = 0; i < inputData.length; i++){
-
+  
         kospiData.push({
           x: inputData[i].date,
           y: inputData[i].kospi,
         });
-
+  
         kosdaqData.push({
           x: inputData[i].date,
           y: inputData[i].kosdaq,
         });
-
+  
         kospi200Data.push({
           x: inputData[i].date,
           y: inputData[i].kospi200,

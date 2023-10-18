@@ -12,7 +12,6 @@ import FeedbackPage from './pages/FeedBackPage/FeedBack';
 import LoginPage from './pages/LoginPage/Login'
 
 function App() {
-
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [fanID, setFanID] = useState("");
 
@@ -20,9 +19,9 @@ function App() {
         setIsLoggedIn(true);
       }
     
-      const handleLogout = () => {
-        setIsLoggedIn(false);
-      }
+    const handleLogout = () => {
+    setIsLoggedIn(false);
+    }
 
     return (
         <Router>
