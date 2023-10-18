@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import sol from '../../../assets/images/detail/sol04.png'
 
 import '../../../styles/detail/detailGlobal.css'
 import styles from './Finance.module.css';
 import { summaryData, annualData, quarterlyData, aiReport } from '../../../data/detail/mockFinance';  // 경로는 적절하게 변경
 
-function Finance() {
+function Finance(props) {
     const [activeTab, setActiveTab] = useState('annual');
+    const [annualFinanceData, setAnnualFinanceData] = useState(props.financeCrawlingData["최근 연간 실적"]);
+    const [quarterlyFinanceData, setQuaterlyFinanceData] = useState(props.financeCrawlingData["최근 분기 실적"]);
+    const [statementComment, setStatementComment] = useState(props.statementComment);
 
     return (
         <div className='container'>
@@ -31,18 +34,18 @@ function Finance() {
                         <thead>
                             <tr>
                                 <th>{activeTab === 'annual' ? 'Year' : 'Quarter'}</th>
-                                {Object.keys(activeTab === 'annual' ? annualData : quarterlyData).map(period => (
+                                {Object.keys(activeTab === 'annual' ? annualFinanceData : quarterlyFinanceData).map(period => (
                                     <th key={period}>{period}</th>
                                 ))}
                             </tr>
                         </thead>
                         <tbody>
-                            {(activeTab === 'annual' ? annualData : quarterlyData) &&
-                                Object.keys((activeTab === 'annual' ? annualData : quarterlyData)[Object.keys((activeTab === 'annual' ? annualData : quarterlyData))[0]]).map(key => (
+                            {(activeTab === 'annual' ? annualFinanceData : quarterlyFinanceData) &&
+                                Object.keys((activeTab === 'annual' ? annualFinanceData : quarterlyFinanceData)[Object.keys((activeTab === 'annual' ? annualFinanceData : quarterlyFinanceData))[0]]).map(key => (
                                     <tr key={key}>
                                         <td>{key}</td>
-                                        {Object.keys(activeTab === 'annual' ? annualData : quarterlyData).map(period => (
-                                            <td key={period}>{(activeTab === 'annual' ? annualData : quarterlyData)[period][key]}</td>
+                                        {Object.keys(activeTab === 'annual' ? annualFinanceData : quarterlyFinanceData).map(period => (
+                                            <td key={period}>{(activeTab === 'annual' ? annualFinanceData : quarterlyFinanceData)[period][key]}</td>
                                         ))}
                                     </tr>
                                 ))}
@@ -58,7 +61,7 @@ function Finance() {
                 <hr /> 
                 <div className={styles['textarea-container']}>
                     <img src={sol} alt="AI Icon" className={styles['ai-image']} />
-                    <textarea value={aiReport} readOnly />
+                    <textarea value={statementComment.statement_short_comment} readOnly />
                 </div>
             </div>
         </div>

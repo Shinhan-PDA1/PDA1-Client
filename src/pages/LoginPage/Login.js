@@ -34,8 +34,15 @@ function LoginPage() {
         axios.post(apiUrl, userData)
         .then(response => {
             console.log('로그인 성공');
-            axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.jwt}`;            
-            navigate('/main');
+            axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.jwt}`;
+            localStorage.setItem("isSurvey", response.data.isSurvey);
+            console.log("isSurvey: ", response.data.isSurvey);
+            console.log("localStorage: ", localStorage.getItem("isSurvey"));
+            if(localStorage.getItem("isSurvey") === "false") {
+                navigate('/filter');
+            } else {
+                navigate('/main');
+            }
         })
         .catch(error => {
             console.error('로그인 실패', error);

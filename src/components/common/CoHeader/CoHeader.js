@@ -4,6 +4,7 @@ import TextLogo from "../../../assets/images/common/TextLogo01.png";
 import ZutopiaLogo from "../../../assets/images/common/zutopiaLogo.png";
 import searchIcon from '../../../assets/images/common/searchIcon.png';
 import styles from './CoHeader.module.css';
+import axios from 'axios';
 
 function Header({ onLogin, isLoggedIn, onLogout }) {
     // const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -13,7 +14,17 @@ function Header({ onLogin, isLoggedIn, onLogout }) {
 
     const handleSearch = () => {
         if (searchTerm.trim() === "") return;
-        navigate('/detail');
+
+        console.log("GET API DATA...");
+        const apiUrl = 'http://localhost:8081/jootopia/v1/users/system/search';
+        axios.get(apiUrl + `?query=${searchTerm.trim()}`)
+        .then((response) =>{
+            navigate(`/detail/${response.data}`);
+        })
+        .catch((error) => {
+          console.error('Detail 데이터 불러오기 실패!', error);
+          alert("올바른 종목명 또는 종목코드를 넣어주세요!")
+        });
     }
 
     const handleKeyPress = (event) => {

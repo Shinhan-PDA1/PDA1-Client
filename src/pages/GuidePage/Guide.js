@@ -4,6 +4,7 @@ import GuideHeader from '../../components/guide/GuideHeader/GuideHeader';
 import Term from '../../components/guide/Term/Term';
 import Concept from '../../components/guide/Concept/Concept';
 import styles from './Guide.module.css';
+import axios from 'axios';
 
 function GuidePage() {
     const headerRef = useRef(null);
@@ -11,6 +12,15 @@ function GuidePage() {
     const conceptRef = useRef(null);
 
     useEffect(() => {
+        const apiUrl = 'http://localhost:8081/jootopia/v1/users/system/guide';
+        axios.get(apiUrl)
+        .then((response) =>{
+          console.log("Guide Response: ", response);
+        })
+        .catch((error) => {
+          console.error('Guide 결과 반환 실패!', error);
+        });
+
         const handleScroll = () => {
             const components = [headerRef, termRef, conceptRef];
 

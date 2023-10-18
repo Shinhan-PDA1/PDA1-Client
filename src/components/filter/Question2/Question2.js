@@ -39,7 +39,7 @@ const Question2 = ({ onAnswer, onNextQuestion }) => {
             className={`${styles.ageOption} ${
               selectedOptions.includes('Finance') && styles.selected
             }`}
-            onClick={() => handleOptionClick('Finance')}
+            onClick={() => handleOptionClick('금융')}
           >
             <img src={Financeimg} alt="금융" />
             <p>금융</p>
@@ -48,7 +48,7 @@ const Question2 = ({ onAnswer, onNextQuestion }) => {
             className={`${styles.ageOption} ${
               selectedOptions.includes('service') && styles.selected
             }`}
-            onClick={() => handleOptionClick('service')}
+            onClick={() => handleOptionClick('서비스')}
           >
             <img src={Serviceimg} alt="service" />
             <p>서비스</p>
@@ -57,7 +57,7 @@ const Question2 = ({ onAnswer, onNextQuestion }) => {
             className={`${styles.ageOption} ${
               selectedOptions.includes('manufacture') && styles.selected
             }`}
-            onClick={() => handleOptionClick('manufacture')}
+            onClick={() => handleOptionClick('제조')}
           >
             <img src={Menufectureimg} alt="제조" />
             <p>제조</p>
@@ -68,7 +68,7 @@ const Question2 = ({ onAnswer, onNextQuestion }) => {
             className={`${styles.ageOption} ${
               selectedOptions.includes('chemistry') && styles.selected
             }`}
-            onClick={() => handleOptionClick('chemistry')}
+            onClick={() => handleOptionClick('화학')}
           >
             <img src={Chemicalimg} alt="화학" />
             <p>화학</p>
@@ -77,7 +77,7 @@ const Question2 = ({ onAnswer, onNextQuestion }) => {
             className={`${styles.ageOption} ${
               selectedOptions.includes('electronic') && styles.selected
             }`}
-            onClick={() => handleOptionClick('electronic')}
+            onClick={() => handleOptionClick('전기, 전자')}
           >
             <img src={Electricimg} alt="전기＊전자" />
             <p>전기 전자</p>
@@ -86,7 +86,7 @@ const Question2 = ({ onAnswer, onNextQuestion }) => {
             className={`${styles.ageOption} ${
               selectedOptions.includes('distribution') && styles.selected
             }`}
-            onClick={() => handleOptionClick('distribution')}
+            onClick={() => handleOptionClick('유통')}
           >
             <img src={Distributionimg} alt="유통" />
             <p>유통</p>
