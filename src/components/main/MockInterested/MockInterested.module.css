@@ -22,7 +22,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
-    margin-left: -2em; /* Adjust the left margin to move the entire group to the left */
+    margin-left: -2.5em; /* Adjust the left margin to move the entire group to the left */
   }
 
   .line {
@@ -88,7 +88,7 @@
     color: white;
     padding: 4px;
     border-radius: 4px;
-    margin-left: 3em;
+    margin-left: 2em;
     height: 2.7em;
     width: 3em;
     margin-top: 1.2em;
@@ -98,11 +98,11 @@
     margin-top: 0.6em;
   }
   
-  .positive {
+  .negative {
     color: blue;
   }
   
-  .negative {
+  .positive {
     color: red;
   }
   /* Add any additional styles here */

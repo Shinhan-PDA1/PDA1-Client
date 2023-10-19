@@ -1,24 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './MockInterested.module.css';
 import { Link } from 'react-router-dom';
 import mockInterestedData from '../../../data/main/mockInterestedData';
-import axios from 'axios';
 
 
 function MockInterested() {
   const themeNames = Object.keys(mockInterestedData);
   const [currentThemeIndex, setCurrentThemeIndex] = useState(0);
-  
-  useEffect(() => {
-    const apiUrl = 'http://jootopia-mainserver-service.team-1.svc.cluster.local/jootopia/v1/users/system/interest';
-    axios.get(apiUrl)
-    .then((response) =>{
-      console.log("Interest Response: ", response);
-    })
-    .catch((error) => {
-      console.error('Interest 결과 반환 실패!', error);
-    });   
-  }, []);
 
   const switchTheme = (direction) => {
     let nextIndex = currentThemeIndex + direction;
@@ -45,7 +33,7 @@ function MockInterested() {
             <div key={index} className={styles.item}>
             <div className={styles.nameCodeContainer}>
               <Link
-                to={`/detail/${item.stock_code}`}
+                to={`/detail`}
                 className={styles.itemLink}
                 style={{ textDecoration: 'none', color: 'black' }}
               >
@@ -62,7 +50,7 @@ function MockInterested() {
                 </div>
                 <div
                   className={styles.changeRateContainer}
-                  style={{ backgroundColor: item.change_rate.includes('-') ? 'red' : 'blue' }}
+                  style={{ backgroundColor: item.change_rate.includes('-') ? 'blue' : 'red' }}
                 >
                   <p>{item.change_rate}</p>
                 </div>

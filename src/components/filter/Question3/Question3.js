@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Question3.module.css';
-import longimg from '../../../assets/images/filter/longterm.png';
-import shortimg from '../../../assets/images/filter/shortterm.png';
+import longimg from '../../../assets/images/filter/LongTerm.png';
+import shortimg from '../../../assets/images/filter/ShortTerm.png';
 
 const Question3 = ({ onNextQuestion, onAnswer }) => {
   const handleOptionSelection = (selectedOption) => {

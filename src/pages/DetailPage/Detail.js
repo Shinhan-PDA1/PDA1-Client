@@ -35,7 +35,7 @@ function DetailPage() {
 
         console.log("GET API DATA...");
         console.log("stock number: ", stock_number);
-        const apiUrl = 'http://jootopia-mainserver-service.team-1.svc.cluster.local/jootopia/v1/users/system/detail';
+        const apiUrl = 'https://jootopia-mainserver.shinhansec-pda.net/jootopia/v1/users/system/detail';
         axios.get(apiUrl + `?stockCode=${stock_number}`)
         //axios.get(apiUrl + `?stockCode=005930`) //삭제
         .then((response) =>{
@@ -54,7 +54,7 @@ function DetailPage() {
           console.error('Detail 데이터 불러오기 실패!', error);
         });
 
-        const apiUrl_crawl = 'http://localhost:4000//api/v1/crawling';
+        const apiUrl_crawl = 'https://jootopia-crawling.shinhansec-pda.net/api/v1/crawling';
         axios.post(apiUrl_crawl + `?code=${stock_number}`)
         //axios.post(apiUrl_crawl + `?code=005930`) //삭제
         .then((response) =>{
