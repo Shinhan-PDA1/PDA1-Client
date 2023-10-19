@@ -7,9 +7,18 @@ import { summaryData, annualData, quarterlyData, aiReport } from '../../../data/
 
 function Finance(props) {
     const [activeTab, setActiveTab] = useState('annual');
-    const [annualFinanceData, setAnnualFinanceData] = useState(props.financeCrawlingData["최근 연간 실적"]);
-    const [quarterlyFinanceData, setQuaterlyFinanceData] = useState(props.financeCrawlingData["최근 분기 실적"]);
-    const [statementComment, setStatementComment] = useState(props.statementComment);
+    const [annualFinanceData, setAnnualFinanceData] = useState(null);
+    const [quarterlyFinanceData, setQuarterlyFinanceData] = useState(null);
+    const [statementComment, setStatementComment] = useState(null);
+
+    useEffect(() => {
+        // 데이터 로딩 처리
+        if (props.financeCrawlingData && props.statementComment) {
+            setAnnualFinanceData(props.financeCrawlingData["최근 연간 실적"]);
+            setQuarterlyFinanceData(props.financeCrawlingData["최근 분기 실적"]);
+            setStatementComment(props.statementComment);
+        }
+    }, [props.financeCrawlingData, props.statementComment]); // 데이터가 변경될 때만 useEffect가 실행
 
     return (
         <div className='container'>
