@@ -26,7 +26,7 @@
 
 
       .issueTitle {
-        flex: 1; /* Allow the title to take up remaining space */
+        width :45%; /* Allow the title to take up remaining space */
         margin-right: 3em; /* Adjust the margin as needed */
         cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
         color: black;
