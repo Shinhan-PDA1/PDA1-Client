@@ -3,10 +3,10 @@ import styles from './Login.module.css';
 import { useNavigate } from 'react-router-dom'; // Import useHistory
 import axios from 'axios';
 
-function LoginPage() {
+function LoginPage({onLogin}) {
 
     const navigate  = useNavigate();
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const [Id, setId] = useState("");
     const [Password, setPassword] = useState("");
@@ -38,6 +38,9 @@ function LoginPage() {
             localStorage.setItem("isSurvey", response.data.isSurvey);
             console.log("isSurvey: ", response.data.isSurvey);
             console.log("localStorage: ", localStorage.getItem("isSurvey"));
+            
+            onLogin();
+            
             if(localStorage.getItem("isSurvey") === "false") {
                 navigate('/filter');
             } else {
