@@ -56,7 +56,7 @@ function Header({ onLogin, isLoggedIn, onLogout }) {
                 <div className={styles.welcomeMessage}>
                     {isLoggedIn ? (
                         <>
-                            Welcome, 고객님
+                            환영합니다, 고객님
                             <button className={styles.logBtn}  onClick={handleLogoutClick}>Logout</button>
                         </>
                     ) : (
