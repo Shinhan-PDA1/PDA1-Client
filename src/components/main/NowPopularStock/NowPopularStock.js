@@ -15,7 +15,7 @@ const NowPopularStock = () => {
       const fetchData = async () => {
         try {
           setLoading(true);
-          const response = await axios.get('http://jootopia-infoconnector-service.team-1.svc.cluster.local/api/v1/shinhan/ranking/rising');
+          const response = await axios.get('https://jootopia-infoconnector.shinhansec-pda.net/api/v1/shinhan/ranking/rising');
           setStocks(response.data.slice(0, 4));
         } catch (error) {
           setError(error);

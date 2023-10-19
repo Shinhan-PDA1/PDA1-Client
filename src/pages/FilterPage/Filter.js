@@ -50,7 +50,7 @@ const FilterPage = () => {
       }
 
       console.log("body: ", body);
-      const apiUrl = 'http://jootopia-mainserver-service.team-1.svc.cluster.local/jootopia/v1/users/system/filter';
+      const apiUrl = 'https://jootopia-crawling.shinhansec-pda.net/jootopia/v1/users/system/filter';
       axios.post(apiUrl, body)
       .then((response) =>{
         console.log("Filter Response: ", response);

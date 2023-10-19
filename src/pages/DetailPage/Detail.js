@@ -37,9 +37,8 @@ function DetailPage() {
         console.log("stock number: ", stock_number);
         const apiUrl = 'https://jootopia-mainserver.shinhansec-pda.net/jootopia/v1/users/system/detail';
         axios.get(apiUrl + `?stockCode=${stock_number}`)
-        //axios.get(apiUrl + `?stockCode=005930`) //삭제
         .then((response) =>{
-            // console.log("Detail, response: ", response);
+            console.log("Detail-response: ", response);
             // console.log("Detail: ", response.data.mainChartResponse);
             // console.log("Detail: ", response.data.chartCommentResponse);
             // console.log("Detail: ", response.data.statementCommentResponse);

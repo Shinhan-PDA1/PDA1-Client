@@ -22,7 +22,7 @@ function NowStockSector () {
 
   useEffect(() => {
     console.log("GET Major Stock DATA...");
-    const apiUrl = 'https://jootopia-crawling-service.team-1.svc.cluster.local:80/api/v1/getmajorstock';
+    const apiUrl = 'https://jootopia-crawling.shinhansec-pda.net/api/v1/getmajorstock';
     axios.post(apiUrl)
     .then((response) =>{
       const inputData = response.data;
