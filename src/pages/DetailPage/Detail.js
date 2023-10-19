@@ -14,65 +14,64 @@ import axios from 'axios';
 
 function DetailPage() {
     const navigate = useNavigate();
-
+    const infoRef = useRef(null); // useRef 사용
     const chartRef = useRef(null);
     const marketTrendRef = useRef(null);
     const financeRef = useRef(null);
     const newsAnnouncementsRef = useRef(null);
     const reportsRef = useRef(null);
 
+    const [stockInfoResponse, setStockInfoResponse] = useState(null); // 초기값 null로 설정
+    const [isLoading, setIsLoading] = useState(true);
+    const [mainChartResponse, setMainChartResponse] = useState(null);
+    const [chartCommentResponse, setChartCommentResponse] = useState(null);
+    const [statementCommentResponse, setStatementCommentResponse] = useState(null);
+    const [chartTableResponse, setChartTableResponse] = useState(null);
 
-    const [isLoading, setIsLoading] = useState(true); // 로딩 상태를 관리하는 상태 변수
-    const [mainChartResponse, setMainChartResponse] = useState();
-    const [chartCommentResponse, setChartCommentResponse] = useState();
-    const [statementCommentResponse, setStatementCommentResponse] = useState();
-    const [chartTableResponse, setChartTableResponse] = useState();
-    const [financeCrawlingData, setFinanceCrawlingData] = useState();
+    const [financeCrawlingData, setFinanceCrawlingData] = useState(null);
 
     const { stock_number } = useParams();
 
-    useEffect(() => {
+    
+// First useEffect for getting main data
+useEffect(() => {
+    console.log("GET API DATA...");
+    console.log("stock number: ", stock_number);
+    
+    const apiUrl = 'http://localhost:8081/jootopia/v1/users/system/detail';
+    axios.get(apiUrl + `?stockCode=${stock_number}`)
+    .then((response) => {
+        setMainChartResponse(response.data.mainChartResponse);
+        setChartCommentResponse(response.data.chartCommentResponse);
+        setStatementCommentResponse(response.data.statementCommentResponse);
+        setChartTableResponse(response.data.chartTableResponse);
+        setStockInfoResponse(response.data.stockInfoResponse);
+    })
+    .catch((error) => {
+        console.error('Detail 데이터 불러오기 실패!', error);
+    });
+    
+    const timer = setTimeout(() => {
+        setIsLoading(false);
+    }, 2000);
+    
+    return () => clearTimeout(timer);
+}, [stock_number]);
 
-        console.log("GET API DATA...");
-        console.log("stock number: ", stock_number);
-        const apiUrl = 'http://localhost:8081/jootopia/v1/users/system/detail';
-        axios.get(apiUrl + `?stockCode=${stock_number}`)
-        //axios.get(apiUrl + `?stockCode=005930`) //삭제
-        .then((response) =>{
-            // console.log("Detail, response: ", response);
-            // console.log("Detail: ", response.data.mainChartResponse);
-            // console.log("Detail: ", response.data.chartCommentResponse);
-            // console.log("Detail: ", response.data.statementCommentResponse);
-            // console.log("Detail: ", response.data.chartTableResponse);
+// Separate useEffect for financeCrawlingData
+useEffect(() => {
+    const apiUrl_crawl = 'http://localhost:4000/api/v1/crawling'; 
+    axios.post(apiUrl_crawl + `?code=${stock_number}`)
+    .then((response) => {
+        console.log(response.data);
+        setFinanceCrawlingData(response.data);
+    })
+    .catch((error) => {
+        console.error('Detail 데이터 불러오기 실패!', error);
+    });
+}, []);
 
-            setMainChartResponse(response.data.mainChartResponse);
-            setChartCommentResponse(response.data.chartCommentResponse);
-            setStatementCommentResponse(response.data.statementCommentResponse);
-            setChartTableResponse(response.data.chartTableResponse);
-        })
-        .catch((error) => {
-          console.error('Detail 데이터 불러오기 실패!', error);
-        });
-
-        const apiUrl_crawl = 'http://localhost:4000//api/v1/crawling';
-        axios.post(apiUrl_crawl + `?code=${stock_number}`)
-        //axios.post(apiUrl_crawl + `?code=005930`) //삭제
-        .then((response) =>{
-            console.log(response.data);
-            setFinanceCrawlingData(response.data);
-        })
-        .catch((error) => {
-          console.error('Detail 데이터 불러오기 실패!', error);
-        });
-
-        // 로딩 컴포넌트가 2초 동안 나타나도록 설정
-        const timer = setTimeout(() => {
-            setIsLoading(false); // 2초 후 로딩 상태를 false로 변경
-        }, 2000);
-
-        return () => clearTimeout(timer); // 컴포넌트가 언마운트되면 타이머를 제거
-    }, []);
-
+    
     const scrollToComponent = (componentName) => {
         let ref;
         switch (componentName) {
@@ -121,25 +120,21 @@ function DetailPage() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-
-
     return (
-<       div className={styles['detail-page']}>
-            {isLoading ? ( // 로딩 상태에 따라 Loading 컴포넌트 또는 본문 컴포넌트를 보여줍니다.
-                <Loading /> // 로딩 중일 때 Loading 컴포넌트를 렌더링
+        <div className={styles['detail-page']}>
+            {isLoading ? (
+                <Loading />
             ) : (
                 <>
-                    <StockInfo />
+                    <div ref={infoRef} className={styles['animated-container']}><StockInfo infoData={stockInfoResponse} /></div>
                     <TopNav scrollToComponent={scrollToComponent} />
                     <SideNav scrollToComponent={scrollToComponent} /> 
-                    <div ref={chartRef} className={styles['animated-container']}><Chart chartData={mainChartResponse} chartComment={chartCommentResponse} chartTable={chartTableResponse}/></div>
+                    <div ref={chartRef} className={styles['animated-container']}><Chart chartData={mainChartResponse} chartComment={chartCommentResponse} chartTable={chartTableResponse} /></div>
                     <div ref={marketTrendRef} className={styles['animated-container']}><MarketTrend /></div>
-                    <div ref={financeRef} className={styles['animated-container']}><Finance statementComment={statementCommentResponse} financeCrawlingData={financeCrawlingData}/></div>
+                    <div ref={financeRef} className={styles['animated-container']}><Finance statementComment={statementCommentResponse} financeCrawlingData={financeCrawlingData} /></div>
                     <div ref={newsAnnouncementsRef} className={styles['animated-container']}><NewsAnnouncements /></div>
                     <div ref={reportsRef} className={styles['animated-container']}><Reports /></div>
-                    <button className={styles['sell-button']} onClick={() => navigate('/feedback')}>
-                        ▶ 매매하러 가기
-                    </button>
+         
                 </>
             )}
         </div>
