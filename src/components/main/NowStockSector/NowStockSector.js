@@ -21,8 +21,8 @@ function NowStockSector () {
   const kospi200Ref = useRef(null);
 
   useEffect(() => {
-    console.log("GET API DATA...");
-    const apiUrl = 'http://jootopia-crawling-service.team-1.svc.cluster.local/api/v1/getmajorstock';
+    console.log("GET Major Stock DATA...");
+    const apiUrl = 'https://jootopia-crawling-service.team-1.svc.cluster.local:80/api/v1/getmajorstock';
     axios.post(apiUrl)
     .then((response) =>{
       const inputData = response.data;
