@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Loading from '../../components/common/Loading/Loading';
 import StockInfo from "../../components/detail/StockInfo/StockInfo";
 import TopNav from "../../components/detail/TopNav/TopNav";
@@ -10,6 +10,7 @@ import Finance from '../../components/detail/Finance/Finance';
 import NewsAnnouncements from '../../components/detail/NewsAnnouncements/NewsAnnouncements';
 import Reports from '../../components/detail/Reports/Reports';
 import styles from './Detail.module.css';
+import axios from 'axios';
 
 function DetailPage() {
     const navigate = useNavigate();
@@ -22,9 +23,48 @@ function DetailPage() {
 
 
     const [isLoading, setIsLoading] = useState(true); // 로딩 상태를 관리하는 상태 변수
+    const [mainChartResponse, setMainChartResponse] = useState();
+    const [chartCommentResponse, setChartCommentResponse] = useState();
+    const [statementCommentResponse, setStatementCommentResponse] = useState();
+    const [chartTableResponse, setChartTableResponse] = useState();
+    const [financeCrawlingData, setFinanceCrawlingData] = useState();
 
-    
+    const { stock_number } = useParams();
+
     useEffect(() => {
+
+        console.log("GET API DATA...");
+        console.log("stock number: ", stock_number);
+        const apiUrl = 'http://localhost:8081/jootopia/v1/users/system/detail';
+        axios.get(apiUrl + `?stockCode=${stock_number}`)
+        //axios.get(apiUrl + `?stockCode=005930`) //삭제
+        .then((response) =>{
+            // console.log("Detail, response: ", response);
+            // console.log("Detail: ", response.data.mainChartResponse);
+            // console.log("Detail: ", response.data.chartCommentResponse);
+            // console.log("Detail: ", response.data.statementCommentResponse);
+            // console.log("Detail: ", response.data.chartTableResponse);
+
+            setMainChartResponse(response.data.mainChartResponse);
+            setChartCommentResponse(response.data.chartCommentResponse);
+            setStatementCommentResponse(response.data.statementCommentResponse);
+            setChartTableResponse(response.data.chartTableResponse);
+        })
+        .catch((error) => {
+          console.error('Detail 데이터 불러오기 실패!', error);
+        });
+
+        const apiUrl_crawl = 'http://localhost:4000//api/v1/crawling';
+        axios.post(apiUrl_crawl + `?code=${stock_number}`)
+        //axios.post(apiUrl_crawl + `?code=005930`) //삭제
+        .then((response) =>{
+            console.log(response.data);
+            setFinanceCrawlingData(response.data);
+        })
+        .catch((error) => {
+          console.error('Detail 데이터 불러오기 실패!', error);
+        });
+
         // 로딩 컴포넌트가 2초 동안 나타나도록 설정
         const timer = setTimeout(() => {
             setIsLoading(false); // 2초 후 로딩 상태를 false로 변경
@@ -32,8 +72,6 @@ function DetailPage() {
 
         return () => clearTimeout(timer); // 컴포넌트가 언마운트되면 타이머를 제거
     }, []);
-
-
 
     const scrollToComponent = (componentName) => {
         let ref;
@@ -94,9 +132,9 @@ function DetailPage() {
                     <StockInfo />
                     <TopNav scrollToComponent={scrollToComponent} />
                     <SideNav scrollToComponent={scrollToComponent} /> 
-                    <div ref={chartRef} className={styles['animated-container']}><Chart /></div>
+                    <div ref={chartRef} className={styles['animated-container']}><Chart chartData={mainChartResponse} chartComment={chartCommentResponse} chartTable={chartTableResponse}/></div>
                     <div ref={marketTrendRef} className={styles['animated-container']}><MarketTrend /></div>
-                    <div ref={financeRef} className={styles['animated-container']}><Finance /></div>
+                    <div ref={financeRef} className={styles['animated-container']}><Finance statementComment={statementCommentResponse} financeCrawlingData={financeCrawlingData}/></div>
                     <div ref={newsAnnouncementsRef} className={styles['animated-container']}><NewsAnnouncements /></div>
                     <div ref={reportsRef} className={styles['animated-container']}><Reports /></div>
                     <button className={styles['sell-button']} onClick={() => navigate('/feedback')}>

@@ -31,7 +31,7 @@ function App() {
                         onLogout={handleLogout}
                         fanID={fanID} />
                 <Routes>
-                    <Route path="/detail" element={<DetailPage />} />
+                    <Route path="/detail/:stock_number" element={<DetailPage />} />
                     <Route path="/guide" element={<GuidePage />} />
                     <Route path="/filter" element={<FilterPage />} />
                     <Route path='/main' element={<MainPage />} />

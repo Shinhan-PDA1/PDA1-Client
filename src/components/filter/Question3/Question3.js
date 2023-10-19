@@ -16,11 +16,11 @@ const Question3 = ({ onNextQuestion, onAnswer }) => {
       <h2 className={styles.questionTitle}>Q3.</h2>
       <h3 className={styles.questionText}>투자 선호 기간을 선택해주세요.</h3>
       <div className={styles.answerContainer}>
-        <div className={styles.answerOption} onClick={() => handleOptionSelection('장기(1년 초과)')}>
+        <div className={styles.answerOption} onClick={() => handleOptionSelection('long')}>
           <img src={longimg} alt="장기" />
           <p>장기(1년 초과)</p>
         </div>
-        <div id={styles.option2} className={styles.answerOption} onClick={() => handleOptionSelection('단기(1년 이하)')}>
+        <div id={styles.option2} className={styles.answerOption} onClick={() => handleOptionSelection('short')}>
           <img src={shortimg} alt="단기" />
           <p>단기(1년 이하)</p>
         </div>

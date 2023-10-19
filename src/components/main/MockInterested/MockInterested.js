@@ -1,12 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './MockInterested.module.css';
 import { Link } from 'react-router-dom';
 import mockInterestedData from '../../../data/main/mockInterestedData';
+import axios from 'axios';
 
 
 function MockInterested() {
   const themeNames = Object.keys(mockInterestedData);
   const [currentThemeIndex, setCurrentThemeIndex] = useState(0);
+  
+  useEffect(() => {
+    const apiUrl = 'http://localhost:8081/jootopia/v1/users/system/interest';
+    axios.get(apiUrl)
+    .then((response) =>{
+      console.log("Interest Response: ", response);
+    })
+    .catch((error) => {
+      console.error('Interest 결과 반환 실패!', error);
+    });   
+  }, []);
 
   const switchTheme = (direction) => {
     let nextIndex = currentThemeIndex + direction;
@@ -33,7 +45,7 @@ function MockInterested() {
             <div key={index} className={styles.item}>
             <div className={styles.nameCodeContainer}>
               <Link
-                to={`/detail`}
+                to={`/detail/${item.stock_code}`}
                 className={styles.itemLink}
                 style={{ textDecoration: 'none', color: 'black' }}
               >

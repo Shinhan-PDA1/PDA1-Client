@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
-import { css } from "@emotion/react";
 import PulseLoader from "react-spinners/PulseLoader";
 import styles from './Chat.module.css';
 import lulu from '../../../assets/images/common/chat01.png';
 import send from '../../../assets/images/common/send.png';
-import mockChatData from '../../../data/common/mockChatData';
+import axios from 'axios';
 
-// 스피너 스타일 설정
-const override = css`
-  display: block;
-  margin: auto 4%;
-  border-color: red;
-`;
+
+
+const initialMessages = [
+    { user: 'AI', text: '안녕하세요! 척척박사 루루입니다. \n ＊단어 검색 모드 : 단순 용어 검색 시, 더 빠르고 정확한 답변을 받으실 수 있습니다. \n＊질문하기 모드 : 용어 외 더 복잡한 질문 시 설정해주세요. ' },
+];
 
 function Chatting() {
+    const [messages, setMessages] = useState(initialMessages);
     const [isOpen, setIsOpen] = useState(true);
-    const [messages, setMessages] = useState(mockChatData);
     const [inputValue, setInputValue] = useState('');
     const [isTerm, setIsTerm] = useState(false);
 
@@ -24,10 +22,29 @@ function Chatting() {
             setMessages([...messages, { user: 'You', text: inputValue.trim(), isLoading: false }]);
             setInputValue('');
 
-            // TODO: 서버 통신 코드
-            setTimeout(() => { // 임시로 setTimeout을 사용하여 비동기 처리.
-                setMessages(prevMessages => [...prevMessages, { user: 'AI', text: 'AI 응답 메시지', isLoading: true }]);
-            }, 10);
+            const body = {
+                "question": inputValue.trim(),
+                "type": isTerm ? 'word' : 'question'
+            }
+
+            // AI 응답 대기 메시지 추가
+            setMessages(prevMessages => [...prevMessages, { user: 'AI', isLoading: false }]);
+
+            console.log("ChatBot API...");
+            const apiUrl = 'http://localhost:8081/jootopia/v1/users/system/chatbot';
+            axios.post(apiUrl, body)
+            .then((response) =>{
+                setMessages(prevMessages => [
+                    ...prevMessages.slice(0, -1), // 마지막 로딩 메시지 제거
+                    { user: 'AI', text: response.data.response, isLoading: false }
+                ]);
+
+            })
+            .catch((error) => {
+              console.error('Chat API...', error);
+            });
+
+setMessages(prevMessages => [...prevMessages, { user: 'AI', text: 'AI 응답 메시지', isLoading: true }]);
         }
     };
 
@@ -54,7 +71,7 @@ function Chatting() {
                         <div key={index} className={msg.user === 'You' ? styles.userMessage : styles.aiMessage}>
                             <span className={styles.messageBubble}>
                                 {msg.isLoading ? 
-                                    <PulseLoader color={"#123abc"} loading={true} css={override} size={10} /> : 
+                                    <PulseLoader color={"#123abc"} loading={true} size={10} /> : 
                                     msg.text}
                             </span>
                         </div>

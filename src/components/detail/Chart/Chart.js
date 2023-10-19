@@ -6,7 +6,7 @@ import mockChartData from '../../../data/detail/mockChartData';
 import ReactApexChart from 'react-apexcharts'
 import axios from 'axios';
 
-function Chart() {
+function Chart(props) {
   const { tableData, aiReport } = mockChartData;
   
   const [candleData, setCandleData] = useState();
@@ -17,98 +17,114 @@ function Chart() {
   const [lineData120, setLineData120] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
+  const [mainchartData, setMainChartData] = useState();
+  const [chartTable, setChartTable] = useState();
+  const [chartComment, setChartComment] = useState();
+
   useEffect(()=>{
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
-    console.log("GET API DATA...");
-    const apiUrl = 'http://localhost:8080/api/v1/stock/information/test?code=005930';
-    axios.get(apiUrl)
-    .then((response) =>{
+        
+    console.log("GET PROP DATA...");
+    console.log("chartData: ", props.chartData.chartData);
+    console.log("chartTable: ", props.chartTable);
+    console.log("chartComment: ", props.chartComment);
 
-      const inputData = response.data.chartData.reverse();
+    setMainChartData(props.chartData.chartData);
+    setChartTable(props.chartTable);
+    setChartComment(props.chartComment);
 
-      const dailyCandleData = [];
-      const volumeData = [];
-      const movingAverageData5 = [];
-      const movingAverageData20 = [];
-      const movingAverageData60 = [];
-      const movingAverageData120 = [];
+    const inputData = props.chartData.chartData.reverse();
 
-      let sum5 = 0;
-      let sum20 = 0;
-      let sum60 = 0;
-      let sum120 = 0;
+    const dailyCandleData = [];
+    const volumeData = [];
+    const movingAverageData5 = [];
+    const movingAverageData20 = [];
+    const movingAverageData60 = [];
+    const movingAverageData120 = [];
 
-      for(let i = 0; i < inputData.length; i++) {
-        sum120 += Number(inputData[i].close_price);
+    let sum5 = 0;
+    let sum20 = 0;
+    let sum60 = 0;
+    let sum120 = 0;
 
-        if (i >= 60) {
-          sum60 += Number(inputData[i].close_price);
-        }
+    for(let i = 0; i < inputData.length; i++) {
+      sum120 += Number(inputData[i].close_price);
 
-        if (i >= 100) {
-          sum20 += Number(inputData[i].close_price);
-        }
-
-        if (i >= 115) {
-          sum5 += Number(inputData[i].close_price);
-        }
-
-        if (i >= 119) {
-          const date = inputData[i].date;
-          const year = date.substring(0,4);
-          const month = date.substring(4,6);
-          const day = date.substring(6,8);
-
-          dailyCandleData.push({
-            x: `${year}-${month}-${day}`,
-            y: [
-              inputData[i].open_price,
-              inputData[i].high_price,
-              inputData[i].low_price,
-              inputData[i].close_price
-            ],
-          });
-  
-          volumeData.push({
-            x: `${year}-${month}-${day}`,
-            y: inputData[i].trading_volume,
-          });
-
-          movingAverageData120.push({
-            x: `${year}-${month}-${day}`,
-            y: `${Math.floor(sum120/120)}`,
-          });
-          movingAverageData60.push({
-            x: `${year}-${month}-${day}`,
-            y: `${Math.floor(sum60/60)}`,
-          });
-          movingAverageData20.push({
-            x: `${year}-${month}-${day}`,
-            y: `${sum20/20}`,
-          });
-          movingAverageData5.push({
-            x: `${year}-${month}-${day}`,
-            y: `${sum5/5}`,
-          });
-          sum120 -= Number(inputData[i-119].close_price);
-          sum60 -= Number(inputData[i-59].close_price);
-          sum20 -= Number(inputData[i-19].close_price);
-          sum5 -= Number(inputData[i-4].close_price);
-        }
+      if (i >= 60) {
+        sum60 += Number(inputData[i].close_price);
       }
-      setLineData5(movingAverageData5);
-      setLineData20(movingAverageData20);
-      setLineData60(movingAverageData60);
-      setLineData120(movingAverageData120);
-      setVolumeData(volumeData); 
-      setCandleData(dailyCandleData);
-    })
-    .catch((error) => {
-      console.error('데이터 불러오기 실패!', error);
-    });
+
+      if (i >= 100) {
+        sum20 += Number(inputData[i].close_price);
+      }
+
+      if (i >= 115) {
+        sum5 += Number(inputData[i].close_price);
+      }
+
+      if (i >= 119) {
+        const date = inputData[i].date;
+        const year = date.substring(0,4);
+        const month = date.substring(4,6);
+        const day = date.substring(6,8);
+
+        dailyCandleData.push({
+          x: `${year}-${month}-${day}`,
+          y: [
+            inputData[i].open_price,
+            inputData[i].high_price,
+            inputData[i].low_price,
+            inputData[i].close_price
+          ],
+        });
+
+        volumeData.push({
+          x: `${year}-${month}-${day}`,
+          y: inputData[i].trading_volume,
+        });
+
+        movingAverageData120.push({
+          x: `${year}-${month}-${day}`,
+          y: `${Math.floor(sum120/120)}`,
+        });
+        movingAverageData60.push({
+          x: `${year}-${month}-${day}`,
+          y: `${Math.floor(sum60/60)}`,
+        });
+        movingAverageData20.push({
+          x: `${year}-${month}-${day}`,
+          y: `${sum20/20}`,
+        });
+        movingAverageData5.push({
+          x: `${year}-${month}-${day}`,
+          y: `${sum5/5}`,
+        });
+        sum120 -= Number(inputData[i-119].close_price);
+        sum60 -= Number(inputData[i-59].close_price);
+        sum20 -= Number(inputData[i-19].close_price);
+        sum5 -= Number(inputData[i-4].close_price);
+      }
+    }
+    setLineData5(movingAverageData5);
+    setLineData20(movingAverageData20);
+    setLineData60(movingAverageData60);
+    setLineData120(movingAverageData120);
+    setVolumeData(volumeData); 
+    setCandleData(dailyCandleData);
   }, []);
+
+  const newChartTableData = {
+    "시장구분":props.chartTable.stock_market,
+    "연중최고":props.chartTable.annual_high,
+    "연중최저":props.chartTable.annual_low,
+    "자본금":props.chartTable.capital,
+    "상장주식수":props.chartTable.listed_stock_number,
+    "시가총액":props.chartTable.market_capital,
+    "PER":props.chartTable.per,
+    "EPS":props.chartTable.eps
+  }
    
   const candlestickSeries = [
       {
@@ -161,7 +177,7 @@ function Chart() {
         type: "candlestick", // 초기 그래프 유형 설정 (캔들스틱)
       },
       title: {
-          text: "일봉, 5일, 20일, 60일 이동평균선",
+          text: "일봉, 5일, 20일, 60일 120일 이동평균선",
           align: "left",
       },
       stroke: {
@@ -231,20 +247,20 @@ return (
               options={mainChartOptions}
               series={candlestickSeries.concat(lineSeries)}
               type="candlestick"
-              width={600}
+              width={700}
               height={400}
             />
             <ReactApexChart
               options={volumeChartOptions}
               series={barSeries}
               type="line"
-              width={600}
+              width={700}
               height={200}
             />
           </div>
           <table className={styles["chart-table"]}>
             <tbody>
-              {Object.entries(tableData).map(([key, value], index) => (
+              {Object.entries(newChartTableData).map(([key, value], index) => (
                 <tr key={index}>
                   <td>{key}</td>
                   <td>{value}</td>
@@ -256,7 +272,7 @@ return (
       </div>
       <div className="component-header">
         <h2>AI REPORT</h2>
-        <p>차트 해석이 어렵다면 신한AI분석을 참고!해보세요.</p>
+        <p>고객님의 투자성향(단기/장기)맞춤 차트 AI REPORT</p>
       </div>
       <div className={styles["ai-report"]}>
         <hr />
@@ -266,7 +282,7 @@ return (
             alt="AI Icon"
             className={styles["ai-image"]}
           />
-          <textarea value={aiReport} readOnly />
+          <textarea value={props.chartComment.chart_short_comment} readOnly />
         </div>
       </div>
     </div>
