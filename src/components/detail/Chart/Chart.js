@@ -115,13 +115,11 @@ function Chart(props) {
 
   const newChartTableData = {
     "시장구분":props.chartTable.stock_market,
-    "연중최고":props.chartTable.annual_high,
-    "연중최저":props.chartTable.annual_low,
-    "자본금":props.chartTable.capital,
+    "연중최고(원)":props.chartTable.annual_high,
+    "연중최저(원)":props.chartTable.annual_low,
+    "자본금(원)":props.chartTable.capital,
     "상장주식수":props.chartTable.listed_stock_number,
-    "시가총액":props.chartTable.market_capital,
-    "PER":props.chartTable.per,
-    "EPS":props.chartTable.eps
+    "시가총액(원)":props.chartTable.market_capital,
   }
    
   const candlestickSeries = [
@@ -274,7 +272,6 @@ return (
               <tr key={index}>
                 <td>{key}</td>
                 <td>{isNaN(value) ? value : parseInt(value).toLocaleString()}</td>
-                {/* isNaN(value)는 값이 숫자인지 확인하고, 숫자라면 toLocaleString을 적용 */}
               </tr>
             ))}
           </tbody>
