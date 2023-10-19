@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
-import { conceptData as initialConceptData } from '../../../data/guide/mockConceptData';
+import React, { useState, useEffect } from 'react';
 import styles from './Concept.module.css';
 
-function Concept() {
-    const [conceptData, setConceptData] = useState(initialConceptData); // 상태 초기화
+function Concept({ data }) {
+    const [conceptData, setConceptData] = useState([]); // 상태 초기화
+
+    useEffect(() => {
+        const newData = data.map((item, index) => ({ ...item, id: index, checked: false }));
+        setConceptData(newData); // data prop이 변경될 때마다 상태 업데이트
+        console.log(data)
+    }, [data]);
 
     const handleCheckboxChange = (id) => {
-        setConceptData(conceptData.map(data => 
-            data.id === id ? {...data, checked: !data.checked} : data
+        setConceptData(conceptData.map(item => 
+            item.id === id ? {...item, checked: !item.checked} : item
         )); // 체크박스 상태 토글
     };
 
@@ -17,11 +22,11 @@ function Concept() {
                 <h3>응용</h3>
                 <p>과거에 몰랐던 내용들을 복습해보세요.</p>
             </div>
-            {conceptData.map(item => (
+            {conceptData.map(item => ( // conceptData를 매핑
                 <div className={styles.term} key={item.id}>
                     <div className={styles.content}>
                         <div className={styles.contentHeader}>
-                            <h4>💙{item.title}</h4>
+                            <h4>💙{item.question}</h4>
                             <input 
                                 type="checkbox" 
                                 id={`option${item.id}`} 
@@ -36,4 +41,5 @@ function Concept() {
         </div>
     );
 }
+
 export default Concept;
