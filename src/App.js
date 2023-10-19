@@ -35,6 +35,7 @@ function App() {
                     <Route path="/guide" element={<GuidePage />} />
                     <Route path="/filter" element={<FilterPage />} />
                     <Route path='/main' element={<MainPage />} />
+                    <Route path='/' element={<MainPage />} />
                     <Route path='/feedback' element={<FeedbackPage />} />
                     <Route path="/login" element={<LoginPage onLogin={handleLogin}  />} />
                 </Routes>
