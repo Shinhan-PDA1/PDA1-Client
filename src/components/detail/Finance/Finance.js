@@ -45,7 +45,7 @@ function Finance(props) {
                                     <tr key={key}>
                                         <td>{key}</td>
                                         {Object.keys(activeTab === 'annual' ? annualFinanceData : quarterlyFinanceData).map(period => (
-                                            <td key={period}>{(activeTab === 'annual' ? annualFinanceData : quarterlyFinanceData)[period][key]}</td>
+                                            <td key={period}>{(activeTab === 'annual' ? annualFinanceData : quarterlyFinanceData)[period][key].toLocaleString()}</td>
                                         ))}
                                     </tr>
                                 ))}
