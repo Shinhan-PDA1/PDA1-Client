@@ -35,7 +35,7 @@ function DetailPage() {
 
         console.log("GET API DATA...");
         console.log("stock number: ", stock_number);
-        const apiUrl = 'http://localhost:8081/jootopia/v1/users/system/detail';
+        const apiUrl = 'http://jootopia-mainserver-service.team-1.svc.cluster.local/jootopia/v1/users/system/detail';
         axios.get(apiUrl + `?stockCode=${stock_number}`)
         //axios.get(apiUrl + `?stockCode=005930`) //삭제
         .then((response) =>{

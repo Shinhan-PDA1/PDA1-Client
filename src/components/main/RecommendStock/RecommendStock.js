@@ -16,7 +16,7 @@ const RecommendStock = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://localhost:8080/api/v1/shinhan/recommend/portfolio');
+        const response = await axios.get('http://jootopia-infoconnector-service.team-1.svc.cluster.local/api/v1/shinhan/recommend/portfolio');
         setStocks(response.data.slice(0, 4));
       } catch (error) {
         setError(error);

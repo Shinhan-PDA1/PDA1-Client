@@ -12,7 +12,7 @@ function GuidePage() {
     const conceptRef = useRef(null);
 
     useEffect(() => {
-        const apiUrl = 'http://localhost:8081/jootopia/v1/users/system/guide';
+        const apiUrl = 'http://jootopia-mainserver-service.team-1.svc.cluster.local/jootopia/v1/users/system/guide';
         axios.get(apiUrl)
         .then((response) =>{
           console.log("Guide Response: ", response);

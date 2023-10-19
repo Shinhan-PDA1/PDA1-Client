@@ -16,7 +16,7 @@ const TopRiseStock = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://localhost:8080/api/v1/shinhan/ranking/issue?query_type=2');
+        const response = await axios.get('http://jootopia-infoconnector-service.team-1.svc.cluster.local/api/v1/shinhan/ranking/issue?query_type=2');
         setStocks(response.data.slice(0, 5));
       } catch (error) {
         setError(error);

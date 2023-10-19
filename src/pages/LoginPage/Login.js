@@ -30,7 +30,7 @@ function LoginPage() {
             password: Password
         };
 
-        const apiUrl = 'http://localhost:8081/jootopia/v1/users/login';
+        const apiUrl = 'http://jootopia-mainserver-service.team-1.svc.cluster.local/jootopia/v1/users/login';
         axios.post(apiUrl, userData)
         .then(response => {
             console.log('로그인 성공');

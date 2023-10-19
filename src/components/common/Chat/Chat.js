@@ -31,7 +31,7 @@ function Chatting() {
             setMessages(prevMessages => [...prevMessages, { user: 'AI', isLoading: false }]);
 
             console.log("ChatBot API...");
-            const apiUrl = 'http://localhost:8081/jootopia/v1/users/system/chatbot';
+            const apiUrl = 'http://jootopia-mainserver-service.team-1.svc.cluster.local/jootopia/v1/users/system/chatbot';
             axios.post(apiUrl, body)
             .then((response) =>{
                 setMessages(prevMessages => [

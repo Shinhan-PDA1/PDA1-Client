@@ -10,7 +10,7 @@ function MockInterested() {
   const [currentThemeIndex, setCurrentThemeIndex] = useState(0);
   
   useEffect(() => {
-    const apiUrl = 'http://localhost:8081/jootopia/v1/users/system/interest';
+    const apiUrl = 'http://jootopia-mainserver-service.team-1.svc.cluster.local/jootopia/v1/users/system/interest';
     axios.get(apiUrl)
     .then((response) =>{
       console.log("Interest Response: ", response);
