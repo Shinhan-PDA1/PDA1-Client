@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './NowStockSector.module.css';
-import axios from 'axios';
-import ReactApexChart from 'react-apexcharts'
+import kospiimg from '../../../assets/images/main/kospi.png';
+import kosdqpimg from '../../../assets/images/main/kosdaq.png';
+import kospi200img from '../../../assets/images/main/kospi200.png';
 
 function NowStockSector () {
 
@@ -13,49 +14,12 @@ function NowStockSector () {
     kosdaq: false,
     kospi200: false,
   });
-  const [kospi, setKospi] = useState();
-  const [kosdaq, setKosdaq] = useState();
-  const [kospi200, setKospi200] = useState();
   const kospiRef = useRef(null);
   const kosdaqRef = useRef(null);
   const kospi200Ref = useRef(null);
 
-  useEffect(() => {
-    console.log("GET API DATA...");
-    const apiUrl = 'http://localhost:4000/api/v1/getmajorstock';
-    axios.post(apiUrl)
-    .then((response) =>{
-      const inputData = response.data;
-    
-      const kospiData = [];
-      const kosdaqData = [];
-      const kospi200Data = [];
-  
-      for(let i = 0; i < inputData.length; i++){
-  
-        kospiData.push({
-          x: inputData[i].date,
-          y: inputData[i].kospi,
-        });
-  
-        kosdaqData.push({
-          x: inputData[i].date,
-          y: inputData[i].kosdaq,
-        });
-  
-        kospi200Data.push({
-          x: inputData[i].date,
-          y: inputData[i].kospi200,
-        });
-      }
-      setKospi(kospiData);
-      setKosdaq(kosdaqData);
-      setKospi200(kospi200Data);
-    })
-    .catch((error) => {
-      console.error('데이터 불러오기 실패!', error);
-    });
 
+  useEffect(() => {
     // 함수를 정의하고, 1초마다 현재 시각을 갱신합니다.
     const updateCurrentTime = () => setCurrentTime(new Date());
     const intervalId = setInterval(updateCurrentTime, 1000);
@@ -68,62 +32,6 @@ function NowStockSector () {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []); // 두 번째 인자로 빈 배열을 전달하여 컴포넌트가 처음 렌더링될 때만 useEffect가 실행되도록 합니다.
-
-
-  const KospiSeries = [
-    {
-      name: "Kospi", // 범례에 표시될 이름
-      type: "line", // 꺾은선 그래프로 설정
-      data: kospi,
-      //color: '#00FF00',
-    },
-  ]
-
-  const KosdaqSeries = [
-    {
-      name: "Kosdaq", // 범례에 표시될 이름
-      type: "line", // 꺾은선 그래프로 설정
-      data: kosdaq,
-      //color: '#00FF00',
-    },
-  ]
-
-  const Kospi200Series = [
-    {
-      name: "Kospi200", // 범례에 표시될 이름
-      type: "line", // 꺾은선 그래프로 설정
-      data: kospi200,
-      //color: '#00FF00',
-    },
-  ]
-
-  const mainChartOptions = {
-    chart: {
-      type: "line", // 초기 그래프 유형 설정
-      toolbar: {
-        show: false,
-      },
-    },
-    // title: {
-    //     text: "일봉, 5일, 20일, 60일 이동평균선",
-    //     align: "left",
-    // },
-    stroke: {
-        curve: 'smooth',
-        width: 2,
-    },
-    xaxis: {
-        type: "category",
-        labels: {
-          formatter: function (value) {
-            return "";
-          }
-        },
-    },
-    yaxis: {
-        show: true,
-    },
-  };
 
   const handleClickOutside = (event) => {
     if (
@@ -165,15 +73,9 @@ function NowStockSector () {
         <div
             ref={kospiRef}
             className={`${styles.chartgroup} ${showStockInfo.kospi ? styles.hide : ''}`}
-        >
-          <ReactApexChart
-              options={mainChartOptions}
-              series={KospiSeries}
-              type="line"
-              width={280}
-              height={150}
-            />
-        </div>
+          >
+            <img src={kospiimg} alt="지수 + 차트" />
+          </div>
           {showStockInfo.kospi && (
             <div className={styles.stockInfo}>
               <p>증권거래소에 상장된 종목들의 주식 가격을 종합적으로 표시한 수치</p>
@@ -189,13 +91,7 @@ function NowStockSector () {
             ref={kosdaqRef}
             className={`${styles.chartgroup} ${showStockInfo.kosdaq ? styles.hide : ''}`}
           >
-            <ReactApexChart
-              options={mainChartOptions}
-              series={KosdaqSeries}
-              type="line"
-              width={280}
-              height={150}
-            />
+            <img src={kosdqpimg} alt="지수 + 차트" />
           </div>
           {showStockInfo.kosdaq && (
             <div className={styles.stockInfo}>
@@ -212,17 +108,11 @@ function NowStockSector () {
             ref={kospi200Ref}
             className={`${styles.chartgroup} ${showStockInfo.kospi200 ? styles.hide : ''}`}
           >
-          <ReactApexChart
-              options={mainChartOptions}
-              series={Kospi200Series}
-              type="line"
-              width={280}
-              height={150}
-            />
-          </div>
+            <img src={kospi200img} alt="지수 + 차트" />
+        </div>
           {showStockInfo.kospi200 && (
             <div className={styles.stockInfo}>
-              <p>시장 대표성, 유동성, 업종 대표성을 고려하여 선정된 한국을 대표하는 200개 주식의 시가총액을 지수화한 것</p>
+              <p>시장 대표성, 유동성, 업종 대표성을 <br></br>고려하여 선정된 한국을 대표하는 200개 주식의 시가총액을 지수화한 것</p>
             </div>
           )}
         </div>
