@@ -5,31 +5,31 @@ const mockInterestedData = {
             [
                 {
                     item_name : "대한항공우",
-                    curr_pric : "23,400",
+                    curr_pric : "23,000",
                     change_number : "▲50",
-                    change_rate : "0.21%",
-                    stock_code : "002345"
+                    change_rate : "0.22%",
+                    stock_code : "003495"
                 },
                 {
                     item_name : "아시아나항공",
-                    curr_pric : "23400",
+                    curr_pric : "10,050",
                     change_number : "▼50",
                     change_rate : "-0.21%",
-                    stock_code : "002345"
+                    stock_code : "020560"
                 },
                 {
                     item_name : "제주항공",
-                    curr_pric : "23400",
+                    curr_pric : "10,080",
                     change_number : "▲50",
-                    change_rate : "0.21%",
-                    stock_code : "002345"
+                    change_rate : "0.30%",
+                    stock_code : "089590"
                 },
                 {
                     item_name : "대한항공",
-                    curr_pric : "23400",
+                    curr_pric : "20,150",
                     change_number : "▲50",
-                    change_rate : "0.21%",
-                    stock_code : "002345"
+                    change_rate : "1.36%",
+                    stock_code : "003490"
                 }
             ]
             },
