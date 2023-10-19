@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 import '../../../styles/detail/detailGlobal.css'
 import styles from './Chart.module.css';
 import sol from '../../../assets/images/detail/sol04.png'
-import mockChartData from '../../../data/detail/mockChartData';
 import ReactApexChart from 'react-apexcharts'
 import axios from 'axios';
 
 function Chart(props) {
-  const { tableData, aiReport } = mockChartData;
   
   const [candleData, setCandleData] = useState();
   const [volumeData, setVolumeData] = useState();
@@ -234,6 +232,17 @@ function Chart(props) {
     },
 };
 
+
+// 데이터의 숫자 값들에 ,를 찍어서 포맷팅
+const formattedChartTable = {};
+
+for (const key in chartTable) {
+  const value = chartTable[key];
+  // 숫자로 변환하고, 숫자가 아닌 경우는 그대로 두기
+  formattedChartTable[key] = isNaN(value) ? value : parseInt(value).toLocaleString();
+}
+console.log(formattedChartTable);
+
 return (
   <div className="container">
     <div className={styles["price-chart"]}>
@@ -258,17 +267,20 @@ return (
               height={200}
             />
           </div>
+ 
           <table className={styles["chart-table"]}>
-            <tbody>
-              {Object.entries(newChartTableData).map(([key, value], index) => (
-                <tr key={index}>
-                  <td>{key}</td>
-                  <td>{value}</td>
-                </tr>
-                
-              ))}
-            </tbody>
-          </table>
+          <tbody>
+            {Object.entries(newChartTableData).map(([key, value], index) => (
+              <tr key={index}>
+                <td>{key}</td>
+                <td>{isNaN(value) ? value : parseInt(value).toLocaleString()}</td>
+                {/* isNaN(value)는 값이 숫자인지 확인하고, 숫자라면 toLocaleString을 적용 */}
+              </tr>
+            ))}
+          </tbody>
+
+</table>
+
       </div>
       <div className="component-header">
         <h2>AI REPORT</h2>
