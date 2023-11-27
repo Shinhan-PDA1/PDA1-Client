@@ -24,7 +24,7 @@ function GuidePage() {
   };
 
   useEffect(() => {
-      axios.get('http://localhost:8081/jootopia/v1/users/system/guide')
+      axios.get('https://jootopia-mainserver.shinhansec-pda.net/jootopia/v1/users/system/guide')
       .then((response) =>{
           console.log("Guide Response: ", response);
           const test = response.data.response;

@@ -16,7 +16,7 @@ function Header({ onLogin, isLoggedIn, onLogout }) {
         if (searchTerm.trim() === "") return;
 
         console.log("GET API DATA...");
-        const apiUrl = 'http://localhost:8081/jootopia/v1/users/system/search';
+        const apiUrl = 'https://jootopia-mainserver.shinhansec-pda.net/jootopia/v1/users/system/search';
         axios.get(apiUrl + `?query=${searchTerm.trim()}`)
         .then((response) =>{
             navigate(`/detail/${response.data}`);

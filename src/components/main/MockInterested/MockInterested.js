@@ -3,7 +3,6 @@ import styles from './MockInterested.module.css';
 import { Link } from 'react-router-dom';
 import mockInterestedData from '../../../data/main/mockInterestedData';
 
-
 function MockInterested() {
   const themeNames = Object.keys(mockInterestedData);
   const [currentThemeIndex, setCurrentThemeIndex] = useState(0);
@@ -30,33 +29,34 @@ function MockInterested() {
         <span className={styles.arrow} onClick={() => switchTheme(-1)}>&#9664;</span>
         <div className={styles.themeItems}>
           {mockInterestedData[themeNames[currentThemeIndex]].items.map((item, index) => (
-            <div key={index} className={styles.item}>
-            <div className={styles.nameCodeContainer}>
-              <Link
-                to={`/detail`}
-                className={styles.itemLink}
-                style={{ textDecoration: 'none', color: 'black' }}
-              >
-                <h3>{item.item_name}</h3>
-              </Link>
-              <p>({item.stock_code})</p>
-            </div>
-              <div className={styles.priceChangeRateContainer}>
-                <div className={styles.priceContainer}>
-                  <h3>{item.curr_pric}</h3>
-                  <p className={item.change_number.includes('▲') ? styles.positive : item.change_number.includes('▼') ? styles.negative : ''}>
-                    {item.change_number}
-                  </p>
+            <Link
+              key={index}
+              to={`/detail/${item.stock_code}`}
+              className={styles.itemLink}
+              style={{ textDecoration: 'none', color: 'black' }}
+            >
+              <div className={styles.item}>
+                <div className={styles.nameCodeContainer}>
+                  <h3>{item.item_name}</h3>
+                  <p>({item.stock_code})</p>
                 </div>
-                <div
-                  className={styles.changeRateContainer}
-                  style={{ backgroundColor: item.change_rate.includes('-') ? 'blue' : 'red' }}
-                >
-                  <p>{item.change_rate}</p>
+                <div className={styles.priceChangeRateContainer}>
+                  <div className={styles.priceContainer}>
+                    <h3>{item.curr_pric} 원</h3>
+                    <p className={item.change_number.includes('▲') ? styles.positive : item.change_number.includes('▼') ? styles.negative : ''}>
+                      {item.change_number}
+                    </p>
+                  </div>
+                  <div
+                    className={styles.changeRateContainer}
+                    style={{ backgroundColor: item.change_rate.includes('-') ? 'blue' : 'red' }}
+                  >
+                    <p>{item.change_rate}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-        ))}
+            </Link>
+          ))}
         </div>
         <span className={styles.arrow} onClick={() => switchTheme(1)}>&#9654;</span>
       </div>

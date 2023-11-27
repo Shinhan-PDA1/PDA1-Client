@@ -1,20 +1,24 @@
 import React from 'react';
 import styles from './StockInfo.module.css';
-import stockData from '../../../data/detail/mockStockInfo';  // 데이터 파일 임포트
 
-function StockInfo() {
-    const { name, price, change } = stockData;  // 데이터 구조 분해 할당
+function StockInfo(props) {
+    if (!props.infoData) {
+        // props.infoData가 null인 경우 처리
+        return null; // 또는 다른 대체 UI를 반환할 수 있음
+    }
+
+    const { stockName, price, rate } = props.infoData; // props에서 데이터 추출
 
     return (
         <div className='container'>
             <div className={styles['stock-info']}>
-                <span className={styles['stock-name']}>{name}</span>
+                <span className={styles['stock-name']}>{stockName}</span>
                 <div className={styles['price-container']}>
-                    <span className={styles['stock-price']}>{price.toLocaleString()}</span>  
-                    <span className={styles['currency']}>원</span>
+                    <span className={styles['stock-price']}>{parseInt(price).toLocaleString()}</span>
+                    <span className={styles['currency']}>원  </span>
                 </div>
-                <span className={change > 0 ? styles['price-rise'] : styles['price-fall']}>
-                    {change > 0 ? `+${change}` : change}%
+                <span id={styles['rate']} className={rate.includes('+') ? styles['price-rise'] : styles['price-fall']}>
+                     { rate}
                 </span>
             </div>
         </div>

@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 import '../../../styles/detail/detailGlobal.css'
 import styles from './Chart.module.css';
 import sol from '../../../assets/images/detail/sol04.png'
-import mockChartData from '../../../data/detail/mockChartData';
 import ReactApexChart from 'react-apexcharts'
 import axios from 'axios';
 
 function Chart(props) {
-  const { tableData, aiReport } = mockChartData;
   
   const [candleData, setCandleData] = useState();
   const [volumeData, setVolumeData] = useState();
@@ -117,13 +115,11 @@ function Chart(props) {
 
   const newChartTableData = {
     "시장구분":props.chartTable.stock_market,
-    "연중최고":props.chartTable.annual_high,
-    "연중최저":props.chartTable.annual_low,
-    "자본금":props.chartTable.capital,
+    "연중최고(원)":props.chartTable.annual_high,
+    "연중최저(원)":props.chartTable.annual_low,
+    "자본금(원)":props.chartTable.capital,
     "상장주식수":props.chartTable.listed_stock_number,
-    "시가총액":props.chartTable.market_capital,
-    "PER":props.chartTable.per,
-    "EPS":props.chartTable.eps
+    "시가총액(원)":props.chartTable.market_capital,
   }
    
   const candlestickSeries = [
@@ -234,6 +230,17 @@ function Chart(props) {
     },
 };
 
+
+// 데이터의 숫자 값들에 ,를 찍어서 포맷팅
+const formattedChartTable = {};
+
+for (const key in chartTable) {
+  const value = chartTable[key];
+  // 숫자로 변환하고, 숫자가 아닌 경우는 그대로 두기
+  formattedChartTable[key] = isNaN(value) ? value : parseInt(value).toLocaleString();
+}
+console.log(formattedChartTable);
+
 return (
   <div className="container">
     <div className={styles["price-chart"]}>
@@ -258,17 +265,19 @@ return (
               height={200}
             />
           </div>
+ 
           <table className={styles["chart-table"]}>
-            <tbody>
-              {Object.entries(newChartTableData).map(([key, value], index) => (
-                <tr key={index}>
-                  <td>{key}</td>
-                  <td>{value}</td>
-                </tr>
-                
-              ))}
-            </tbody>
-          </table>
+          <tbody>
+            {Object.entries(newChartTableData).map(([key, value], index) => (
+              <tr key={index}>
+                <td>{key}</td>
+                <td>{isNaN(value) ? value : parseInt(value).toLocaleString()}</td>
+              </tr>
+            ))}
+          </tbody>
+
+</table>
+
       </div>
       <div className="component-header">
         <h2>AI REPORT</h2>
